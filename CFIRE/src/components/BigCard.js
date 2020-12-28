@@ -1,13 +1,13 @@
 import React from 'react';
 import { withNavigation } from 'react-navigation';
+import PropTypes from 'prop-types';
 import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback, View, Text, TouchableOpacity } from 'react-native';
 
 
 
-class Card extends React.Component {
+class BigCard extends React.Component {
     render() {
-        const { navigation, item, horizontal, full, style, ctaColor, imageStyle, food, key} = this.props;
-
+        const { navigation, item, horizontal, full, style, ctaColor, imageStyle} = this.props;
 
         const crdContainer = [styles.card, styles.shadow, style];
         const imgContainer = [styles.imgContainer,
@@ -15,33 +15,15 @@ class Card extends React.Component {
             styles.shadow
         ];
 
-        const colorStyles = [
-          item.food ? styles.foodStuff : styles.regStuff,
-        ];
-
-        const backgroundStyles = [
-          item.food ? styles.foodBackground : styles.regBackground,
-        ];
-
 
         return (
             <View row={horizontal} card flex style={crdContainer}>
-
                 <TouchableWithoutFeedback onPress={() => navigation.navigate('Pro')}>
-                  <View flex style={[imgContainer, backgroundStyles]}>
-                    <Text style={colorStyles}>{item.companyName}</Text>
-                    {/*     <Image source={item.img} style={imageStyles} />  */} 
-                  </View>
+                    <View flex style={[imgContainer]}>
+                      <Text style={{fontSize: 40, fontWeight: '800', color: 'white'}}>{item.companyName}</Text>
+                       {/*     <Image source={item.img} style={imageStyles} />  */} 
+                    </View>
                 </TouchableWithoutFeedback>
-
-              <TouchableOpacity onPress = {() => navigation.navigate('Card',{ key: item.key })} style={{activeOpacity: .3}}>
-                <View flex space='between' style={styles.cardDescription}>
-                    {/*    <Text size={14} style={styles.cardName}>{item.companyName}</Text>     */} 
-                    <Text size={14} numberOfLines={2} style={styles.cardTitle}>{item.title}</Text>
-                    <Text size={10} style={styles.cardCTA}>{item.cta}</Text>
-                </View>
-              </TouchableOpacity>
-
             </View>
         );
     }
@@ -61,19 +43,19 @@ const styles = StyleSheet.create({
       marginBottom: 16,
       borderRadius: 10,
       flex: 1,
-      height:'40%',
+      height:'30%',
       width: '100%'
     },
     foodBackground:{
-      backgroundColor: '#ff6600',
+      backgroundColor: 'white',
     },
     regBackground:{
-      backgroundColor: '#551A8B',
+      backgroundColor: 'white',
     },
     foodStuff: {
       fontSize: 25,
       fontWeight: '800',
-      color: 'white',
+      color: 'rgba(156,137,184,1)',
       paddingLeft: '4%',
       paddingRight: '4%',
       paddingBottom: '2%',
@@ -81,7 +63,7 @@ const styles = StyleSheet.create({
     regStuff: {
       fontSize: 25,
       fontWeight: '800',
-      color: 'white',
+      color: 'rgba(10,10,253,.6)',
       paddingLeft: '4%',
       paddingRight: '4%',
       paddingTop: '2%',
@@ -96,7 +78,7 @@ const styles = StyleSheet.create({
     cardTitle: {
       flex: 1,
       flexWrap: 'nowrap',
-      paddingBottom: 8
+      paddingBottom: 6
     },
     cardDescription: {
       padding: 6,
@@ -109,7 +91,9 @@ const styles = StyleSheet.create({
       elevation: 1,
       overflow: 'hidden',
       height: 130,
-      paddingBottom: '2%',
+    },
+    image: {
+      // borderRadius: 3,
     },
     horizontalImage: {
       width: 'auto',
@@ -119,16 +103,18 @@ const styles = StyleSheet.create({
     horizontalStyles: {
       borderTopRightRadius: 0,
       borderBottomRightRadius: 0,
-      height: 200,
-      justifyContent: 'space-between',
+      height: 90,
     },
     verticalStyles: {
       borderBottomRightRadius: 0,
       borderBottomLeftRadius: 0,
-      height: 110,
+      height: 90,
       flex: 1,
-      justifyContent: 'flex-end',
+      justifyContent: 'flex-start',
       backgroundColor: 'rgba(66,202,253,.3)',
+      paddingTop: '10%',
+      alignItems: 'center'
+      
       },
     fullImage: {
       height: '100%',
@@ -153,4 +139,4 @@ const styles = StyleSheet.create({
   });
 
 
-  export default withNavigation(Card);
+  export default withNavigation(BigCard);
