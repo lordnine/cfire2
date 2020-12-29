@@ -6,6 +6,7 @@ const common = {
     alignItems: 'center',
     justifyContent: 'flex-start',
     backgroundColor: CAMPFIRE_RED,
+    paddingHorizontal: '3%'
   },
   text: {
     fontSize: 15,
@@ -18,7 +19,7 @@ const common = {
     color: 'white',
   },
   megaText: {
-    fontSize: 35,
+    fontSize: 28,
     fontWeight: 'bold',
     color: 'white',
   },
