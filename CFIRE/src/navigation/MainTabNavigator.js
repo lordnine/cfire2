@@ -5,6 +5,7 @@ import { Platform } from 'react-native';
 import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import { createAppContainer } from 'react-navigation';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -38,7 +39,13 @@ SettingsStack.navigationOptions = {
   ),
 };
 
-export default createBottomTabNavigator({
-  HomeStack,
-  SettingsStack,
-});
+
+
+const bottomTabNavigator = createBottomTabNavigator({
+  Home: HomeStack,
+  Settings: SettingsStack
+
+})
+
+
+export default bottomTabNavigator;
