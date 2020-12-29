@@ -19,24 +19,22 @@ export default class WelcomeScreen extends React.Component {
       return (
         <View style={styles.frameContainer}>
           <Divider style={{ height: 80, backgroundColor: 'transparent' }} />
-          <Image style={{ width: 50, height: 50,resizeMode: 'contain'}} source={logo}/>
+          <Image style={{ width: 55, height: 55,}}  resizeMode='contain' source={logo}/>
+          <Divider style={{ height: 16, backgroundColor: 'transparent' }} />
           <Divider style={{ height: 170, backgroundColor: 'transparent' }} />
-          <View style={{alignItems:'left'}}>
-          <Text style={styles.megaText}>Get connected.</Text>
-          <Text style={styles.subtitleText}>Find the best deals in your community today.</Text>
-          </View>
-          <Divider style={{height: 30, backgroundColor: 'transparent'}}/>
+          <Divider style={{height: 190, backgroundColor: 'transparent'}}/>
+       {/*   <Text style={styles.megaText}>campfire</Text>  */}
           <Button
-              title="SIGN UP"
+              title="LEARN MORE"
               buttonStyle={styles.button}
               titleStyle={{ fontWeight: 'bold', color: 'white' }}
               onPress={() => this.props.navigation.navigate('CreateAccount')}
             />
            <Divider style={{ height: 18, backgroundColor: 'transparent' }} />
           <Button
-              title="LOG IN"
+              title="GET STARTED"
               buttonStyle={styles.inverseButton}
-              titleStyle={{ fontWeight: 'bold', color: '#FE5F54'}}
+              titleStyle={{ fontWeight: 'bold', color: '#000437'}}
               onPress={() => this.props.navigation.navigate('Home')}
             />
         </View>
