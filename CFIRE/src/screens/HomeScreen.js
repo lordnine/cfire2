@@ -12,7 +12,6 @@ import { connect } from 'react-redux';
 import { CAMPFIRE_RED } from '../styles/colors.js';
 import { Button } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
-import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 
 export default class HomeScreen extends React.Component {
 
@@ -32,8 +31,6 @@ export default class HomeScreen extends React.Component {
       ),
       headerLeft: <Button title='back' style={{ paddingLeft: 15}} onPress={() => navigation.goBack()}>
       </Button>,
-      headerRight: <HeaderButtons>
-        <Item title="Menu" iconName='ios-menu' style={{color: 'white'}} onPress={() => {navigation.openDrawer()}}/></HeaderButtons>,
     };
   };
 
