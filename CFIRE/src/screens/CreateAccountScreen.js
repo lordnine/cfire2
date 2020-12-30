@@ -40,8 +40,8 @@ class CreateAccountScreen extends React.Component {
   render() {
     return (
       <View style={styles.frameContainer}>
-          <Divider style={{ height: 60, backgroundColor: 'transparent' }} />
-          <Image style={{ width: 90, height: 90,resizeMode: 'cover'}} source={logo}/>
+        <Divider style={{ height: '14%' }} />
+        <Image style={{ width: 55, height: 55 }} resizeMode='contain' source={require('../assets/images/logo.png')}/>
         <View style={styles.formContainer}>
           <View style={styles.logoContainer}>
             <Text style={styles.titleText}>Create an Account</Text>
