@@ -3,9 +3,8 @@ import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createDrawerNavigator } from 'react-navigation-drawer';
 import { Platform } from 'react-native';
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import HomeScreen from '../screens/homeScreen';
+import SettingsScreen from '../screens/settingsScreen';
 import { createAppContainer } from 'react-navigation';
 
 

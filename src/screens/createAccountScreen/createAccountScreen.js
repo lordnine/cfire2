@@ -9,10 +9,9 @@ import {
 import {
   Button, Image, Divider,
 } from 'react-native-elements';
-import logo from '../assets/images/logo.png';
-import common from '../styles/common';
-import { isValidEmail, isUnusedEmail } from '../utils/helpers';
-import { createUser } from '../actions/userActions';
+import common from '../../styles/common';
+import { isValidEmail, isUnusedEmail } from '../../utils/helpers';
+import { createUser } from '../../actions/userActions';
 
 class CreateAccountScreen extends React.Component {
   static navigationOptions = {
@@ -41,7 +40,7 @@ class CreateAccountScreen extends React.Component {
     return (
       <View style={styles.frameContainer}>
         <Divider style={{ height: '14%' }} />
-        <Image style={{ width: 55, height: 55 }} resizeMode='contain' source={require('../assets/images/logo.png')}/>
+        <Image style={{ width: 55, height: 55 }} resizeMode='contain' source={require('../../assets/images/logo.png')}/>
         <View style={styles.formContainer}>
           <View style={styles.logoContainer}>
             <Text style={styles.titleText}>Create an Account</Text>

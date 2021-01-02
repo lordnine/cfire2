@@ -2,9 +2,9 @@ import React from 'react';
 import { createStackNavigator } from 'react-navigation-stack';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { Platform } from 'react-native';
-import TabBarIcon from '../components/TabBarIcon';
-import HomeScreen from '../screens/HomeScreen';
-import SettingsScreen from '../screens/SettingsScreen';
+import TabBarIcon from '../components/tabBarIcon';
+import HomeScreen from '../screens/homeScreen';
+import SettingsScreen from '../screens/settingsScreen';
 import { createAppContainer } from 'react-navigation';
 
 const HomeStack = createStackNavigator({

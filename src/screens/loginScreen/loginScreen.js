@@ -8,10 +8,9 @@ import {
   Alert,
 } from 'react-native';
 import { Button, Image, Divider } from 'react-native-elements';
-import logo from '../assets/images/logo.png';
-import { firebaseAuth } from '../utils/firebase';
-import { asyncUserLogin } from '../actions/userActions';
-import common from '../styles/common';
+import { firebaseAuth } from '../../utils/firebase';
+import { asyncUserLogin } from '../../actions/userActions';
+import common from '../../styles/common';
 
 class LoginScreen extends React.Component {
   static navigationOptions = {

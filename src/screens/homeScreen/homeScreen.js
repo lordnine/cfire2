@@ -6,10 +6,8 @@ import {
   Image,
   ImagePropTypes,
 } from 'react-native';
-import Card from '../components/card';
-import articles from '../constants/articles';
-import { connect } from 'react-redux';
-import { CAMPFIRE_RED } from '../styles/colors.js';
+import Card from '../../components/card';
+import articles from '../../constants/articles';
 import { Button } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 
@@ -27,7 +25,7 @@ export default class HomeScreen extends React.Component {
       elevation: 3,
     },
     headerTitle: (
-      <Image source={require('../assets/images/logo.png')} style={{height: 36, width: 36, paddingBottom: 8}} resizeMode='contain'/>
+      <Image source={require('../../assets/images/logo.png')} style={{height: 36, width: 36, paddingBottom: 8}} resizeMode='contain'/>
       ),
       headerLeft: <Button title='back' style={{ paddingLeft: 15}} onPress={() => navigation.goBack()}>
       </Button>,

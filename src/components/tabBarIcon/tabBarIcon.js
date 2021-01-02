@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from 'expo';
 
-import { TAB_ICON_SELECTED, TAB_ICON_DEFAULT } from '../styles/colors';
+import { TAB_ICON_SELECTED, TAB_ICON_DEFAULT } from '../../styles/colors';
 
 const TabBarIcon = ({ name, focused }) => (
   <Icon.Ionicons

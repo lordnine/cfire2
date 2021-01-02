@@ -5,8 +5,8 @@ import {
   StyleSheet,
   Image
 } from 'react-native';
-import common from '../styles/common';
-import logo from '../assets/images/logo.png';
+import common from '../../styles/common';
+import logo from '../../assets/images/logo.png';
 import { Button, Divider} from 'react-native-elements';
 
 export default class WelcomeScreen extends React.Component {

@@ -5,11 +5,10 @@ import {
   StyleSheet,
   Image
 } from 'react-native';
-import common from '../styles/common';
-import logo from '../assets/images/logo.png';
+import common from '../../styles/common';
 import { Button, Divider} from 'react-native-elements';
-import articles from '../constants/articles';
-import BigCard from '../components/bigCard';
+import articles from '../../constants/articles';
+import BigCard from '../../components/bigCard';
 
 export default class CardScreen extends React.Component {
     static navigationOptions = {
