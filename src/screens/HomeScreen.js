@@ -6,7 +6,7 @@ import {
   Image,
   ImagePropTypes,
 } from 'react-native';
-import Card from '../components/Card';
+import Card from '../components/card';
 import articles from '../constants/articles';
 import { connect } from 'react-redux';
 import { CAMPFIRE_RED } from '../styles/colors.js';
