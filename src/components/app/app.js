@@ -4,9 +4,10 @@
  */
 
 import React from 'react';
+import { registerRootComponent } from 'expo';
 import { Provider } from 'react-redux';
-import configureStore from './src/utils/configureStore';
-import AppNavigator from './src/navigation/AppNavigator';
+import configureStore from '../../utils/configureStore';
+import AppNavigator from '../../navigation/AppNavigator';
 
 /** 
  * configureStore() takes the initial state as an argument
@@ -22,4 +23,5 @@ const App = () => (
   </Provider>
 )
 
-export default App;
+registerRootComponent(App);
+// export default App;
