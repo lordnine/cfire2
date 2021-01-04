@@ -7,7 +7,7 @@ import React from 'react';
 import { registerRootComponent } from 'expo';
 import { Provider } from 'react-redux';
 import configureStore from '../../utils/configureStore';
-import AppNavigator from '../../navigation/AppNavigator';
+import AppNavigator from '../../navigation/appNavigator';
 
 /** 
  * configureStore() takes the initial state as an argument
