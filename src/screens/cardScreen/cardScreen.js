@@ -20,7 +20,6 @@ export default class CardScreen extends React.Component {
     render() {
 
       const { key } = this.props.route.params;
-      console.log(key);
       return (
         <View style={styles.redContainer}>
             <Divider style={{height: '1.5%'}}/>
