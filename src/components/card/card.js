@@ -1,5 +1,4 @@
 import React from 'react';
-import { withNavigation } from 'react-navigation';
 import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback, View, Text, TouchableOpacity } from 'react-native';
 
 
@@ -27,14 +26,14 @@ class Card extends React.Component {
         return (
             <View row={horizontal} card flex style={crdContainer}>
 
-                <TouchableWithoutFeedback onPress={() => navigation.navigate('Card', { key: item.key})}>
+                <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
                   <View flex style={[imgContainer, backgroundStyles]}>
                     <Text style={colorStyles}>{item.companyName}</Text>
                     {/*     <Image source={item.img} style={imageStyles} />  */} 
                   </View>
                 </TouchableWithoutFeedback>
 
-              <TouchableOpacity onPress = {() => navigation.navigate('Card',{ key: item.key })} style={{activeOpacity: .3}}>
+              <TouchableOpacity onPress = {() => this.props.navigation.navigate('Card',{ key: item.key })} style={{activeOpacity: .3}}>
                 <View flex space='between' style={styles.cardDescription}>
                     {/*    <Text size={14} style={styles.cardName}>{item.companyName}</Text>     */} 
                     <Text size={14} numberOfLines={2} style={styles.cardTitle}>{item.title}</Text>
@@ -153,4 +152,4 @@ const styles = StyleSheet.create({
   });
 
 
-  export default withNavigation(Card);
+  export default Card;

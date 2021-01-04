@@ -16,17 +16,15 @@ export default class CardScreen extends React.Component {
       header: null,
     };
 
-    
-
-    
 
     render() {
 
-
+      const { key } = this.props.route.params;
+      console.log(key);
       return (
         <View style={styles.redContainer}>
             <Divider style={{height: '1.5%'}}/>
-            <BigCard item={articles[this.props.navigation.getParam('key','Sorry, something went wrong! Please try again!')]}/>
+            <BigCard item={articles[key]}/>
 
         </View>
       );

@@ -1,18 +1,29 @@
-import { createAppContainer, createSwitchNavigator } from 'react-navigation';
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
-import MainTabNavigator from './MainTabNavigator';
-import AuthNavigator from './AuthNavigator';
-import AuthLoadingScreen from '../screens/authLoadingScreen';
-import HomeDrawerNavigator from './HomeDrawerNavigator';
+import WelcomeScreen from '../screens/welcomeScreen';
+import HomeScreen from '../screens/homeScreen';
+import CardScreen from '../screens/cardScreen';
 
-export default createAppContainer(createSwitchNavigator(
-  {
-    AuthLoading: AuthLoadingScreen,
-    Auth: AuthNavigator,
-    Main: MainTabNavigator,
-    Drawer: HomeDrawerNavigator
-  },
-  {
-    initialRouteName: 'AuthLoading',
-  },
-));
+const Stack = createStackNavigator();
+
+const AppNavigator = () => (
+  <NavigationContainer>
+    <Stack.Navigator
+      initialRouteName="Welcome"
+    >
+      <Stack.Screen 
+        name="Welcome" component={WelcomeScreen} 
+      />
+      <Stack.Screen
+        name="Home" component={HomeScreen}
+      />
+      <Stack.Screen
+        name="Card" component={CardScreen}
+      />
+    </Stack.Navigator>
+  </NavigationContainer>
+);
+
+export default AppNavigator;

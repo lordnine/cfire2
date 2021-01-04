@@ -1,5 +1,4 @@
 import React from 'react';
-import { withNavigation } from 'react-navigation';
 import PropTypes from 'prop-types';
 import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback, View, Text, TouchableOpacity } from 'react-native';
 import { Divider } from 'react-native-elements';
@@ -103,4 +102,4 @@ const styles = StyleSheet.create({
   });
 
 
-  export default withNavigation(BigCard);
+  export default BigCard;

@@ -24,4 +24,3 @@ const App = () => (
 )
 
 registerRootComponent(App);
-// export default App;
