@@ -9,6 +9,7 @@ import common from '../../styles/common';
 import logo from '../../assets/images/logo.png';
 import { Button, Divider} from 'react-native-elements';
 import buttons from '../../styles/buttons';
+import text from '../../styles/text';
 
 export default class WelcomeScreen extends React.Component {
     static navigationOptions = {
@@ -28,14 +29,14 @@ export default class WelcomeScreen extends React.Component {
           <Button
               title="LEARN MORE"
               buttonStyle={buttons.minimalistButton}
-              titleStyle={{ fontWeight: 'bold', color: 'white' }}
+              titleStyle={text.minimalistButtonText}
               onPress={() => this.props.navigation.navigate('CreateAccount')}
             />
            <Divider style={{ height: 18, backgroundColor: 'transparent' }} />
           <Button
               title="GET STARTED"
               buttonStyle={buttons.inverseMinimalistButton}
-              titleStyle={{ fontWeight: 'bold', color: '#000437'}}
+              titleStyle={text.inverseMinimalistButtonText}
               onPress={() => this.props.navigation.navigate('Home')}
             />
         </View>
