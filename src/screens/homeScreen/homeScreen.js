@@ -12,6 +12,10 @@ import { Button } from 'react-native-elements';
 
 export default class HomeScreen extends React.Component {
 
+/*
+
+  //I think this is an old version of react
+
   static navigationOptions = ({navigation}) => {
     return{
     headerStyle: {
@@ -30,6 +34,8 @@ export default class HomeScreen extends React.Component {
       </Button>,
     };
   };
+
+  */
 
     renderArticles = ({item, index}) => {
       return (
@@ -59,6 +65,7 @@ export default class HomeScreen extends React.Component {
           style={{}}
           >
           </FlatList>
+          <Button title='hello' style={general.generalBackground}></Button>
         </View>
         
       );
