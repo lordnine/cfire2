@@ -12,7 +12,7 @@ import { Button } from 'react-native-elements';
 
 export default class HomeScreen extends React.Component {
 
-/*
+  /*
 
   //I think this is an old version of react
 
@@ -45,13 +45,13 @@ export default class HomeScreen extends React.Component {
       );
     }
 
+
   /*  renderSeparator = () => { 
       return(
         <View style={{backgroundColor: 'red', height: 0}}/>
       );
     }     
-
-*/
+  */
 
     render() {
       return(
@@ -65,7 +65,6 @@ export default class HomeScreen extends React.Component {
           style={{}}
           >
           </FlatList>
-          <Button title='hello' style={general.generalBackground}></Button>
         </View>
         
       );
