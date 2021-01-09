@@ -10,6 +10,7 @@ import logo from '../../assets/images/logo.png';
 import { Button, Divider} from 'react-native-elements';
 import buttons from '../../styles/buttons';
 import text from '../../styles/text';
+import transparentDivider from '../../styles/transparentDivider';
 
 export default class WelcomeScreen extends React.Component {
     static navigationOptions = {
@@ -20,12 +21,9 @@ export default class WelcomeScreen extends React.Component {
     render() {
       return (
         <View style={styles.frameContainer}>
-          <Divider style={{ height: 80, backgroundColor: 'transparent' }} />
+          <Divider style={transparentDivider('10%')} />
           <Image style={{ width: 55, height: 55,}}  resizeMode='contain' source={logo}/>
-          <Divider style={{ height: 16, backgroundColor: 'transparent' }} />
-          <Divider style={{ height: 170, backgroundColor: 'transparent' }} />
-          <Divider style={{height: 190, backgroundColor: 'transparent'}}/>
-       {/*   <Text style={styles.megaText}>campfire</Text>  */}
+          <Divider style={transparentDivider('45%')} />
           <Button
               title="LEARN MORE"
               buttonStyle={buttons.minimalistButton}
