@@ -27,7 +27,7 @@ export default class WelcomeScreen extends React.Component {
 
           <Button
               title="LEARN MORE"
-              buttonStyle={buttons.minimalistButton}
+              buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
               titleStyle={text.minimalistButtonText}
               onPress={() => this.props.navigation.navigate('CreateAccount')}
             />
@@ -36,7 +36,7 @@ export default class WelcomeScreen extends React.Component {
 
           <Button
               title="GET STARTED"
-              buttonStyle={buttons.inverseMinimalistButton}
+              buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
               titleStyle={text.inverseMinimalistButtonText}
               onPress={() => this.props.navigation.navigate('Home')}
             />
