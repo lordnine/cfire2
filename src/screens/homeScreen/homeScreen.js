@@ -3,12 +3,9 @@ import {
   View,
   StyleSheet,
   FlatList,
-  Image,
-  ImagePropTypes,
 } from 'react-native';
 import Card from '../../components/card';
 import articles from '../../constants/articles';
-import { Button } from 'react-native-elements';
 
 export default class HomeScreen extends React.Component {
 
