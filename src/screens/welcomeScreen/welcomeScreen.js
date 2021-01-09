@@ -22,7 +22,7 @@ export default class WelcomeScreen extends React.Component {
         <View style={containers.frameContainer}>
 
           <Divider style={customStyles.transparentDivider('10%')} />
-          <Image style={{ width: 55, height: 55,}}  resizeMode='contain' source={logo}/>
+          <Image style={customStyles.imgSize('13%','13%')}  resizeMode='contain' source={logo}/>
           <Divider style={customStyles.transparentDivider('45%')} />
 
           <Button

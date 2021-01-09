@@ -9,6 +9,7 @@ const containers = {
         backgroundColor: CAMPFIRE_RED,
         paddingHorizontal: '3%'
       },
+    
 
 };
 
