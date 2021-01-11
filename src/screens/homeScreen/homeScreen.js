@@ -6,6 +6,7 @@ import {
 } from 'react-native';
 import Card from '../../components/card';
 import articles from '../../constants/articles';
+import homeStyles from './homeStyles';
 
 export default class HomeScreen extends React.Component {
 
@@ -36,7 +37,7 @@ export default class HomeScreen extends React.Component {
 
     renderArticles = ({item, index}) => {
       return (
-        <View style={{width: '48%', padding: '0%', marginHorizontal: '1%', marginBottom: '0%'}}>
+        <View style={homeStyles.articleContainer}>
           <Card item={item} navigation={this.props.navigation}/>
         </View>
       );
@@ -53,7 +54,7 @@ export default class HomeScreen extends React.Component {
     render() {
       return(
         
-        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', paddingHorizontal: '2%'}}>
+        <View style={homeStyles.listContainer}>
           <FlatList
           data={articles}
           numColumns={2}

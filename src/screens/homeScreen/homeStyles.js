@@ -10,6 +10,13 @@ const homeStyles = {
         marginBottom: '0%'
     },
 
+    listContainer: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        paddingHorizontal: '2%'
+    },
+
 
 };
 
