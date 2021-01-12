@@ -18,7 +18,7 @@ const bigCardStyles = {
         elevation: 3,
     },
 
-    imgContainer: {
+    wrappedContainer: {
         borderRadius: 10,
         elevation: 1,
         overflow: 'hidden',

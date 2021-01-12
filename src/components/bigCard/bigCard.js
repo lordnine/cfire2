@@ -7,27 +7,35 @@ import customStyles from '../../styles/customStyles';
  
 class BigCard extends React.Component {
     render() {
-        const { navigation, item, horizontal, full, style, ctaColor, imageStyle} = this.props;
+        const { item } = this.props;
 
         const crdContainer = [bigCardStyles.card, bigCardStyles.shadow];
-        const imgContainer = [bigCardStyles.imgContainer, bigCardStyles.cardStyles]
+        const touchableContainer = [bigCardStyles.touchableContainer, bigCardStyles.cardStyles]
 
 
         return (
             <View style={crdContainer}>
                 <TouchableWithoutFeedback>
-                    <View style={imgContainer}>
+
+                  <View style={touchableContainer}>
+
                     <View style={bigCardStyles.imageContainer}> 
-                    <Image source={item.img} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
-                       </View>
-                       <Divider style={customStyles.transparentDivider('1%')}/>
-                       <Text style={bigCardStyles.companyTitle}>{item.companyName}</Text>
-                       <View style={bigCardStyles.bigCardContainer}>
+                        <Image source={item.img} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
+                    </View>
+
+                    <Divider style={customStyles.transparentDivider('1%')}/>
+
+                    <Text style={bigCardStyles.companyTitle}>{item.companyName}</Text>
+                    
+                    <View style={bigCardStyles.bigCardContainer}>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Location: </Text></Text>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Deal: </Text>{item.title}</Text>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Code: </Text>This page or a valid Student ID</Text>
-                      </View>
                     </View>
+                    
+                    
+                  </View>
+
                 </TouchableWithoutFeedback>
             </View>
         );
