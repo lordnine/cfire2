@@ -20,11 +20,13 @@ export default class WelcomeScreen extends React.Component {
     render() {
       return (
         <View style={containers.frameContainer}>
-
+     
+          {/* logo and spacing*/}
           <Divider style={customStyles.transparentDivider('10%')} />
           <Image style={customStyles.imgSize('13%','13%')}  resizeMode='contain' source={logo}/>
           <Divider style={customStyles.transparentDivider('45%')} />
 
+          {/* Top Button */}
           <Button
               title="LEARN MORE"
               buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
@@ -34,6 +36,7 @@ export default class WelcomeScreen extends React.Component {
 
           <Divider style={customStyles.transparentDivider('3%')} />
 
+          {/* Bottom button - reversed color */}
           <Button
               title="GET STARTED"
               buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}

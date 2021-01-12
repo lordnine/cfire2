@@ -12,7 +12,7 @@ const cardStyles = {
         flex: 1,
         height:'40%',
         width: '100%'
-      },
+    },
 
     shadow: {
         shadowColor: 'black',
@@ -20,7 +20,7 @@ const cardStyles = {
         shadowRadius: 4,
         shadowOpacity: 0.15,
         elevation: 3,
-      },
+    },
 
     imageContainer: {
         borderRadius: 10,
@@ -28,14 +28,14 @@ const cardStyles = {
         overflow: 'hidden',
         height: 130,
         paddingBottom: '2%',
-      },
+    },
 
     horizontalStyles: {
         borderTopRightRadius: 0,
         borderBottomRightRadius: 0,
         height: 200,
         justifyContent: 'space-between',
-      },
+    },
 
     verticalStyles: {
         borderBottomRightRadius: 0,
@@ -44,7 +44,7 @@ const cardStyles = {
         flex: 1,
         justifyContent: 'flex-end',
         backgroundColor: 'rgba(66,202,253,.3)',
-        },
+    },
 
     foodStuff: {
         fontSize: 25,
@@ -63,33 +63,33 @@ const cardStyles = {
         paddingRight: '4%',
         paddingTop: '2%',
         paddingBottom: '2%',
-      },
+    },
 
-      foodBackground:{
+    foodBackground:{
         backgroundColor: '#9E1030FF',
-      },
+    },
 
-      regBackground:{
+    regBackground:{
         backgroundColor: '#F49F1C',
-      },
+    },
 
-      cardDescription: {
+    cardDescription: {
         padding: 6,
         height: 90,
         flex: 1,
         flexWrap: 'nowrap',
-      },
+    },
 
-      cardTitle: {
+    cardTitle: {
         flex: 1,
         flexWrap: 'nowrap',
         paddingBottom: 8
-      },
+    },
 
-      cardCTA: {
+    cardCTA: {
         color: 'cornflowerblue'
-      },
-      
+    },
+
 
 };
 

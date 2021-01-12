@@ -7,11 +7,12 @@ const text = {
     minimalistButtonText: {
         fontWeight: 'bold', 
         color: 'white'
-      },
-      inverseMinimalistButtonText: {
+    },
+
+    inverseMinimalistButtonText: {
         fontWeight: 'bold', 
         color: CAMPFIRE_RED,
-      },
+    },
 
 };
 

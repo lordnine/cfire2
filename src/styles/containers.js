@@ -2,6 +2,7 @@
 import { CAMPFIRE_RED } from './colors';
 
 const containers = {
+  
     frameContainer: {
         flex: 1,
         alignItems: 'center',

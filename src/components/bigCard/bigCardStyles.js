@@ -1,5 +1,6 @@
 
 const bigCardStyles = {
+
     card: {
       backgroundColor: 'white',
       marginVertical: 12,
@@ -59,7 +60,7 @@ const bigCardStyles = {
     subTitle: {
         fontWeight: '600',
         fontSize: 18,
-      },
+    },
 
     imageContainer: {
         borderRadius: 10,
@@ -68,7 +69,7 @@ const bigCardStyles = {
         height: '30%',
         borderBottomEndRadius:0,
         borderBottomStartRadius: 0,
-      },
+    },
 
 };
 

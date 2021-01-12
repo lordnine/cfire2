@@ -12,7 +12,7 @@ export default class HomeScreen extends React.Component {
 
   /*
 
-  //I think this is an old version of react
+  * I think this is an old version of react - previously could take out top navigator
 
   static navigationOptions = ({navigation}) => {
     return{
@@ -35,6 +35,8 @@ export default class HomeScreen extends React.Component {
 
   */
 
+
+    /* Render function for the flat list  */
     renderArticles = ({item, index}) => {
       return (
         <View style={homeStyles.articleContainer}>
@@ -44,7 +46,12 @@ export default class HomeScreen extends React.Component {
     }
 
 
-  /*  renderSeparator = () => { 
+  /*  
+
+    * For adjusting UI if necessary adds (vertically) space between cards
+    * Must add a seperator function to the flatlist
+  
+    renderSeparator = () => { 
       return(
         <View style={{backgroundColor: 'red', height: 0}}/>
       );
@@ -55,14 +62,17 @@ export default class HomeScreen extends React.Component {
       return(
         
         <View style={homeStyles.listContainer}>
-          <FlatList
+     
+
+       {/* Render the cards in a list */}  
+        <FlatList
           data={articles}
           numColumns={2}
-     /*     ItemSeparatorComponent={this.renderSeparator}  */
           renderItem={this.renderArticles}
           style={{}}
           >
-          </FlatList>
+        </FlatList>
+
         </View>
         
       );

@@ -1,6 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { StyleSheet, Dimensions, Image, TouchableWithoutFeedback, View, Text, TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, TouchableWithoutFeedback, View, Text } from 'react-native';
 import { Divider } from 'react-native-elements';
 import bigCardStyles from './bigCardStyles';
 import customStyles from '../../styles/customStyles';
@@ -10,7 +9,7 @@ class BigCard extends React.Component {
         const { item } = this.props;
 
         const crdContainer = [bigCardStyles.card, bigCardStyles.shadow];
-        const touchableContainer = [bigCardStyles.touchableContainer, bigCardStyles.cardStyles]
+        const touchableContainer = [bigCardStyles.wrappedContainer, bigCardStyles.cardStyles]
 
 
         return (
@@ -19,6 +18,7 @@ class BigCard extends React.Component {
 
                   <View style={touchableContainer}>
 
+                  {/* Render company image at the top of the card */}
                     <View style={bigCardStyles.imageContainer}> 
                         <Image source={item.img} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
                     </View>
@@ -26,7 +26,8 @@ class BigCard extends React.Component {
                     <Divider style={customStyles.transparentDivider('1%')}/>
 
                     <Text style={bigCardStyles.companyTitle}>{item.companyName}</Text>
-                    
+                   
+                   {/* Deal Description */}
                     <View style={bigCardStyles.bigCardContainer}>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Location: </Text></Text>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Deal: </Text>{item.title}</Text>

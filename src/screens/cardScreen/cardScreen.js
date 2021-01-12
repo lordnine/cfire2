@@ -18,13 +18,16 @@ export default class CardScreen extends React.Component {
 
     render() {
 
+      /* gets card key from route */
       const { key } = this.props.route.params;
+
       return (
 
         <View style={cardStyles.cardScreenContainer}>
 
             <Divider style={customStyles.transparentDivider('0.5%')}/>
 
+            {/* renders BigCard component with key */}
             <BigCard item={articles[key]}/>
 
         </View>

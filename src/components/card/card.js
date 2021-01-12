@@ -30,13 +30,14 @@ class Card extends React.Component {
         return (
             <View style={crdContainer}>
 
+              {/* Top portion of the card - contains company name and color currently */}
               <TouchableWithoutFeedback onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
                 <View flex style={[imgContainer, backgroundStyles]}>
                     <Text style={colorStyles}>{item.companyName}</Text>
                 </View>
               </TouchableWithoutFeedback>
 
-
+              {/* Bottom portion of card - contains description of deal */}
               <TouchableOpacity onPress = {() => this.props.navigation.navigate('Card',{ key: item.key })}>
                 <View style={cardStyles.cardDescription}>
                     <Text numberOfLines={2} style={cardStyles.cardTitle}>{item.title}</Text>
