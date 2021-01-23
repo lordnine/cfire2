@@ -3,14 +3,16 @@ import {
   View,
   StyleSheet,
   FlatList,
-  Image,
-  ImagePropTypes,
 } from 'react-native';
 import Card from '../../components/card';
 import articles from '../../constants/articles';
-import { Button } from 'react-native-elements';
+import homeStyles from './homeStyles';
 
 export default class HomeScreen extends React.Component {
+
+  /*
+
+  * I think this is an old version of react - previously could take out top navigator
 
   static navigationOptions = ({navigation}) => {
     return{
@@ -31,34 +33,46 @@ export default class HomeScreen extends React.Component {
     };
   };
 
+  */
+
+
+    /* Render function for the flat list  */
     renderArticles = ({item, index}) => {
       return (
-        <View style={{width: '48%', padding: '0%', marginHorizontal: '1%', marginBottom: '0%'}}>
+        <View style={homeStyles.articleContainer}>
           <Card item={item} navigation={this.props.navigation}/>
         </View>
       );
     }
 
-  /*  renderSeparator = () => { 
+
+  /*  
+
+    * For adjusting UI if necessary adds (vertically) space between cards
+    * Must add a seperator function to the flatlist
+  
+    renderSeparator = () => { 
       return(
         <View style={{backgroundColor: 'red', height: 0}}/>
       );
     }     
-
-*/
+  */
 
     render() {
       return(
         
-        <View style={{flex: 1, flexDirection: 'column', justifyContent: 'center', paddingHorizontal: '2%'}}>
-          <FlatList
+        <View style={homeStyles.listContainer}>
+     
+
+       {/* Render the cards in a list */}  
+        <FlatList
           data={articles}
           numColumns={2}
-     /*     ItemSeparatorComponent={this.renderSeparator}  */
           renderItem={this.renderArticles}
           style={{}}
           >
-          </FlatList>
+        </FlatList>
+
         </View>
         
       );
