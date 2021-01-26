@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Image, TouchableWithoutFeedback, View, Text } from 'react-native';
 import { Divider } from 'react-native-elements';
 import bigCardStyles from './bigCardStyles';
-import customStyles from '../../styles/customStyles';
+import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
  
 class BigCard extends React.Component {
     render() {
@@ -23,7 +23,7 @@ class BigCard extends React.Component {
                         <Image source={item.img} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
                     </View>
 
-                    <Divider style={customStyles.transparentDivider('1%')}/>
+                    <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>
 
                     <Text style={bigCardStyles.companyTitle}>{item.companyName}</Text>
                    

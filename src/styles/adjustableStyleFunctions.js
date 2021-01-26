@@ -1,7 +1,7 @@
 
 
 
-const customStyles = {
+const adjustableStyleFunctions = {
 
     transparentDivider : function(y){
         return{
@@ -19,4 +19,4 @@ const customStyles = {
 
 };
     
-export default customStyles;
+export default adjustableStyleFunctions;

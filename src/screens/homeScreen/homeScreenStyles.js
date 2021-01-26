@@ -1,7 +1,7 @@
 
 
 
-const homeStyles = {
+const homeScreenStyles = {
 
     articleContainer: {
         width: '48%',
@@ -26,4 +26,4 @@ const homeStyles = {
 
 
 
-export default homeStyles;
+export default homeScreenStyles;

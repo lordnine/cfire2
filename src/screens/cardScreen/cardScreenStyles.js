@@ -1,6 +1,6 @@
 
 
-const cardStyles = {
+const cardScreenStyles = {
 
     cardScreenContainer: {
         flex: 1,
@@ -14,4 +14,4 @@ const cardStyles = {
 };
 
 
-export default cardStyles;
+export default cardScreenStyles;

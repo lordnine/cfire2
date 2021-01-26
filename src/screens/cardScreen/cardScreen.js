@@ -6,8 +6,8 @@ import {
 import { Divider} from 'react-native-elements';
 import articles from '../../constants/articles';
 import BigCard from '../../components/bigCard';
-import cardStyles from './cardStyles';
-import customStyles from '../../styles/customStyles';
+import cardScreenStyles from './cardScreenStyles';
+import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 
 export default class CardScreen extends React.Component {
     static navigationOptions = {
@@ -23,9 +23,9 @@ export default class CardScreen extends React.Component {
 
       return (
 
-        <View style={cardStyles.cardScreenContainer}>
+        <View style={cardScreenStyles.cardScreenContainer}>
 
-            <Divider style={customStyles.transparentDivider('0.5%')}/>
+            <Divider style={adjustableStyleFunctions.transparentDivider('0.5%')}/>
 
             {/* renders BigCard component with key */}
             <BigCard item={articles[key]}/>
