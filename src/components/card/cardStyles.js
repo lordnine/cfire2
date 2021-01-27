@@ -8,7 +8,7 @@ const cardStyles = {
         marginBottom: 8,
         borderWidth: 0,
         minHeight: 114,
-        borderRadius: 10,
+        borderRadius: 12,
         flex: 1,
         height:'40%',
         width: '100%'
@@ -23,7 +23,7 @@ const cardStyles = {
     },
 
     imageContainer: {
-        borderRadius: 10,
+        borderRadius: 12,
         elevation: 1,
         overflow: 'hidden',
         height: 130,
@@ -46,8 +46,8 @@ const cardStyles = {
         backgroundColor: 'rgba(66,202,253,.3)',
     },
 
-    foodStuff: {
-        fontSize: 25,
+    foodText: {
+        fontSize: 18,
         fontWeight: '800',
         color: 'white',
         paddingLeft: '4%',
@@ -55,8 +55,8 @@ const cardStyles = {
         paddingBottom: '2%',
     },
 
-    regStuff: {
-        fontSize: 25,
+    regText: {
+        fontSize: 18,
         fontWeight: '800',
         color: 'white',
         paddingLeft: '4%',
@@ -66,11 +66,11 @@ const cardStyles = {
     },
 
     foodBackground:{
-        backgroundColor: '#9E1030FF',
+        backgroundColor: 'blue',
     },
 
     regBackground:{
-        backgroundColor: '#F49F1C',
+        backgroundColor: '#6C5B7B',
     },
 
     cardDescription: {

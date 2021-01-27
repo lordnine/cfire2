@@ -23,7 +23,7 @@ class Card extends React.Component {
           item.food ? cardStyles.foodBackground : cardStyles.regBackground,
         ];
         const colorStyles = [
-          item.food ? cardStyles.foodStuff : cardStyles.regStuff,
+          item.food ? cardStyles.foodText : cardStyles.regText,
         ];
 
 
