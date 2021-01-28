@@ -7,8 +7,8 @@ const cardStyles = {
         marginTop: 10,
         marginBottom: 8,
         borderWidth: 0,
-        minHeight: 114,
-        borderRadius: 10,
+        minHeight: 130,
+        borderRadius: 4,
         flex: 1,
         height:'40%',
         width: '100%'
@@ -23,54 +23,52 @@ const cardStyles = {
     },
 
     imageContainer: {
-        borderRadius: 10,
+        borderRadius: 4,
         elevation: 1,
         overflow: 'hidden',
         height: 130,
-        paddingBottom: '2%',
+        flex: 1,
     },
 
     horizontalStyles: {
-        borderTopRightRadius: 0,
-        borderBottomRightRadius: 0,
         height: 200,
-        justifyContent: 'space-between',
     },
 
     verticalStyles: {
-        borderBottomRightRadius: 0,
-        borderBottomLeftRadius: 0,
         height: 110,
         flex: 1,
-        justifyContent: 'flex-end',
-        backgroundColor: 'rgba(66,202,253,.3)',
+        backgroundColor: 'grey',
     },
 
     foodStuff: {
-        fontSize: 25,
+        fontSize: 18,
         fontWeight: '800',
         color: 'white',
         paddingLeft: '4%',
         paddingRight: '4%',
         paddingBottom: '2%',
+        textAlign: 'center',
     },
 
     regStuff: {
-        fontSize: 25,
+        fontSize: 18,
         fontWeight: '800',
         color: 'white',
         paddingLeft: '4%',
         paddingRight: '4%',
         paddingTop: '2%',
         paddingBottom: '2%',
+        textAlign: 'center',
     },
 
     foodBackground:{
-        backgroundColor: '#9E1030FF',
+        backgroundColor: '#3f1f69',
+        opacity: .8
     },
 
     regBackground:{
-        backgroundColor: '#F49F1C',
+        backgroundColor: '#3f1f69',
+        opacity: .8
     },
 
     cardDescription: {
