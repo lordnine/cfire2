@@ -7,7 +7,6 @@ const cardScreenStyles = {
         alignItems: 'center',
         justifyContent: 'flex-start',
         backgroundColor: 'white',
-        paddingHorizontal: '3%'
     },
     
 

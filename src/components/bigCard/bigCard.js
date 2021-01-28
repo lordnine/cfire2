@@ -25,10 +25,11 @@ class BigCard extends React.Component {
 
                     <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>
 
-                    <Text style={bigCardStyles.companyTitle}>{item.companyName}</Text>
+                    
                    
                    {/* Deal Description */}
                     <View style={bigCardStyles.bigCardContainer}>
+                    <Text style={bigCardStyles.companyTitle}>{item.companyName}</Text>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Location: </Text></Text>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Deal: </Text>{item.title}</Text>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Code: </Text>This page or a valid Student ID</Text>

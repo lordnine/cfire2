@@ -12,10 +12,7 @@ import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 import containers from '../../styles/containers';
 
 export default class WelcomeScreen extends React.Component {
-    static navigationOptions = {
-      title: 'Campfire',
-      header: null,
-    };
+
 
     render() {
       return (

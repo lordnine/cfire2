@@ -3,12 +3,11 @@ const bigCardStyles = {
 
     card: {
       backgroundColor: 'white',
-      marginVertical: 12,
       borderWidth: 0,
       minHeight: 114,
-      borderRadius: 10,
+      borderRadius: 8,
       flex: 1,
-      width: '98%',
+      width: '100%',
     },
 
     shadow: {
@@ -20,7 +19,7 @@ const bigCardStyles = {
     },
 
     wrappedContainer: {
-        borderRadius: 10,
+        borderRadius: 6,
         elevation: 1,
         overflow: 'hidden',
         height: 130,
@@ -40,16 +39,16 @@ const bigCardStyles = {
     },
 
     companyTitle: {
-        fontSize: 30, 
+        fontSize: 24, 
         fontWeight: '800', 
-        color: 'black'
+        color: 'black',
     },
 
     bigCardContainer: {
-        width: '96%', 
+        width: '90%', 
         alignItems: 'flex-start', 
         justifyContent: 'flex-start', 
-        paddingHorizontal: '2%'
+
     },
 
     description: {
@@ -63,12 +62,11 @@ const bigCardStyles = {
     },
 
     imageContainer: {
-        borderRadius: 10,
+        borderRadius: 4,
         overflow: 'hidden',
-        width: '100%',
+        marginTop: '10%',
+        width: '90%',
         height: '30%',
-        borderBottomEndRadius:0,
-        borderBottomStartRadius: 0,
     },
 
 };
