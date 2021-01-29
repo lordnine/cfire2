@@ -12,6 +12,7 @@ import text from '../../styles/text';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 import containers from '../../styles/containers';
 import { ScrollView } from 'react-native-gesture-handler';
+import { LinearGradient } from 'expo-linear-gradient';
 
 export default class WelcomeScreen extends React.Component {
 
@@ -19,7 +20,7 @@ export default class WelcomeScreen extends React.Component {
     render() {
       return (
         <View style={containers.frameContainer}>
-     
+
           {/* logo and spacing*/}
           <Divider style={adjustableStyleFunctions.transparentDivider('10%')} />
           <Image style={adjustableStyleFunctions.imgSize('13%','13%')}  resizeMode='contain' source={logo}/>
@@ -87,6 +88,7 @@ export default class WelcomeScreen extends React.Component {
 
    
         </View>
+
         </View>
       );
     }
