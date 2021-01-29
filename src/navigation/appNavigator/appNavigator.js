@@ -28,7 +28,7 @@ const AppNavigator = () => (
         name="Welcome" component={WelcomeScreen} options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Home" component={HomeScreen} options={{headerTitle: ( () => <HeaderLogo /> ), headerTintColor: 'gray', headerRight: ( () => <Text style={{marginRight: 14, fontSize: 16, color: 'gray'}}>filter</Text>)  }}
+        name="Home" component={HomeScreen} options={{headerTitle: ( () => <HeaderLogo /> ), headerTintColor: 'gray', headerLeft: null, headerRight: ( () => <Text style={{marginRight: 14, fontSize: 16, color: 'gray'}}>filter</Text>)  }}
       />
       <Stack.Screen
         name="Card" component={CardScreen} options={{headerShown: false}}

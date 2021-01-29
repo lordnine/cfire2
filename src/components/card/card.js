@@ -46,7 +46,7 @@ class Card extends React.Component {
                   </View>
 
                   <View style={{width: '100%', height:'100%', alignItems:'flex-start', justifyContent: 'flex-end', position: 'absolute'}}>
-                    <Text style={{color: 'white', marginLeft: '4.5%', fontSize: 12, fontWeight: '600', marginBottom: '4%'}}>{item.deal}</Text>
+                    <Text style={{color: 'white', marginLeft: '4.5%', fontSize: 13, fontWeight: '600', marginBottom: '4%'}}>{item.deal}</Text>
                   </View>
 
                   <View style={{width: '100%', height:'100%', alignItems:'flex-end', justifyContent: 'flex-start', position: 'absolute'}}>

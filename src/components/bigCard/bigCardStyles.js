@@ -39,13 +39,13 @@ const bigCardStyles = {
     },
 
     companyTitle: {
-        fontSize: 24, 
+        fontSize: 20, 
         fontWeight: '800', 
         color: 'black',
     },
 
     bigCardContainer: {
-        width: '90%', 
+        width: '89%', 
         alignItems: 'flex-start', 
         justifyContent: 'flex-start', 
 
@@ -53,12 +53,20 @@ const bigCardStyles = {
 
     description: {
         fontWeight: '400',
-        fontSize: 16
+        fontSize: 15,
+        color: 'gray'
     },
 
     subTitle: {
-        fontWeight: '600',
-        fontSize: 18,
+        fontWeight: '700',
+        fontSize: 15,
+        color: 'gray'
+    },
+
+    locationTitle: {
+        fontWeight: '700',
+        fontSize: 15,
+        color: 'cornflowerblue'
     },
 
     imageContainer: {
