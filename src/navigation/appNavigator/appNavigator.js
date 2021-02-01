@@ -11,6 +11,7 @@ import logo from '../../assets/images/logo.png';
 import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import { DrawerActions } from '@react-navigation/native';
 import burgerlogo from '../../assets/images/burgerlogo.png';
+import appNavigatorStyles from './appNavigatorStyles.js';
 
 
 
@@ -18,7 +19,13 @@ const Stack = createStackNavigator();
 
 function HeaderLogo() {
   return (
-    <Image style={{height: '75%', marginBottom: '4%', tintColor: '#5d3c85'}} resizeMode='contain' source={logo}/>
+    <Image style={appNavigatorStyles.mainLogo} resizeMode='contain' source={logo}/>
+  );
+}
+
+function LeftLogo() {
+  return(
+    <Text style={{marginLeft: 14, fontSize: 16, color: 'gray'}}>drawer</Text>
   );
 }
 
@@ -32,7 +39,7 @@ const AppNavigator = () => (
         name="Welcome" component={WelcomeScreen} options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Home" component={HomeScreen} options={{headerTitle: ( () => <HeaderLogo /> ), headerTintColor: 'gray', headerLeft: null, headerRight: ( () => <Text style={{marginRight: 14, fontSize: 16, color: 'gray'}}>search</Text>), headerLeft: ( () => <Text style={{marginLeft: 14, fontSize: 16, color: 'gray'}}>drawer</Text>)  }}
+        name="Home" component={HomeScreen} options={{headerTitle: ( () => <HeaderLogo /> ), headerTintColor: 'gray', headerLeft: null, headerRight: ( () => <Text style={{marginRight: 14, fontSize: 16, color: 'gray'}}>search</Text>), headerLeft: ( () => <LeftLogo />)  }}
       />
       <Stack.Screen
         name="Card" component={CardScreen} options={{headerShown: false}}
