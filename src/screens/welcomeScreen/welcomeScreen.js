@@ -3,7 +3,8 @@ import {
   View,
   StyleSheet,
   Image,
-  Text
+  Text,
+  TouchableOpacity
 } from 'react-native';
 import logo from '../../assets/images/logo.png';
 import { Button, Divider} from 'react-native-elements';
@@ -12,7 +13,7 @@ import text from '../../styles/text';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 import containers from '../../styles/containers';
 import { ScrollView } from 'react-native-gesture-handler';
-import { LinearGradient } from 'expo-linear-gradient';
+
 
 export default class WelcomeScreen extends React.Component {
 
@@ -69,7 +70,7 @@ export default class WelcomeScreen extends React.Component {
               title="Get Started"
               buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
               titleStyle={text.inverseMinimalistButtonText}
-              onPress={() => this.props.navigation.navigate('Home')}
+              onPress={() => this.props.navigation.navigate('Drawer')}
             />
 
             <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')}></Divider>
@@ -81,7 +82,7 @@ export default class WelcomeScreen extends React.Component {
               title="Learn More"
               buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
               titleStyle={text.minimalistButtonText}
-              onPress={() => this.props.navigation.navigate('CreateAccount')}
+              onPress={() => this.props.navigation.navigate('Home')}
             />
 
           {/* Bottom button - reversed color */}

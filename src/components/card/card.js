@@ -1,7 +1,6 @@
 import React from 'react';
 import { 
-  StyleSheet,  
-  TouchableWithoutFeedback, 
+  StyleSheet,   
   View, 
   Text, 
   TouchableOpacity ,

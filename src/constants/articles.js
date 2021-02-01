@@ -18,6 +18,7 @@ export default [
       food: false,
       cta: 'view shiz',
       category: 2,
+      address: '45 S Pleasant St, Amherst, MA 01002'
     },
     {
       key: 1,
@@ -29,6 +30,7 @@ export default [
       food: true,
       cta: 'view stuff',
       category: 0,
+      address: '30 Boltwood Walk, Amherst, MA 01002'
     },
     {
       key: 2,
@@ -40,6 +42,7 @@ export default [
       cta: 'View Code',
       food: true,
       category: 0,
+      address: '334 Russell St, Hadley, MA 01035'
     },
     {
       key: 3,
@@ -52,6 +55,7 @@ export default [
       cta: 'View Deal',
       food: false,
       category: 1,
+      address: '353 Russell St, Hadley, MA 01035'
     },
     {
       key: 4,
@@ -64,6 +68,7 @@ export default [
       horizontal: true,
       food: true,
       category: 0,
+      address: '374 Russell St, Hadley, MA 01035'
     }, 
     {
       key: 5,
@@ -75,5 +80,7 @@ export default [
       cta: 'View Deal',
       food: false,
       category: 3,
+      address: '103 N Pleasant St, Amherst, MA 01002'
+
     }
   ];

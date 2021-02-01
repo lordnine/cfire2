@@ -62,13 +62,11 @@ const cardStyles = {
     },
 
     foodBackground:{
-        backgroundColor: '#3f1f69',
-        opacity: .8
+        backgroundColor: '#5d3c85',
     },
 
     regBackground:{
-        backgroundColor: '#3f1f69',
-        opacity: .8
+        backgroundColor: '#5d3c85',
     },
 
     cardDescription: {

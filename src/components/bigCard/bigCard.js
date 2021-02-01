@@ -40,7 +40,7 @@ class BigCard extends React.Component {
                       
                     <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
                     <Image source={locationlogo} resizeMode='contain' style={{tintColor: 'cornflowerblue', height: 11, width: 11}}  />
-                      <Text style={bigCardStyles.description}><Text style={bigCardStyles.locationTitle}>Location: </Text></Text> 
+                      <Text numberOfLines={1} style={bigCardStyles.description}><Text  style={bigCardStyles.locationTitle}>Address: {item.address}</Text></Text> 
                       </View>
                       <Divider style={{height: 10}}/>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Deal: </Text>{item.title}</Text>
