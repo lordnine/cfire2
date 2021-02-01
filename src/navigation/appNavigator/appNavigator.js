@@ -8,7 +8,7 @@ import HomeScreen from '../../screens/homeScreen';
 import CardScreen from '../../screens/cardScreen';
 import { NativeAppEventEmitter } from 'react-native';
 import logo from '../../assets/images/logo.png';
-import DrawerNavigator from './drawerNavigator.js';
+import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import { DrawerActions } from '@react-navigation/native';
 import burgerlogo from '../../assets/images/burgerlogo.png';
 
