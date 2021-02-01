@@ -18,6 +18,16 @@ const appNavigatorStyles = {
         marginRight: 14, 
         fontSize: 16, 
         color: 'gray',
+    },
+
+    burgerContainer: {
+        marginRight: 12
+    },
+
+    burgerStyles: {
+        height: 18, 
+        width: 18, 
+        tintColor: 'lightsteelblue',
     }
 
 };

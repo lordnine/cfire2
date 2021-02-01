@@ -36,6 +36,7 @@ function HomeRight() {
 }
 
 
+
 const AppNavigator = () => (
   <NavigationContainer>
     <Stack.Navigator
@@ -53,12 +54,21 @@ const AppNavigator = () => (
           headerLeft: ( () => <HomeLeft />)  }}
       />
       <Stack.Screen
-        name="Card" component={CardScreen} options={{headerShown: false}}
+        name="Card" component={CardScreen} 
+        options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Drawer" component={DrawerNavigator} options={({navigation}) => ({headerTitle: ( () => <HeaderLogo /> ), headerTintColor: 'gray', headerLeft: null, 
-        /*headerLeft: ( () => <Button style={{marginRight: 14, fontSize: 16, color: 'gray'}} title="back" onPress={() => navigation.navigate('Welcome')}></Button>), */
-        headerRight: ( () => <TouchableOpacity style={{marginRight: 12, fontSize: 16, color: 'cornflowerblue'}} onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}><Image source={burgerlogo} style={{height: 18, width: 18, tintColor: 'lightsteelblue'}} /></TouchableOpacity>)  }  )}  
+        name="Drawer" component={DrawerNavigator} 
+        options={({navigation}) => 
+        ({headerTitle: ( () => <HomeHeader /> ), 
+          headerLeft: null, 
+          headerRight: ( () => 
+          <TouchableOpacity style={appNavigatorStyles.burgerContainer} 
+          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
+              <Image source={burgerlogo} style={appNavigatorStyles.burgerStyles} />
+          </TouchableOpacity> 
+          )} 
+        )}  
       />
     </Stack.Navigator>
 
