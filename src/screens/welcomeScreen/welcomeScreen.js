@@ -63,7 +63,7 @@ export default class WelcomeScreen extends React.Component {
 
 
           {/* Top Button */}
-          <View style={{flexDirection: 'column', width: '96%', alignItems: 'space-between', justifyContent: 'space-between'}}>
+          <View style={{flexDirection: 'column', width: '100%', alignItems: 'center', justifyContent: 'space-between'}}>
          
          
           <Button
