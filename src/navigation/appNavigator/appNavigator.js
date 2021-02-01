@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Image, Text, Button, TouchableOpacity} from 'react-native';
 
@@ -12,7 +12,6 @@ import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import { DrawerActions } from '@react-navigation/native';
 import burgerlogo from '../../assets/images/burgerlogo.png';
 import appNavigatorStyles from './appNavigatorStyles.js';
-
 
 
 const Stack = createStackNavigator();
@@ -35,6 +34,15 @@ function HomeRight() {
   );
 }
 
+function DrawerBurger () {
+  const navigation = useNavigation();
+  return(
+    <TouchableOpacity style={appNavigatorStyles.burgerContainer} 
+    onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
+        <Image source={burgerlogo} style={appNavigatorStyles.burgerStyles} />
+    </TouchableOpacity> 
+  );
+}
 
 
 const AppNavigator = () => (
@@ -62,12 +70,8 @@ const AppNavigator = () => (
         options={({navigation}) => 
         ({headerTitle: ( () => <HomeHeader /> ), 
           headerLeft: null, 
-          headerRight: ( () => 
-          <TouchableOpacity style={appNavigatorStyles.burgerContainer} 
-          onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-              <Image source={burgerlogo} style={appNavigatorStyles.burgerStyles} />
-          </TouchableOpacity> 
-          )} 
+          headerRight: ( () => <DrawerBurger />)
+          } 
         )}  
       />
     </Stack.Navigator>
