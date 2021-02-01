@@ -17,15 +17,21 @@ import appNavigatorStyles from './appNavigatorStyles.js';
 
 const Stack = createStackNavigator();
 
-function HeaderLogo() {
+function HomeHeader() {
   return (
-    <Image style={appNavigatorStyles.mainLogo} resizeMode='contain' source={logo}/>
+    <Image style={appNavigatorStyles.homeHeader} resizeMode='contain' source={logo}/>
   );
 }
 
-function LeftLogo() {
+function HomeLeft() {
   return(
-    <Text style={{marginLeft: 14, fontSize: 16, color: 'gray'}}>drawer</Text>
+    <Text style={appNavigatorStyles.homeLeft}>drawer</Text>
+  );
+}
+
+function HomeRight() {
+  return(
+    <Text style={appNavigatorStyles.homeRight}>search</Text>
   );
 }
 
@@ -39,7 +45,12 @@ const AppNavigator = () => (
         name="Welcome" component={WelcomeScreen} options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Home" component={HomeScreen} options={{headerTitle: ( () => <HeaderLogo /> ), headerTintColor: 'gray', headerLeft: null, headerRight: ( () => <Text style={{marginRight: 14, fontSize: 16, color: 'gray'}}>search</Text>), headerLeft: ( () => <LeftLogo />)  }}
+        name="Home" component={HomeScreen} 
+        options={{headerTitle: ( () => <HomeHeader /> ), 
+          headerTintColor: 'gray', 
+          headerLeft: null, 
+          headerRight: ( () => <HomeRight />), 
+          headerLeft: ( () => <HomeLeft />)  }}
       />
       <Stack.Screen
         name="Card" component={CardScreen} options={{headerShown: false}}
