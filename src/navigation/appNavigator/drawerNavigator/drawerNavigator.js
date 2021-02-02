@@ -3,7 +3,7 @@ import React from 'react';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import HomeScreen from '../../../screens/homeScreen';
 import SettingsScreen from '../../../screens/settingsScreen';
-import SearchScreen from '../../../screens/searchScreen'
+import SearchScreen from '../../../screens/searchScreen';
 
 const Drawer = createDrawerNavigator();
 

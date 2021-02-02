@@ -6,8 +6,7 @@ import {
 } from 'react-native';
 
 
-export default class SearchScreen extends React.Component {
-
+export default class CategoryScreen extends React.Component {
 
 
     render() {
@@ -18,7 +17,7 @@ export default class SearchScreen extends React.Component {
 
         <View >
 
-            <Text>hello</Text>
+            <Text>CategoryScreen</Text>
 
         </View>
 

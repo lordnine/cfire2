@@ -12,6 +12,7 @@ import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import { DrawerActions } from '@react-navigation/native';
 import burgerlogo from '../../assets/images/burgerlogo.png';
 import appNavigatorStyles from './appNavigatorStyles.js';
+import TabNavigator from './tabNavigator/tabNavigator.js';
 
 
 const Stack = createStackNavigator();
@@ -66,7 +67,7 @@ const AppNavigator = () => (
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Drawer" component={DrawerNavigator} 
+        name="Tab" component={TabNavigator} 
         options={({navigation}) => 
         ({headerTitle: ( () => <HomeHeader /> ), 
           headerLeft: null, 

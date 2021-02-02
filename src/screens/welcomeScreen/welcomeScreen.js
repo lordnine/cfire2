@@ -70,7 +70,7 @@ export default class WelcomeScreen extends React.Component {
                 title="Get Started"
                 buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
                 titleStyle={text.inverseMinimalistButtonText}
-                onPress={() => this.props.navigation.navigate('Drawer')}
+                onPress={() => this.props.navigation.navigate('Tab')}
               />
 
               <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')}></Divider>

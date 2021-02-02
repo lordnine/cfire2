@@ -7,10 +7,7 @@ import {
 
 
 export default class SettingsScreen extends React.Component {
-    static navigationOptions = {
-      title: 'Campfire',
-      header: null,
-    };
+
 
 
     render() {
