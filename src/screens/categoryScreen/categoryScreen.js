@@ -2,27 +2,40 @@ import React from 'react';
 import {
   View,
   StyleSheet,
-  Text
+  FlatList,
 } from 'react-native';
+import CategoryCard from '../../components/categoryCard';
+import categories from '../../constants/categories';
+import categoryScreenStyles from './categoryScreenStyles';
 
 
 export default class CategoryScreen extends React.Component {
 
+  renderArticles = ({item, index}) => {
+    return (
+      <View style={categoryScreenStyles.articleContainer}>
+        <CategoryCard item={item} navigation={this.props.navigation}/>
+      </View>
+    );
+  }
+  render() {
+    return(
+      
+      <View style={categoryScreenStyles.listContainer}>
+   
 
-    render() {
+     {/* Render the cards in a list */}  
+      <FlatList
+        data={categories}
+        numColumns={2}
+        renderItem={this.renderArticles}
+        >
+      </FlatList>
 
-      /* gets card key from route */
-
-      return (
-
-        <View >
-
-            <Text>CategoryScreen</Text>
-
-        </View>
-
-      );
-    }
+      </View>
+      
+    );
+  }
 }
 
 

@@ -90,7 +90,7 @@ const cardStyles = {
         height: '100%',
     },
     
-    comapnyNameContainer: {
+    companyNameContainer: {
         width: '100%', 
         height:'94%', 
         alignItems:'center', 

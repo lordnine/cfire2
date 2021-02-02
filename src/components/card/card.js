@@ -40,7 +40,7 @@ class Card extends React.Component {
               {/* Top portion of the card - contains company name and color currently */}
               <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
                 <View style={[imgContainer, backgroundStyles]}>
-                  <View style={cardStyles.comapnyNameContainer}>
+                  <View style={cardStyles.companyNameContainer}>
                     <Text style={colorStyles}>{item.companyName}</Text>
                   </View>
 
