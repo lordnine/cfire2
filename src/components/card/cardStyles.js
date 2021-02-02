@@ -86,6 +86,79 @@ const cardStyles = {
         color: 'cornflowerblue'
     },
 
+    touchableContainer: {
+        height: '100%',
+    },
+    
+    comapnyNameContainer: {
+        width: '100%', 
+        height:'94%', 
+        alignItems:'center', 
+        justifyContent: 'center', 
+        position: 'absolute',
+    },
+
+    dealContainer: {
+        width: '100%', 
+        height:'100%', 
+        alignItems:'flex-start', 
+        justifyContent: 'flex-end', 
+        position: 'absolute',
+    },
+
+    dealText: {
+        color: 'white', 
+        marginLeft: '4.5%', 
+        fontSize: 13, 
+        fontWeight: '600', 
+        marginBottom: '4%'
+    },
+    
+    dateContainer: {
+        width: '100%', 
+        height:'100%', 
+        alignItems:'flex-end', 
+        justifyContent: 'flex-start', 
+        position: 'absolute',
+    },
+
+    dateText: {
+        color: 'white', 
+        marginRight: '4.5%', 
+        fontSize: 12, 
+        fontWeight: '600', 
+        marginTop: '4%',
+    },
+
+    categoryContainer: {
+        width: '100%', 
+        height: '100%', 
+        justifyContent: 'flex-start', 
+        alignItems: 'center' , 
+        position: 'absolute',
+    },
+
+    categoryImage: {
+        height: '9%', 
+        flexWrap: 'nowrap', 
+        marginTop: '4%', 
+        marginRight: '84%',
+    },
+
+    qrContainer: {
+        width: '100%', 
+        height: '100%', 
+        justifyContent: 'flex-end', 
+        alignItems: 'center' , 
+        position: 'absolute',
+    },
+
+    qrImage: {
+        height: '12%', 
+        flexWrap: 'nowrap', 
+        marginBottom: '4.5%', 
+        marginLeft: '80%',
+    },
 
 };
 

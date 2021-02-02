@@ -38,26 +38,26 @@ class Card extends React.Component {
             <View style={crdContainer}>
 
               {/* Top portion of the card - contains company name and color currently */}
-              <TouchableOpacity style={{height: '100%'}} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
+              <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
                 <View style={[imgContainer, backgroundStyles]}>
-                  <View style={{width: '100%', height:'94%', alignItems:'center', justifyContent: 'center', position: 'absolute'}}>
+                  <View style={cardStyles.comapnyNameContainer}>
                     <Text style={colorStyles}>{item.companyName}</Text>
                   </View>
 
-                  <View style={{width: '100%', height:'100%', alignItems:'flex-start', justifyContent: 'flex-end', position: 'absolute'}}>
-                    <Text style={{color: 'white', marginLeft: '4.5%', fontSize: 13, fontWeight: '600', marginBottom: '4%'}}>{item.deal}</Text>
+                  <View style={cardStyles.dealContainer}>
+                    <Text style={cardStyles.dealText}>{item.deal}</Text>
                   </View>
 
-                  <View style={{width: '100%', height:'100%', alignItems:'flex-end', justifyContent: 'flex-start', position: 'absolute'}}>
-                    <Text style={{color: 'white', marginRight: '4.5%', fontSize: 12, fontWeight: '600', marginTop: '4%'}}>{item.date}d</Text>
+                  <View style={cardStyles.dateContainer}>
+                    <Text style={cardStyles.dateText}>{item.date}d</Text>
                   </View>
 
-                  <View style={{width: '100%', height: '100%', justifyContent: 'flex-start', alignItems: 'center' , position: 'absolute'}} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
-                    <Image style={{height: '9%', flexWrap: 'nowrap', marginTop: '4%', marginRight: '84%'}}source={categoryLogo[item.category]} resizeMode='contain'></Image>
+                  <View style={cardStyles.categoryContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
+                    <Image style={cardStyles.categoryImage} source={categoryLogo[item.category]} resizeMode='contain'></Image>
                   </View>
 
-                  <TouchableOpacity style={{width: '100%', height: '100%', justifyContent: 'flex-end', alignItems: 'center' , position: 'absolute'}} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
-                    <Image style={{height: '12%', flexWrap: 'nowrap', marginBottom: '4.5%', marginLeft: '80%'}}source={qrlogo} resizeMode='contain'></Image>
+                  <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
+                    <Image style={cardStyles.qrImage}source={qrlogo} resizeMode='contain'></Image>
                   </TouchableOpacity>
 
 
