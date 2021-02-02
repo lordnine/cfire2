@@ -8,7 +8,7 @@ import shoppinglogo from '../../assets/images/shoppinglogo.png';
 import supplieslogo from '../../assets/images/supplieslogo.png';
 import scissorslogo from '../../assets/images/scissorslogo.png';
 import locationlogo from '../../assets/images/locationlogo.png';
- 
+
 class BigCard extends React.Component {
     render() {
         const { item } = this.props;
@@ -34,15 +34,19 @@ class BigCard extends React.Component {
                    
                    {/* Deal Description */}
                     <View style={bigCardStyles.bigCardContainer}>
-                    <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
-                    <Text style={bigCardStyles.companyTitle}>{item.companyName} </Text> 
-                    <Image source={categoryLogo[item.category]} resizeMode='contain' style={{tintColor: 'black', width: 15, height: 15}}/></View>
-                      
-                    <View style={{justifyContent: 'center', alignItems: 'center', flexDirection: 'row'}}>
-                    <Image source={locationlogo} resizeMode='contain' style={{tintColor: 'cornflowerblue', height: 11, width: 11}}  />
-                      <Text numberOfLines={1} style={bigCardStyles.description}><Text  style={bigCardStyles.locationTitle}>Address: {item.address}</Text></Text> 
+                  
+                     <View style={bigCardStyles.titleContainer}>
+                       <Text style={bigCardStyles.companyTitle}>{item.companyName} </Text> 
+                        <Image source={categoryLogo[item.category]} resizeMode='contain' style={bigCardStyles.categoryLogo}/>
                       </View>
-                      <Divider style={{height: 10}}/>
+                   
+                      <View style={bigCardStyles.locationContainer}>
+                        <Image source={locationlogo} resizeMode='contain' style={bigCardStyles.locationLogo}  />
+                        <Text numberOfLines={1} style={bigCardStyles.description}><Text  style={bigCardStyles.locationTitle}>Address: {item.address}</Text></Text> 
+                      </View>
+
+                      <Divider style={adjustableStyleFunctions.transparentDivider('7%')}/>
+                
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Deal: </Text>{item.title}</Text>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Code: </Text>This page or a valid Student ID</Text>
                     </View>

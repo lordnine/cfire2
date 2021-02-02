@@ -77,6 +77,29 @@ const bigCardStyles = {
         height: '30%',
     },
 
+    titleContainer: {
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        flexDirection: 'row',
+    },
+
+    categoryLogo: {
+        tintColor: 'black',
+        width: 15, 
+        height: 15,
+    },
+
+    locationContainer: {
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        flexDirection: 'row',
+    },
+
+    locationLogo: {
+        tintColor: 'cornflowerblue', 
+        height: 11, 
+        width: 11,
+    }
 };
 
 export default bigCardStyles;
