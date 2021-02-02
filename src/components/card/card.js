@@ -60,8 +60,6 @@ class Card extends React.Component {
                     <Image style={cardStyles.qrImage}source={qrlogo} resizeMode='contain'></Image>
                   </TouchableOpacity>
 
-
-
                 </View>
               </TouchableOpacity>
 
