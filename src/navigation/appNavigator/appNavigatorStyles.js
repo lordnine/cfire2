@@ -21,7 +21,7 @@ const appNavigatorStyles = {
     },
 
     burgerContainer: {
-        marginRight: 12
+        marginRight: 16
     },
 
     burgerStyles: {
