@@ -4,7 +4,7 @@ import {
   StyleSheet,
   Text
 } from 'react-native';
-
+import settingsScreenStyles from './settingsScreenStyles';
 
 export default class SettingsScreen extends React.Component {
 
