@@ -68,7 +68,7 @@ const AppNavigator = () => (
         options={{headerShown: false}}
       />
       <Stack.Screen
-        name="Tab" component={TabNavigator} 
+        name="Drawer" component={DrawerNavigator} 
         options={({navigation}) => 
         ({headerTitle: ( () => <HomeHeader /> ), 
           headerLeft: null, 
