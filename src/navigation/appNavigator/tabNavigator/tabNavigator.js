@@ -12,7 +12,6 @@ const TabNavigator = () => {
 return(
     <Tab.Navigator initialRouteName="Home" drawerPosition='right'>
         <Tab.Screen name="Drawer" component={DrawerNavigator} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
         <Tab.Screen name="Search" component={SearchScreen} />
         <Tab.Screen name="categories" component={CategoryScreen} />
     </Tab.Navigator>
