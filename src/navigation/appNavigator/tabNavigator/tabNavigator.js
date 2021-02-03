@@ -22,7 +22,7 @@ return(
           tabBarIcon: ({ focused, color, size }) => {
             // You can return any component that you like here!
             return (
-            <Image source={houselogo} style={{height: 14, width: 14, marginTop: 8, tintColor: color }} />
+            <Image source={houselogo} style={{height: 16, width: 16, marginTop: 8, tintColor: color }} resizeMode='contain'/>
              );
           },
         })}
@@ -32,7 +32,7 @@ return(
                   tabBarIcon: ({ focused, color, size }) => {
                     // You can return any component that you like here!
                     return (
-                    <Image source={searchlogo} style={{height: 14, width: 14, marginTop: 8, tintColor: color }} />
+                    <Image source={searchlogo} style={{height: 16, width: 16, marginTop: 8, tintColor: color }} resizeMode='contain' />
                      );
                   },
                 })}
