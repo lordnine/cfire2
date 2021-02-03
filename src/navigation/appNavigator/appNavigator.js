@@ -12,7 +12,6 @@ import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import { DrawerActions } from '@react-navigation/native';
 import burgerlogo from '../../assets/images/burgerlogo.png';
 import appNavigatorStyles from './appNavigatorStyles.js';
-import TabNavigator from './tabNavigator/tabNavigator.js';
 import SpecificCategoryScreen from '../../screens/specificCategoryScreen';
 
 
