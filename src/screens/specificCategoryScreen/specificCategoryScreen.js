@@ -14,19 +14,24 @@ export default class SpecificCategoryScreen extends React.Component {
     
     /* Render function for the flat list  */
     renderArticles = ({item, index}, check) => {
-      if(item.category==check){
         return (
           <View style={specificCategoryScreenStyles.articleContainer}>
             <Card item={item} navigation={this.props.navigation}/>
           </View>
         );
-      }
     }
 
 
 
     render() {
       const { check } = this.props.route.params;
+      const newArticles = [];
+      for(let i=0; i < articles.length; i++){
+        if(articles[i].category == check){
+          newArticles.push(articles[i]);
+        }
+      };
+
       return(
         
         <View style={specificCategoryScreenStyles.listContainer}>
@@ -34,7 +39,7 @@ export default class SpecificCategoryScreen extends React.Component {
 
        {/* Render the cards in a list */}  
         <FlatList
-          data={articles}
+          data={newArticles}
           numColumns={2}
           renderItem={(item) => this.renderArticles(item, check)}
           style={{}}

@@ -6,7 +6,7 @@ const specificCategoryScreenStyles = {
     articleContainer: {
         width: '48%',
         padding: '0%',
-        marginHorizontal: '.2%',
+        marginHorizontal: '1%',
         marginBottom: '0%',
         flexDirection: 'column',
     },
