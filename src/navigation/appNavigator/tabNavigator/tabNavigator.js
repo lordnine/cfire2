@@ -27,7 +27,7 @@ return(
           },
         })}
         />
-        <Tab.Screen name="Search" component={SearchScreen} 
+        <Tab.Screen name="Search" component={CategoryScreen} 
                 options={({ route }) => ({
                   tabBarIcon: ({ focused, color, size }) => {
                     // You can return any component that you like here!
@@ -37,7 +37,6 @@ return(
                   },
                 })}
         />
-        <Tab.Screen name="categories" component={CategoryScreen} />
     </Tab.Navigator>
 );
 
