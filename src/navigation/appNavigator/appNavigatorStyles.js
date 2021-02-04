@@ -25,9 +25,9 @@ const appNavigatorStyles = {
     },
 
     burgerStyles: {
-        height: 18, 
-        width: 18, 
-        tintColor: 'lightsteelblue',
+        height: 20,
+        width: 20, 
+        tintColor: 'darkgray',
     }
 
 };

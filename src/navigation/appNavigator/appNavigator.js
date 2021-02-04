@@ -10,7 +10,7 @@ import { NativeAppEventEmitter } from 'react-native';
 import logo from '../../assets/images/logo.png';
 import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import { DrawerActions } from '@react-navigation/native';
-import burgerlogo from '../../assets/images/burgerlogo.png';
+import drawerlogo from '../../assets/images/drawerlogo.png';
 import appNavigatorStyles from './appNavigatorStyles.js';
 import SpecificCategoryScreen from '../../screens/specificCategoryScreen';
 
@@ -40,7 +40,7 @@ function DrawerBurger () {
   return(
     <TouchableOpacity style={appNavigatorStyles.burgerContainer} 
     onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-        <Image source={burgerlogo} style={appNavigatorStyles.burgerStyles} />
+        <Image source={drawerlogo} style={appNavigatorStyles.burgerStyles} resizeMode='contain' />
     </TouchableOpacity> 
   );
 }
