@@ -32,7 +32,7 @@ class CategoryCard extends React.Component {
           <View style={crdContainer}>
 
           <TouchableOpacity style={categoryCardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Specific', { check: item.key})}>
-            <View style={[imgContainer, backgroundStyles]}>
+            <View style={[imgContainer, {backgroundColor: item.color}]}>
               <View style={categoryCardStyles.categoryNameContainer}>
                 <Text style={colorStyles}>{item.name}</Text>
               </View>

@@ -69,7 +69,7 @@ const categoryCardStyles = {
     },
 
     foodBackground:{
-        backgroundColor: '#5d3c85',
+        backgroundColor: '#009688',  /*5d3c85*/
     },
 };
 
