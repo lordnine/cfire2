@@ -4,10 +4,10 @@ const cardStyles = {
 
     card: {
         backgroundColor: 'white',
-        marginTop: 10,
-        marginBottom: 8,
+        marginTop: 2,
+        marginBottom: 2,
         borderWidth: 0,
-        minHeight: 130,
+        minHeight: 162,
         borderRadius: 4,
         flex: 1,
         height:'40%',
@@ -17,9 +17,9 @@ const cardStyles = {
     shadow: {
         shadowColor: 'black',
         shadowOffset: { width: 0, height: 2 },
-        shadowRadius: 4,
-        shadowOpacity: 0.15,
-        elevation: 3,
+        shadowRadius: 3,
+        shadowOpacity: 0.2,
+        elevation: 100,
     },
 
     imageContainer: {
@@ -43,7 +43,7 @@ const cardStyles = {
     foodStuff: {
         fontSize: 18,
         fontWeight: '800',
-        color: 'white',
+        color: '#5d3c85',
         paddingLeft: '4%',
         paddingRight: '4%',
         paddingBottom: '2%',
@@ -53,7 +53,7 @@ const cardStyles = {
     regStuff: {
         fontSize: 18,
         fontWeight: '800',
-        color: 'white',
+        color: '#5d3c85',
         paddingLeft: '4%',
         paddingRight: '4%',
         paddingTop: '2%',
@@ -62,11 +62,11 @@ const cardStyles = {
     },
 
     foodBackground:{
-        backgroundColor: '#5d3c85',
+        backgroundColor: 'white',
     },
 
     regBackground:{
-        backgroundColor: '#5d3c85',
+        backgroundColor: 'white',
     },
 
     cardDescription: {
@@ -107,10 +107,10 @@ const cardStyles = {
     },
 
     dealText: {
-        color: 'white', 
+        color: '#242526', 
         marginLeft: '4.5%', 
-        fontSize: 13, 
-        fontWeight: '600', 
+        fontSize: 12, 
+        fontWeight: '500', 
         marginBottom: '4%'
     },
     
@@ -123,7 +123,7 @@ const cardStyles = {
     },
 
     dateText: {
-        color: 'white', 
+        color: 'darkgrey', 
         marginRight: '4.5%', 
         fontSize: 12, 
         fontWeight: '600', 
@@ -142,7 +142,8 @@ const cardStyles = {
         height: '9%', 
         flexWrap: 'nowrap', 
         marginTop: '4%', 
-        marginRight: '84%',
+        marginRight: '86%',
+        tintColor: 'darkgrey'
     },
 
     qrContainer: {
@@ -157,7 +158,8 @@ const cardStyles = {
         height: '12%', 
         flexWrap: 'nowrap', 
         marginBottom: '4.5%', 
-        marginLeft: '80%',
+        marginLeft: '84%',
+        tintColor: 'cornflowerblue'
     },
 
 };

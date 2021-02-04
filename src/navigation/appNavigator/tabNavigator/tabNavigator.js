@@ -14,9 +14,12 @@ const Tab = createBottomTabNavigator();
 
 const TabNavigator = () => {
 return(
-    <Tab.Navigator initialRouteName="Home" drawerPosition='right' tabBarOptions={{activeTintColor: 'cornflowerblue'}}
-
-    >
+    <Tab.Navigator initialRouteName="Home" drawerPosition='right' 
+    tabBarOptions={{
+      activeTintColor: 'black',
+      inactiveTintColor: 'darkgrey',
+    }} 
+   >
         <Tab.Screen name="Home" component={HomeScreen} 
         options={({ route }) => ({
           tabBarIcon: ({ focused, color, size }) => {
@@ -24,6 +27,7 @@ return(
             return (
             <Image source={houselogo} style={{height: 16, width: 16, marginTop: 8, tintColor: color }} resizeMode='contain'/>
              );
+             
           },
         })}
         />

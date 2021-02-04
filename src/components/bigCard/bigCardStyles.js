@@ -41,11 +41,11 @@ const bigCardStyles = {
     companyTitle: {
         fontSize: 20, 
         fontWeight: '800', 
-        color: 'black',
+        color: '#242526',
     },
 
     bigCardContainer: {
-        width: '89%', 
+        width: '93%', 
         alignItems: 'flex-start', 
         justifyContent: 'flex-start', 
 
@@ -72,8 +72,8 @@ const bigCardStyles = {
     imageContainer: {
         borderRadius: 4,
         overflow: 'hidden',
-        marginTop: '10%',
-        width: '90%',
+        marginTop: '4%',
+        width: '94%',
         height: '30%',
     },
 

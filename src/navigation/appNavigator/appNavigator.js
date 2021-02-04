@@ -57,22 +57,33 @@ const AppNavigator = () => (
       <Stack.Screen
         name="Home" component={HomeScreen} 
         options={{headerTitle: ( () => <HomeHeader /> ), 
-          headerTintColor: 'gray', 
+          headerTintColor: 'black', 
           headerLeft: null, 
           headerRight: ( () => <HomeRight />), 
           headerLeft: ( () => <HomeLeft />)  }}
       />
       <Stack.Screen
         name="Card" component={CardScreen} 
-        options={{headerShown: false}}
-      />
-      <Stack.Screen
-        name="Drawer" component={DrawerNavigator} 
         options={({navigation}) => 
         ({headerTitle: ( () => <HomeHeader /> ), 
           headerLeft: null, 
-          headerRight: ( () => <DrawerBurger />)
-          } 
+          headerRight: ( () => <DrawerBurger />),
+          headerStyle: {
+            backgroundColor: '#5d3c85',
+          },
+        } 
+        )}  
+      />
+      <Stack.Screen
+        name="Drawer" component={DrawerNavigator}
+        options={({navigation}) => 
+        ({headerTitle: ( () => <HomeHeader /> ), 
+          headerLeft: null, 
+          headerRight: ( () => <DrawerBurger />),
+          headerStyle: {
+            backgroundColor: '#5d3c85',
+          },
+        } 
         )}  
       />
       <Stack.Screen 

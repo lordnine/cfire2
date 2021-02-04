@@ -4,11 +4,11 @@ const categoryCardStyles = {
 
     card: {
         backgroundColor: 'white',
-        marginTop: 10,
-        marginBottom: 8,
+        marginTop: 2,
+        marginBottom: 2,
         borderWidth: 0,
         minHeight: 130,
-        borderRadius: 4,
+        borderRadius: 12,
         flex: 1,
         height:'40%',
         width: '100%'
@@ -29,17 +29,17 @@ const categoryCardStyles = {
     categoryNameContainer: {
         width: '100%', 
         height:'94%', 
-        alignItems:'center', 
-        justifyContent: 'center', 
+        alignItems:'flex-start', 
+        justifyContent: 'flex-end', 
         position: 'absolute',
     },
 
     horizontalStyles: {
-        height: 200,
+        height: 100,
     },
 
     imageContainer: {
-        borderRadius: 4,
+        borderRadius: 12,
         elevation: 1,
         overflow: 'hidden',
         height: 130,
@@ -47,13 +47,14 @@ const categoryCardStyles = {
     },
 
     foodStuff: {
-        fontSize: 18,
-        fontWeight: '800',
+        fontSize: 14,
+        fontWeight: '500',
         color: 'white',
         paddingLeft: '4%',
         paddingRight: '4%',
         paddingBottom: '2%',
         textAlign: 'center',
+        marginLeft: '3%',
     },
 
     regStuff: {

@@ -4,14 +4,9 @@ import {
   View, 
   Text, 
   TouchableOpacity ,
-  Image
 } from 'react-native';
 import categoryCardStyles from './categoryCardStyles';
-import qrlogo from '../../assets/images/qr_code.png';
-import burgerlogo from '../../assets/images/burgerlogo.png';
-import shoppinglogo from '../../assets/images/shoppinglogo.png';
-import supplieslogo from '../../assets/images/supplieslogo.png';
-import scissorslogo from '../../assets/images/scissorslogo.png';
+
 
 
 

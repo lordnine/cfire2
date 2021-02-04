@@ -67,9 +67,11 @@ export default class HomeScreen extends React.Component {
        {/* Render the cards in a list */}  
         <FlatList
           data={articles}
-          numColumns={2}
+          numColumns={1}
           renderItem={this.renderArticles}
           style={{}}
+          keyExtractor={item => item.key.toString()}
+          showsVerticalScrollIndicator={false}
           >
         </FlatList>
 

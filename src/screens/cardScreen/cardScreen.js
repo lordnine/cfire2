@@ -25,7 +25,6 @@ export default class CardScreen extends React.Component {
 
         <View style={cardScreenStyles.cardScreenContainer}>
 
-            <Divider style={adjustableStyleFunctions.transparentDivider('0.5%')}/>
 
             {/* renders BigCard component with key */}
             <BigCard item={articles[key]}/>

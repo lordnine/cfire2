@@ -5,16 +5,19 @@ const categoryScreenStyles = {
 
     articleContainer: {
         width: '48%',
-        padding: '0%',
+        paddingTop: '1%',
         marginHorizontal: '1%',
-        marginBottom: '0%'
+        marginTop: '1%',
+        marginBottom: '.5%'
     },
 
     listContainer: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
-        paddingHorizontal: '2%'
+        alignItems: 'space-between',
+        paddingHorizontal: '2%',
+        backgroundColor: '#e4e6eb',
     },
 
 
