@@ -88,6 +88,15 @@ const AppNavigator = () => (
       />
       <Stack.Screen 
         name="Specific" component={SpecificCategoryScreen}
+        options={({navigation}) => 
+        ({headerTitle: ( () => <HomeHeader /> ), 
+          headerLeft: null, 
+          headerRight: ( () => <DrawerBurger />),
+          headerStyle: {
+            backgroundColor: '#5d3c85',
+          },
+        } 
+        )}  
       />
     </Stack.Navigator>
 
