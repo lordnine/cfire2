@@ -39,13 +39,15 @@ export default class SpecificCategoryScreen extends React.Component {
 
        {/* Render the cards in a list */}  
         <FlatList
-          data={newArticles}
-          numColumns={2}
-          renderItem={(item) => this.renderArticles(item, check)}
-          style={{}}
+            data={newArticles}
+            numColumns={1}
+            renderItem={(item) => this.renderArticles(item, check)}
+            style={{}}
+            keyExtractor={item => item.key.toString()}
+            showsVerticalScrollIndicator={false}
           >
         </FlatList>
-
+        
         </View>
         
       );

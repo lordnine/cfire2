@@ -4,11 +4,10 @@
 const specificCategoryScreenStyles = {
 
     articleContainer: {
-        width: '48%',
+        width: '98%',
         padding: '0%',
         marginHorizontal: '1%',
-        marginBottom: '0%',
-        flexDirection: 'column',
+        marginVertical: '1%'
     },
 
     listContainer: {
@@ -16,7 +15,7 @@ const specificCategoryScreenStyles = {
         flexDirection: 'column',
         justifyContent: 'center',
         paddingHorizontal: '2%',
-        flex: 1,
+        backgroundColor: '#e4e6eb'
     },
 
 
