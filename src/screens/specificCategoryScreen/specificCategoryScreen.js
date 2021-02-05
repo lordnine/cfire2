@@ -7,6 +7,7 @@ import {
 import Card from '../../components/card';
 import articles from '../../constants/articles';
 import specificCategoryScreenStyles from './specificCategoryScreenStyles';
+import { SearchBar } from 'react-native-elements';
 
 export default class SpecificCategoryScreen extends React.Component {
 
