@@ -63,7 +63,7 @@ export default class LearnMoreScreen extends React.Component {
                     </Text>
                     <Divider style={adjustableStyleFunctions.transparentDivider('8%')}></Divider>
                     <Text style={{marginLeft: '2%', fontWeight: '600', fontSize: 15, textAlign: 'justify'}}>
-                        Don't see your school on our list? Fill out the link below and we'll get in touch. And sorry for any delays - we're new to this.
+                        Don't see your school on our list? Click the link below and we'll get in touch. And sorry for any delays - we're new to this.
                     </Text>
                 </View>
                 <View style={learnMoreScreenStyles.buttonContainer}>
