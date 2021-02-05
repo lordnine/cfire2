@@ -40,7 +40,7 @@ export default class LearnMoreScreen extends React.Component {
 
         <View style={{width: '100%', height: '100%', backgroundColor: 'white', alignItems: 'center'}}>
 
-            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#FE5F54', marginTop: '12%'}]}  resizeMode='contain' source={logo}/>
+            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#000437', marginTop: '12%'}]}  resizeMode='contain' source={logo}/>
             <View style={{alignItems: 'center', height: '60%'}}>
             <Text style={{color: 'grey', fontSize: 26, fontWeight: '700'}}> A New Way To Save </Text>
             <Divider style={adjustableStyleFunctions.transparentDivider('2%')}></Divider>
@@ -59,7 +59,7 @@ export default class LearnMoreScreen extends React.Component {
             <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')}></Divider>
                 <View style={{width: '90%', alignText: 'flex-start', marginTop: '3%'}}>
                     <Text style={{marginHorizontal: '2%', fontWeight: '600', fontSize: 15, textAlign:'justify'}}>
-                        Get connected with local small businesses through exclusive offerings and limited time sales. Don't miss out on an opportunity to save some cash. The best part? It's absolutely free to use! Just sign up with your college email address and start saving today.
+                        Get connected with small businesses in your college community through exclusive offerings and limited time sales. Don't miss out on an opportunity to save some cash. The best part? It's absolutely free to use! Just sign up with your college email address and start saving today.
                     </Text>
                     <Divider style={adjustableStyleFunctions.transparentDivider('8%')}></Divider>
                     <Text style={{marginLeft: '2%', fontWeight: '600', fontSize: 15, textAlign: 'justify'}}>

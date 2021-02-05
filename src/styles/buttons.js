@@ -19,13 +19,13 @@ const buttons = {
     },
 
     learnMoreMinimalistButton: {
-        borderColor: '#FE5F54',
+        borderColor: '#000437',
         backgroundColor: 'transparent',
     },
 
     learnMoreMinimalistInverseButton: {
-        borderColor: '#FE5F54',
-        backgroundColor: '#FE5F54',
+        borderColor: '#000437',
+        backgroundColor: '#000437',
     }
 
 };

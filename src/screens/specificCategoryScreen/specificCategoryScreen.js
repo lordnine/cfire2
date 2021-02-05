@@ -3,6 +3,7 @@ import {
   View,
   StyleSheet,
   FlatList,
+  Button
 } from 'react-native';
 import Card from '../../components/card';
 import articles from '../../constants/articles';
@@ -12,7 +13,9 @@ import { SearchBar } from 'react-native-elements';
 export default class SpecificCategoryScreen extends React.Component {
 
 
-    
+
+
+
     /* Render function for the flat list  */
     renderArticles = ({item, index}, check) => {
         return (
@@ -22,8 +25,7 @@ export default class SpecificCategoryScreen extends React.Component {
         );
     }
 
-
-
+    
     render() {
       const { check } = this.props.route.params;
       const newArticles = [];
@@ -34,10 +36,10 @@ export default class SpecificCategoryScreen extends React.Component {
       };
 
       return(
+
         
         <View style={specificCategoryScreenStyles.listContainer}>
-     
-
+          
        {/* Render the cards in a list */}  
         <FlatList
             data={newArticles}

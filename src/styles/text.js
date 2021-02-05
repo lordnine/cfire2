@@ -16,7 +16,7 @@ const text = {
 
     learnMoreMinimalistButtonText: {
         fontWeight: 'bold',
-        color: '#FE5F54',
+        color: '#000437',
     },
 
     learnMoreInverseMinimalistButtonText: {

@@ -46,6 +46,20 @@ function DrawerBurger () {
   );
 }
 
+const config = {
+  animation: 'spring',
+  config: {
+    stiffness: 200,
+    damping: 500,
+    mass: 3,
+    overshootClamping: true,
+    restDisplacementThreshold: 0.01,
+    restSpeedThreshold: 0.01,
+  },
+};
+
+
+
 
 const AppNavigator = () => (
   <NavigationContainer>
@@ -56,7 +70,8 @@ const AppNavigator = () => (
         name="Welcome" component={WelcomeScreen} options={{headerShown: false}}
       />
       <Stack.Screen 
-      name="Learn" component={LearnMoreScreen} options={{headerShown: false}}
+      name="Learn" component={LearnMoreScreen} 
+      options={{headerShown: false, transitionSpec: { open: config, close: config}}}
       />
       <Stack.Screen
         name="Home" component={HomeScreen} 
