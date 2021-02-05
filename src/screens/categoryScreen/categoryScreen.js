@@ -3,15 +3,15 @@ import {
   View,
   StyleSheet,
   FlatList,
-  Text
+  Text,
 } from 'react-native';
 import CategoryCard from '../../components/categoryCard';
 import categories from '../../constants/categories';
 import articles from '../../constants/articles';
 import categoryScreenStyles from './categoryScreenStyles';
-import { SearchBar } from 'react-native-elements';
+import { SearchBar, Divider } from 'react-native-elements';
 import Card from '../../components/card';
-
+import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 
 export default class CategoryScreen extends React.Component {
 
@@ -68,35 +68,50 @@ export default class CategoryScreen extends React.Component {
        </FlatList>);
 
     const categoryFlatList = (
+      <View>
+      <Text style={{fontSize: 32, fontWeight: '700'}}> Categories </Text>
       <FlatList
         data={categories}
         numColumns={2}
         renderItem={this.renderArticles}
+        scrollEnabled={false}
         >
       </FlatList>
+      </View>
     );
 
     const noResultsFound = (
-      <Text> No Deals Found </Text>
+      <Text style={{fontSize: 18, fontWeight: '600', textAlign: 'center'}}> No Deals Found </Text>
     );
     return(
       
-      <View style={{height: '100%', width: '100%'}}>
+      <View style={{height: '100%', width: '100%', backgroundColor: '#e6e6e6'}}>
+
+        <Divider style={adjustableStyleFunctions.transparentDivider('2.5%')} />
+
         <SearchBar 
-          inputStyle={{backgroundColor: 'black'}}
+          inputStyle={{backgroundColor: '#d6dbe0'}}
+          inputContainerStyle={{backgroundColor: '#d6dbe0'}}
           searchIcon={{ size: 24 }}
-          containerStyle={{backgroundColor: 'white', width: '100%', borderRadius: 10}}
-          placeholder='Type here...'
+          containerStyle={{width: '98%', backgroundColor: '#e4e6eb', borderBottomColor: 'transparent', borderTopColor: 'transparent', marginHorizontal: '1%'}}
+          placeholder='Search'
           onChangeText={this.updateSearch}
           value={search}
         />
 
+
+      <Divider style={adjustableStyleFunctions.transparentDivider('1%')} />
+
+      {!this.state.noData && this.state.noResults ? noResultsFound : null}  
+
+
       <View style={categoryScreenStyles.listContainer}>
-    
+
+
       {!this.state.noData && !this.state.noResults ? searchFlatList : null }
 
 
-      {!this.state.noData && this.state.noResults ? noResultsFound : null}
+      
      {/* Render the cards in a list */}  
       
         {this.state.noData ? categoryFlatList : null }

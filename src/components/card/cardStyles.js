@@ -41,7 +41,7 @@ const cardStyles = {
     },
 
     foodStuff: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: '800',
         color: '#5d3c85',
         paddingLeft: '4%',
@@ -51,7 +51,7 @@ const cardStyles = {
     },
 
     regStuff: {
-        fontSize: 18,
+        fontSize: 20,
         fontWeight: '800',
         color: '#5d3c85',
         paddingLeft: '4%',
@@ -109,8 +109,8 @@ const cardStyles = {
     dealText: {
         color: '#242526', 
         marginLeft: '4.5%', 
-        fontSize: 12, 
-        fontWeight: '500', 
+        fontSize: 16, 
+        fontWeight: '600', 
         marginBottom: '4%'
     },
     
