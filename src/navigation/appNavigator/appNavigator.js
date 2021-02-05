@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createStackNavigator , HeaderStyleInterpolators } from '@react-navigation/stack';
 import { Image, Text, Button, TouchableOpacity} from 'react-native';
 
 import WelcomeScreen from '../../screens/welcomeScreen';
@@ -46,10 +46,30 @@ function DrawerBurger () {
   );
 }
 
+const verticalAnimation = {
+  gestureDirection: 'vertical',
+  cardStyleInterpolator: ({ current, layouts }) => {
+    return {
+      cardStyle: {
+        transform: [
+          {
+            translateY: current.progress.interpolate({
+              inputRange: [0, 1],
+              outputRange: [layouts.screen.height, 0],
+            }),
+          },
+        ],
+      },
+    };
+  },
+};
+
+
+
 const config = {
   animation: 'spring',
   config: {
-    stiffness: 200,
+    stiffness: 100,
     damping: 500,
     mass: 3,
     overshootClamping: true,
@@ -71,7 +91,28 @@ const AppNavigator = () => (
       />
       <Stack.Screen 
       name="Learn" component={LearnMoreScreen} 
-      options={{headerShown: false, transitionSpec: { open: config, close: config}}}
+      options={{headerShown: false, gestureDirection: 'vertical', transitionSpec: { open: config, close: config}, headerStyleInterpolator: HeaderStyleInterpolators.forFade,
+      cardStyleInterpolator: ({ current, next, layouts }) => {
+        return {
+          cardStyle: {
+            transform: [
+              {
+                translateY: current.progress.interpolate({
+                  inputRange: [0, 1],
+                  outputRange: [layouts.screen.height, 0],
+                }),
+              },
+            ],
+          },
+          overlayStyle: {
+            opacity: current.progress.interpolate({
+              inputRange: [0, 1],
+              outputRange: [0, 0.5],
+            }),
+          },
+        };
+      },
+    }}
       />
       <Stack.Screen
         name="Home" component={HomeScreen} 

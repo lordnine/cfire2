@@ -37,16 +37,16 @@ export default class LearnMoreScreen extends React.Component {
       /* gets card key from route */
 
       return (
+        <View style={{height: '100%', justifyContent: 'flex-end', backgroundColor: '#000437'}}>
+        <View style={{width: '100%', height: '95%', backgroundColor: 'white', alignItems: 'center', borderRadius:12}}>
 
-        <View style={{width: '100%', height: '100%', backgroundColor: 'white', alignItems: 'center'}}>
-
-            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#000437', marginTop: '12%'}]}  resizeMode='contain' source={logo}/>
+            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#000437', marginTop: '1%'}]}  resizeMode='contain' source={logo}/>
             <View style={{alignItems: 'center', height: '60%'}}>
             <Text style={{color: 'grey', fontSize: 26, fontWeight: '700'}}> A New Way To Save </Text>
             <Divider style={adjustableStyleFunctions.transparentDivider('2%')}></Divider>
 
-            <View style={{width: '92%', height: '60%', backgroundColor:'#e6e6e6', borderRadius: 18}}>
-                <View style={{marginHorizontal: '1.5%'}}>
+            <View style={{width: '92%', height: '64%', backgroundColor:'#e6e6e6', borderRadius: 18}}>
+                <View style={{marginHorizontal: '1.5%', marginVertical: '1%'}}>
                  <FlatList
                     data={categories}
                     numColumns={2}
@@ -92,7 +92,7 @@ export default class LearnMoreScreen extends React.Component {
 
 
         </View>
-
+        </View>
       );
     }
 }

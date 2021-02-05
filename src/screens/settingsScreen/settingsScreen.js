@@ -20,7 +20,7 @@ export default class SettingsScreen extends React.Component {
 
         <View style={{width: '100%', height: '100%', alignItems: 'center'}}>
           <Divider style={{height: '4%'}}/>
-            <Text style={{fontSize: 28, fontWeight: '600'}}>Settings</Text>
+            <Text style={{fontSize: 28, fontWeight: '600', color: 'grey'}}>Settings</Text>
 
         </View>
 
