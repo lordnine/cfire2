@@ -110,7 +110,7 @@ const AppNavigator = () => (
         options={({navigation}) => 
         ({headerTitle: ( () => <HomeHeader /> ), 
           headerLeft: null, 
-          headerRight: ( () => <DrawerBurger />),
+          headerRight: null,
           headerStyle: {
             backgroundColor: '#5d3c85',
           },
