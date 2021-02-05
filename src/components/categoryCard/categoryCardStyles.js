@@ -47,8 +47,8 @@ const categoryCardStyles = {
     },
 
     foodStuff: {
-        fontSize: 14,
-        fontWeight: '500',
+        fontSize: 17,
+        fontWeight: '600',
         color: 'white',
         paddingLeft: '4%',
         paddingRight: '4%',
