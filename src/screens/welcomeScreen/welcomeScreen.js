@@ -4,6 +4,7 @@ import {
   StyleSheet,
   Image,
   Text,
+  TouchableOpacity
 } from 'react-native';
 import logo from '../../assets/images/logo.png';
 import { Button, Divider} from 'react-native-elements';
@@ -71,7 +72,7 @@ export default class WelcomeScreen extends React.Component {
                  title="Learn More"
                  buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
                  titleStyle={text.minimalistButtonText}
-                 onPress={() => this.props.navigation.navigate('Home')}
+                 onPress={() => this.props.navigation.navigate('Learn')}
                 />
               </View>
               

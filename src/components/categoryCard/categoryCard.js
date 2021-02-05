@@ -13,7 +13,7 @@ import categoryCardStyles from './categoryCardStyles';
 
 class CategoryCard extends React.Component {
     render() {
-        const { item, name, key} = this.props;
+        const { item, name, key, disabled} = this.props;
 
         const crdContainer = [categoryCardStyles.card, categoryCardStyles.shadow];
         const imgContainer = [categoryCardStyles.imageContainer,
@@ -31,7 +31,7 @@ class CategoryCard extends React.Component {
         return (
           <View style={crdContainer}>
 
-          <TouchableOpacity style={categoryCardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Specific', { check: item.key})}>
+          <TouchableOpacity disabled={disabled} style={categoryCardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Specific', { check: item.key})}>
             <View style={[imgContainer, {backgroundColor: item.color}]}>
               <View style={categoryCardStyles.categoryNameContainer}>
                 <Text style={colorStyles}>{item.name}</Text>

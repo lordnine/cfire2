@@ -18,6 +18,16 @@ const buttons = {
         backgroundColor: 'white',
     },
 
+    learnMoreMinimalistButton: {
+        borderColor: '#FE5F54',
+        backgroundColor: 'transparent',
+    },
+
+    learnMoreMinimalistInverseButton: {
+        borderColor: '#FE5F54',
+        backgroundColor: '#FE5F54',
+    }
+
 };
 
 export default buttons;

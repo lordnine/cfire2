@@ -13,6 +13,7 @@ import { DrawerActions } from '@react-navigation/native';
 import drawerlogo from '../../assets/images/drawerlogo.png';
 import appNavigatorStyles from './appNavigatorStyles.js';
 import SpecificCategoryScreen from '../../screens/specificCategoryScreen';
+import LearnMoreScreen from '../../screens/learnMoreScreen';
 
 
 const Stack = createStackNavigator();
@@ -53,6 +54,9 @@ const AppNavigator = () => (
     >
       <Stack.Screen 
         name="Welcome" component={WelcomeScreen} options={{headerShown: false}}
+      />
+      <Stack.Screen 
+      name="Learn" component={LearnMoreScreen} options={{headerShown: false}}
       />
       <Stack.Screen
         name="Home" component={HomeScreen} 
@@ -98,6 +102,8 @@ const AppNavigator = () => (
         } 
         )}  
       />
+
+
     </Stack.Navigator>
 
   </NavigationContainer>

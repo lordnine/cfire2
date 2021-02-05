@@ -69,7 +69,7 @@ export default class CategoryScreen extends React.Component {
 
     const categoryFlatList = (
       <View>
-      <Text style={{fontSize: 32, fontWeight: '700'}}> Categories </Text>
+      <Text style={{marginLeft: 2, fontSize: 28, fontWeight: '700'}}> Categories </Text>
       <FlatList
         data={categories}
         numColumns={2}
