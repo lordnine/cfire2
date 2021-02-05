@@ -16,6 +16,7 @@ import learnMoreScreenStyles from './learnMoreScreenStyles.js';
 import CategoryCard from '../../components/categoryCard';
 import buttons from '../../styles/buttons.js';
 import text from '../../styles/text.js';
+import pulldownbar from '../../assets/images/pulldownbar.png';
 
 export default class LearnMoreScreen extends React.Component {
 
@@ -39,7 +40,6 @@ export default class LearnMoreScreen extends React.Component {
       return (
         <View style={{height: '100%', justifyContent: 'flex-end', backgroundColor: '#000437'}}>
         <View style={{width: '100%', height: '95%', backgroundColor: 'white', alignItems: 'center', borderRadius:12}}>
-
             <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#000437', marginTop: '1%'}]}  resizeMode='contain' source={logo}/>
             <View style={{alignItems: 'center', height: '60%'}}>
             <Text style={{color: 'grey', fontSize: 26, fontWeight: '700'}}> A New Way To Save </Text>
@@ -59,7 +59,7 @@ export default class LearnMoreScreen extends React.Component {
             <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')}></Divider>
                 <View style={{width: '90%', alignText: 'flex-start', marginTop: '3%'}}>
                     <Text style={{marginHorizontal: '2%', fontWeight: '600', fontSize: 15, textAlign:'justify'}}>
-                        Get connected with small businesses in your college community through exclusive offerings and limited time sales. Don't miss out on an opportunity to save some cash. The best part? It's absolutely free to use! Just sign up with your college email address and start saving today.
+                        Get connected with small businesses near your campus through exclusive offerings and limited time sales. Don't miss out on an opportunity to save some cash. The best part? It's absolutely free to use! Just sign up with your college email address and start saving today.
                     </Text>
                     <Divider style={adjustableStyleFunctions.transparentDivider('8%')}></Divider>
                     <Text style={{marginLeft: '2%', fontWeight: '600', fontSize: 15, textAlign: 'justify'}}>
