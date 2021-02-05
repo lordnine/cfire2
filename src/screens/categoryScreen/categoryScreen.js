@@ -3,6 +3,7 @@ import {
   View,
   StyleSheet,
   FlatList,
+  Text
 } from 'react-native';
 import CategoryCard from '../../components/categoryCard';
 import categories from '../../constants/categories';
@@ -16,24 +17,24 @@ export default class CategoryScreen extends React.Component {
 
   state = { 
     search: '',
-    data: categories,
+    data: articles,
     filteredData: [],
+    noData: true,
+    noResults: true,
   };
 
   updateSearch = (search) => {
     this.setState({ search });
-
-    let filteredData = this.filterList(this.state.data)
-
-    this.setState({filteredData: filteredData});
+    let tempData = this.filterList(search);
+    search.length > 0 ? this.setState({noData: false}) : this.setState({noData: true});
+    tempData.length > 0 ? this.setState({noResults: false}) : this.setState({noResults: true});
+    this.setState({filteredData: tempData});
   };
 
-  filterList(list) {
-    return list.filter(
-      (listItem) => 
-          listItem.name
-            .toLowerCase()
-            .includes(this.state.search.toLowerCase())
+  filterList (search) {
+    return articles.filter(
+      (item) => 
+          item.companyName.toLowerCase().includes(search.toLowerCase())
     );
   }
 
@@ -46,9 +47,38 @@ export default class CategoryScreen extends React.Component {
     );
   }
 
+  renderSecondary = ({item, index}) => {
+  return (
+    <View style={categoryScreenStyles.articleContainer}>
+      <Card item={item} navigation={this.props.navigation}/>
+    </View>
+  );
+}
+
+  
 
   render() {
     const { search } = this.state;
+    const searchFlatList = (
+          <FlatList
+          data={this.state.noData ? this.state.data : this.state.filteredData}
+          numColumns={2}
+          renderItem={this.renderSecondary}
+          >
+       </FlatList>);
+
+    const categoryFlatList = (
+      <FlatList
+        data={categories}
+        numColumns={2}
+        renderItem={this.renderArticles}
+        >
+      </FlatList>
+    );
+
+    const noResultsFound = (
+      <Text> No Deals Found </Text>
+    );
     return(
       
       <View style={{height: '100%', width: '100%'}}>
@@ -62,29 +92,14 @@ export default class CategoryScreen extends React.Component {
         />
 
       <View style={categoryScreenStyles.listContainer}>
-    <FlatList
-        data={(this.state.filteredData.length > 0 ? this.state.filteredData : this.state.data)}
-        numColumns={2}
-        renderItem={this.renderArticles}
-        >
-    </FlatList>
+    
+      {!this.state.noData && !this.state.noResults ? searchFlatList : null }
 
 
-
+      {!this.state.noData && this.state.noResults ? noResultsFound : null}
      {/* Render the cards in a list */}  
-      <FlatList
-        data={categories}
-        numColumns={2}
-        renderItem={this.renderArticles}
-        >
-      </FlatList>
-      {/*   {this.filterList(articles).map((item, key) => (
-            <View style={categoryScreenStyles.articleContainer}>
-                <Card item={item} navigation={this.props.navigation}/>
-            </View>
-        ))}
-
-        */}
+      
+        {this.state.noData ? categoryFlatList : null }
       </View>
       </View>
     );
