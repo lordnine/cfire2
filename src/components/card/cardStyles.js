@@ -8,7 +8,7 @@ const cardStyles = {
         marginBottom: 2,
         borderWidth: 0,
         minHeight: 162,
-        borderRadius: 4,
+        borderRadius: 8,
         flex: 1,
         height:'40%',
         width: '100%'

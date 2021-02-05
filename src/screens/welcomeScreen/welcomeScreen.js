@@ -65,22 +65,29 @@ export default class WelcomeScreen extends React.Component {
           {/* Top Button */}
           <View style={welcomeScreenStyles.buttonContainer}>
          
-         
-              <Button
-                title="Get Started"
-                buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
-                titleStyle={text.inverseMinimalistButtonText}
-                onPress={() => this.props.navigation.navigate('Drawer')}
-              />
+              
+          <View style={welcomeScreenStyles.buttonWidth}>
+               <Button
+                 title="Learn More"
+                 buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
+                 titleStyle={text.minimalistButtonText}
+                 onPress={() => this.props.navigation.navigate('Home')}
+                />
+              </View>
+              
+              
+              
+              <View style={welcomeScreenStyles.buttonWidth}>
+                <Button
+                  title="Get Started"
+                  buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
+                  titleStyle={text.inverseMinimalistButtonText}
+                  onPress={() => this.props.navigation.navigate('Drawer')}
+                />
+              </View>
 
-              <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')}></Divider>
 
-              <Button
-                title="Learn More"
-                buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
-                titleStyle={text.minimalistButtonText}
-                onPress={() => this.props.navigation.navigate('Home')}
-              />
+
 
           {/* Bottom button - reversed color */}
 

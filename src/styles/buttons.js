@@ -4,9 +4,8 @@ const buttons = {
   
     mainButton: {
         height: 50,
-        width: 340,
         borderWidth: 2,
-        borderRadius: 6,
+        borderRadius: 8,
     },
 
     minimalistButton: {
