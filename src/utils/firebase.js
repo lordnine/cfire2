@@ -1,15 +1,22 @@
-import firebase from 'firebase';
 
-// TODO: use firebase cloud functions to mask API key (firebase-functions) or dotenv
-const config = {
-    apiKey: "AIzaSyCRT2qfA8NWb7K-Ok7U4pHPsk7uhTuQlo8",
-    authDomain: "campfire-c8b22.firebaseapp.com",
-    databaseURL: "https://campfire-c8b22.firebaseio.com",
-    projectId: "campfire-c8b22",
-    storageBucket: "campfire-c8b22.appspot.com",
-    messagingSenderId: "372665112027"
-};
 
-firebase.initializeApp(config);
+import Firebase from 'firebase';
+
+
+let config = {
+    apiKey: "AIzaSyA0tIbd9J_gR8fbS2mT9B8EvIvxv7-8kw4",
+    authDomain: "rn-cfire2.firebaseapp.com",
+    databaseURL: "https://rn-cfire2-default-rtdb.firebaseio.com",
+    projectId: "rn-cfire2",
+    storageBucket: "rn-cfire2.appspot.com",
+    messagingSenderId: "20319303910",
+    appId: "1:20319303910:web:9a56417a1bd2bd0b08a327"
+  };
+
+let app = Firebase.initializeApp(config);
+export const db = app.database();
+
 // reference to the authorization features
-export const firebaseAuth = firebase.auth();
+
+
+// export const firebaseAuth = firebase.auth();

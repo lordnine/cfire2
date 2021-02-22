@@ -7,10 +7,23 @@ import {
 import Card from '../../components/card';
 import articles from '../../constants/articles';
 import homeScreenStyles from './homeScreenStyles';
+import { db } from '../../utils/firebase.js';
+
+
+let itemsRef = db.ref('/Deals');
 
 export default class HomeScreen extends React.Component {
-
-
+  
+  state = {
+    items: []
+  };
+  componentDidMount() {
+    itemsRef.on('value', snapshot => {
+      let data = snapshot.val();
+      let items = Object.values(data);
+      this.setState({ items });
+    });
+  }
     /* Render function for the flat list  */
     renderArticles = ({item, index}) => {
       return (
@@ -22,6 +35,9 @@ export default class HomeScreen extends React.Component {
 
 
     render() {
+
+      
+
       return(
         
         <View style={homeScreenStyles.listContainer}>
@@ -29,12 +45,19 @@ export default class HomeScreen extends React.Component {
 
        {/* Render the cards in a list */}  
         <FlatList
-          data={articles}
+          data={this.state.items}
           numColumns={1}
           renderItem={this.renderArticles}
-          style={{}}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={item => item.key.toString()}
+          
+      /*    data={articles}
+          numColumns={1}
+          renderItem={this.renderArticles}
           keyExtractor={item => item.key.toString()}
           showsVerticalScrollIndicator={false}
+
+      */
           >
         </FlatList>
 
