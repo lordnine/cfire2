@@ -34,10 +34,10 @@ export default class suggestedSchoolScreen extends React.Component {
     return (
       <View style={styles.frameContainer}>
         <Divider style={adjustableStyleFunctions.transparentDivider('10%')} />
-          <Image style={adjustableStyleFunctions.imgSize(40,40)}  resizeMode='contain' source={logo}/>
+        <Image style={adjustableStyleFunctions.imgSize(40,40)}  resizeMode='contain' source={logo}/>
           <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
           <Text style={suggestedSchoolScreenStyles.campfireTitle}>Suggest Your School</Text>
-
+          <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
         <View style={styles.formContainer}>
           <View>
             <View style={styles.inputContainer}>
@@ -74,7 +74,7 @@ export default class suggestedSchoolScreen extends React.Component {
 
 
 
-
+            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
             <View style={suggestedSchoolScreenStyles.buttonContainer}>
             <View style={suggestedSchoolScreenStyles.buttonWidth}>
             <Button
