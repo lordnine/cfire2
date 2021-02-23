@@ -51,6 +51,19 @@ const suggestedSchoolScreenStyles = {
 
     buttonWidth: {
         width: '49%'
+    },
+
+    inputTitle: {
+        color: 'white',
+        fontSize: 16,
+        fontWeight: '700',
+        marginLeft: 4
+    },
+
+    inputText: {
+        color: 'white',
+        fontSize: 14,
+        fontWeight: '800'
     }
 
 

@@ -35,26 +35,31 @@ export default class suggestedSchoolScreen extends React.Component {
       <View style={styles.frameContainer}>
         <Divider style={adjustableStyleFunctions.transparentDivider('10%')} />
           <Image style={adjustableStyleFunctions.imgSize(40,40)}  resizeMode='contain' source={logo}/>
+          <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+          <Text style={suggestedSchoolScreenStyles.campfireTitle}>Suggest Your School</Text>
 
-          <Text style={suggestedSchoolScreenStyles.campfireTitle}>Add a School</Text>
-
-          <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
         <View style={styles.formContainer}>
           <View>
             <View style={styles.inputContainer}>
+            <Text style={suggestedSchoolScreenStyles.inputTitle}>School Name</Text>
+            <Divider style={{ height: 4, backgroundColor: 'transparent' }} />
               <TextInput
-                style={styles.input}
-                placeholder="Your School"
+                style={[suggestedSchoolScreenStyles.inputText, {backgroundColor: '#25284f', height: 40, fontSize: 14, borderRadius: 4, paddingLeft: 10}]}
+                maxLength={35}
+                placeholder="College University"
                 placeholderTextColor="white"
                 autoCapitalize="none"
                 spellCheck={false}
                 value={this.state.username}
                 onChangeText={newUsername => this.setState({ username: newUsername })}
               />
-              <Divider style={{ height: 10, backgroundColor: 'transparent' }} />
+              <Divider style={{ height: 12, backgroundColor: 'transparent' }} />
+              <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
+              <Divider style={{ height: 4, backgroundColor: 'transparent' }} />
               <TextInput
-                style={styles.input}
-                placeholder="College Email"
+                style={[suggestedSchoolScreenStyles.inputText, {backgroundColor: '#25284f', height: 40, fontSize: 14, borderRadius: 4, paddingLeft: 10}]}
+                maxLength={40}
+                placeholder="first.last@college.edu"
                 placeholderTextColor="white"
                 autoCapitalize="none"
                 spellCheck={false}
@@ -62,7 +67,13 @@ export default class suggestedSchoolScreen extends React.Component {
                 onChangeText={newEmail => this.setState({ email: newEmail })}
               />
             </View>
+
+
+
             <Divider style={{ height: 25, backgroundColor: 'transparent' }} />
+
+
+
 
             <View style={suggestedSchoolScreenStyles.buttonContainer}>
             <View style={suggestedSchoolScreenStyles.buttonWidth}>
@@ -83,6 +94,11 @@ export default class suggestedSchoolScreen extends React.Component {
             />
             </View>
             </View>
+
+
+
+
+
           </View>
         </View>
       </View>
@@ -99,8 +115,8 @@ export default class suggestedSchoolScreen extends React.Component {
 const styles = StyleSheet.create({
   frameContainer: containers.frameContainer,
   formContainer: {
-    height: 500,
-    justifyContent: 'space-around',
+    height: '40%',
+    marginTop: '18%'
   },
   logoContainer: {
     height: 160,
