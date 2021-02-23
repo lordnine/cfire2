@@ -14,6 +14,7 @@ import drawerlogo from '../../assets/images/drawerlogo.png';
 import appNavigatorStyles from './appNavigatorStyles.js';
 import SpecificCategoryScreen from '../../screens/specificCategoryScreen';
 import LearnMoreScreen from '../../screens/learnMoreScreen';
+import SuggestedSchoolScreen from '../../screens/suggestedSchoolScreen';
 
 
 const Stack = createStackNavigator();
@@ -88,6 +89,9 @@ const AppNavigator = () => (
     >
       <Stack.Screen 
         name="Welcome" component={WelcomeScreen} options={{headerShown: false}}
+      />
+      <Stack.Screen 
+        name="SuggestedSchool" component={SuggestedSchoolScreen} options={{headerShown: false}}
       />
       <Stack.Screen 
       name="Learn" component={LearnMoreScreen} 

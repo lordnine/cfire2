@@ -74,6 +74,7 @@ export default class LearnMoreScreen extends React.Component {
                 title="New School"
                 buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
                 titleStyle={text.learnMoreMinimalistButtonText}
+                onPress={() => this.props.navigation.navigate('SuggestedSchool')}
                />
              </View>
              
