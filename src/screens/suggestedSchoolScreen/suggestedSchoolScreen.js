@@ -45,6 +45,8 @@ export default class suggestedSchoolScreen extends React.Component {
 
     handleSubmit = () => {
         addItem(this.state.schoolName, this.state.email);
+        this.state.schoolName = '';
+        this.state.email = '';
     };
 
   render() {
