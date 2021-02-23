@@ -8,6 +8,7 @@ import shoppinglogo from '../../assets/images/shoppinglogo.png';
 import supplieslogo from '../../assets/images/supplieslogo.png';
 import scissorslogo from '../../assets/images/scissorslogo.png';
 import locationlogo from '../../assets/images/locationlogo.png';
+import imgArray from '../../constants/imgArray';
 
 class BigCard extends React.Component {
     render() {
@@ -25,7 +26,7 @@ class BigCard extends React.Component {
 
                   {/* Render company image at the top of the card */}
                     <View style={bigCardStyles.imageContainer}> 
-                        <Image source={item.img} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
+                        <Image source={imgArray[item.key]} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
                     </View>
 
                     <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>

@@ -56,7 +56,7 @@ class Card extends React.Component {
                     <Image style={cardStyles.categoryImage} source={categoryLogo[item.category]} resizeMode='contain'></Image>
                   </View>
 
-                  <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
+                  <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { element: item})}>
                     <Image style={cardStyles.qrImage}source={qrlogo} resizeMode='contain'></Image>
                   </TouchableOpacity>
 
