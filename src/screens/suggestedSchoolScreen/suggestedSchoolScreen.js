@@ -16,6 +16,17 @@ import suggestedSchoolScreenStyles from './suggestedSchoolScreenStyles';
 import buttons from '../../styles/buttons';
 import text from '../../styles/text';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
+import { db } from '../../utils/firebase';
+import { NativeAppEventEmitter } from 'react-native';
+
+
+let addItem = (school, email) => {
+    db.ref('/suggestedSchools').push({
+        schoolName: school,
+        email: email,
+    });
+    };
+
 
 export default class suggestedSchoolScreen extends React.Component {
 
@@ -29,6 +40,12 @@ export default class suggestedSchoolScreen extends React.Component {
     // TODO: password requirements
 
   }
+  
+
+
+    handleSubmit = () => {
+        addItem(this.state.schoolName, this.state.email);
+    };
 
   render() {
     return (
@@ -50,8 +67,8 @@ export default class suggestedSchoolScreen extends React.Component {
                 placeholderTextColor="white"
                 autoCapitalize="none"
                 spellCheck={false}
-                value={this.state.username}
-                onChangeText={newUsername => this.setState({ username: newUsername })}
+                value={this.state.schoolName}
+                onChangeText={newSchoolName => this.setState({ schoolName: newSchoolName })}
               />
               <Divider style={{ height: 12, backgroundColor: 'transparent' }} />
               <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
@@ -81,7 +98,7 @@ export default class suggestedSchoolScreen extends React.Component {
               title="Submit"
               buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
               titleStyle={text.minimalistButtonText}
-              onPress={this.handleSuggestion}
+              onPress={this.handleSubmit}
             />
             </View>
             {/* TODO: some kind of loading spinner... use redux or state if you're lazy */}
