@@ -23,7 +23,6 @@ export default class CardScreen extends React.Component {
         let data = snapshot.val();
         let items = Object.values(data);
         this.setState({ items });
-        console.log('hello there');
       });
     }
 

@@ -12,16 +12,21 @@ import categoryScreenStyles from './categoryScreenStyles';
 import { SearchBar, Divider } from 'react-native-elements';
 import Card from '../../components/card';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
+import { db } from '../../utils/firebase.js';
+
+let itemsRef = db.ref('/Deals');
 
 export default class CategoryScreen extends React.Component {
 
   state = { 
     search: '',
     data: articles,
+    items: [],
     filteredData: [],
     noData: true,
     noResults: true,
   };
+  
 
   updateSearch = (search) => {
     this.setState({ search });
