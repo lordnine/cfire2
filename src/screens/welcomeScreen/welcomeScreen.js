@@ -45,6 +45,7 @@ export default class WelcomeScreen extends React.Component {
                   <Text style={welcomeScreenStyles.elementTitle}>What's Up</Text>
                   <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
                   <Text style={welcomeScreenStyles.elementSubTitle}>Looking for great deals in your college town?</Text>
+                  <Text style={{position: 'absolute', paddingTop: '60%', alignItems: 'center', color: 'white', fontSize: 76}}>.</Text>
               </View>
           
           
@@ -52,6 +53,7 @@ export default class WelcomeScreen extends React.Component {
                   <Text style={welcomeScreenStyles.elementTitle}>Sign In</Text>
                   <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
                   <Text style={welcomeScreenStyles.elementSubTitle}>And get connected with local small businesses</Text>
+                  <Text style={{position: 'absolute', paddingTop: '60%', alignItems: 'center', color: 'white', fontSize: 76}}>..</Text>
               </View>
 
           </ScrollView>

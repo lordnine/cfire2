@@ -154,11 +154,15 @@ const AppNavigator = () => (
         name="Specific" component={SpecificCategoryScreen}
         options={({navigation}) => 
         ({headerTitle: ( () => <HomeHeader /> ), 
-          headerLeft: null, 
+          headerTintColor: 'white',
+          headerBackTitleVisible: false,
           headerRight: null,
           headerStyle: {
             backgroundColor: '#5d3c85',
           },
+          headerLeftContainerStyle: {
+            marginLeft: 8
+          }
         } 
         )}  
       />

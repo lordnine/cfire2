@@ -3,9 +3,9 @@
 const suggestedSchoolScreenStyles = {
   
     campfireTitle: {
-    fontSize: 24, 
-    fontWeight: '600', 
-    color: 'white',
+    fontSize: 25, 
+    fontWeight: '800', 
+    color: '#000437',
     },
 
     carouselContainer: {
@@ -43,10 +43,8 @@ const suggestedSchoolScreenStyles = {
 
     buttonContainer: {
         flexDirection: 'row', 
-        width: '100%', 
         alignItems: 'center', 
         justifyContent: 'space-between',
-        width: 340,
     },
 
     buttonWidth: {
@@ -64,8 +62,23 @@ const suggestedSchoolScreenStyles = {
         color: 'white',
         fontSize: 14,
         fontWeight: '800'
-    }
+    },
 
+    inputContainer: {
+        backgroundColor: '#000437',
+        height: '42%%',
+        width: '94%',
+        justifyContent: 'center',
+        paddingHorizontal: '4%',
+        borderRadius: 14,
+    },
+
+    button: {
+        height: 44,
+        borderWidth: 2,
+        borderColor: 'white',
+        borderRadius: 10
+    }
 
 };
 

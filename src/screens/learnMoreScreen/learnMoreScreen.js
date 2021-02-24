@@ -16,7 +16,6 @@ import learnMoreScreenStyles from './learnMoreScreenStyles.js';
 import CategoryCard from '../../components/categoryCard';
 import buttons from '../../styles/buttons.js';
 import text from '../../styles/text.js';
-import pulldownbar from '../../assets/images/pulldownbar.png';
 
 export default class LearnMoreScreen extends React.Component {
 

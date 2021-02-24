@@ -6,9 +6,10 @@ import {
   Text,
   View,
   TextInput,
+  Image
 } from 'react-native';
 import {
-  Button, Image, Divider,
+  Button, Divider,
 } from 'react-native-elements';
 import logo from '../../assets/images/logo.png';
 import containers from '../../styles/containers';
@@ -17,7 +18,6 @@ import buttons from '../../styles/buttons';
 import text from '../../styles/text';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 import { db } from '../../utils/firebase';
-import { NativeAppEventEmitter } from 'react-native';
 
 
 let addItem = (school, email) => {
@@ -51,15 +51,17 @@ export default class suggestedSchoolScreen extends React.Component {
 
   render() {
     return (
-      <View style={styles.frameContainer}>
-        <Divider style={adjustableStyleFunctions.transparentDivider('10%')} />
-        <Image style={adjustableStyleFunctions.imgSize(40,40)}  resizeMode='contain' source={logo}/>
-          <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-          <Text style={suggestedSchoolScreenStyles.campfireTitle}>Suggest Your School</Text>
-          <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-        <View style={styles.formContainer}>
-          <View>
-            <View style={styles.inputContainer}>
+      <View style={{width: '100%', height: '100%', backgroundColor: 'white', alignItems: 'center', }}>
+        <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
+        <Image style={[adjustableStyleFunctions.imgSize('10%','10%'), {tintColor: '#000437', marginTop: '1%'}]}  resizeMode='contain' source={logo}/>
+          <Divider style={adjustableStyleFunctions.transparentDivider('10%')} />
+          <Text style={suggestedSchoolScreenStyles.campfireTitle}>Help Us Grow</Text>
+          <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+
+            
+            
+            
+            <View style={suggestedSchoolScreenStyles.inputContainer}>
             <Text style={suggestedSchoolScreenStyles.inputTitle}>School Name</Text>
             <Divider style={{ height: 4, backgroundColor: 'transparent' }} />
               <TextInput
@@ -72,7 +74,7 @@ export default class suggestedSchoolScreen extends React.Component {
                 value={this.state.schoolName}
                 onChangeText={newSchoolName => this.setState({ schoolName: newSchoolName })}
               />
-              <Divider style={{ height: 12, backgroundColor: 'transparent' }} />
+              <Divider style={{ height: 18, backgroundColor: 'transparent' }} />
               <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
               <Divider style={{ height: 4, backgroundColor: 'transparent' }} />
               <TextInput
@@ -85,42 +87,40 @@ export default class suggestedSchoolScreen extends React.Component {
                 value={this.state.email}
                 onChangeText={newEmail => this.setState({ email: newEmail })}
               />
-            </View>
 
+              <Divider style={{ height: '10%', backgroundColor: 'transparent' }} />
 
-
-            <Divider style={{ height: 25, backgroundColor: 'transparent' }} />
-
-
-
-            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-            <View style={suggestedSchoolScreenStyles.buttonContainer}>
+        <View style={suggestedSchoolScreenStyles.buttonContainer}>
+        <View style={suggestedSchoolScreenStyles.buttonWidth}>
+            <Button
+              title="Get Started"
+              buttonStyle={[suggestedSchoolScreenStyles.button, buttons.minimalistButton]}
+              titleStyle={text.minimalistButtonText}
+              onPress={() => this.props.navigation.navigate('Drawer')}
+            />
+              </View>
             <View style={suggestedSchoolScreenStyles.buttonWidth}>
             <Button
               title="Submit"
-              buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
-              titleStyle={text.minimalistButtonText}
+              buttonStyle={[suggestedSchoolScreenStyles.button, buttons.inverseMinimalistButton]}
+              titleStyle={text.inverseMinimalistButtonText}
               onPress={this.handleSubmit}
             />
             </View>
             {/* TODO: some kind of loading spinner... use redux or state if you're lazy */}
-            <View style={suggestedSchoolScreenStyles.buttonWidth}>
-            <Button
-              title="Get Started"
-              buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
-              titleStyle={text.inverseMinimalistButtonText}
-              onPress={() => this.props.navigation.navigate('Drawer')}
-            />
+
             </View>
-            </View>
+        </View>
+
+
+
 
 
 
 
 
           </View>
-        </View>
-      </View>
+
     );
   }
 }
