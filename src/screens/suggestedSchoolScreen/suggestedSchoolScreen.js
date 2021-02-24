@@ -52,11 +52,11 @@ export default class suggestedSchoolScreen extends React.Component {
   render() {
     return (
       <View style={{width: '100%', height: '100%', backgroundColor: '#e6e6e6', alignItems: 'center', }}>
-        <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
-        <Image style={[adjustableStyleFunctions.imgSize('10%','10%'), {tintColor: '#000437', marginTop: '1%'}]}  resizeMode='contain' source={logo}/>
-          <Divider style={adjustableStyleFunctions.transparentDivider('.5%')} />
-          <Text style={suggestedSchoolScreenStyles.campfireTitle}>Help Us Grow</Text>
+        <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+        <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#000437', marginTop: '1%'}]}  resizeMode='contain' source={logo}/>
           <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
+          <Text style={suggestedSchoolScreenStyles.campfireTitle}>Help Us Grow</Text>
+          <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
 
             
             

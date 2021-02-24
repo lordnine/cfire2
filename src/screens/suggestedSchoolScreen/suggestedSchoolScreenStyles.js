@@ -3,7 +3,7 @@
 const suggestedSchoolScreenStyles = {
   
     campfireTitle: {
-    fontSize: 25, 
+    fontSize: 27, 
     fontWeight: '800', 
     color: '#000437',
     },
@@ -61,7 +61,7 @@ const suggestedSchoolScreenStyles = {
     inputText: {
         color: 'white',
         fontSize: 14,
-        fontWeight: '800'
+        fontWeight: '300'
     },
 
     inputContainer: {

@@ -129,9 +129,13 @@ const AppNavigator = () => (
       <Stack.Screen
         name="Card" component={CardScreen} 
         options={({navigation}) => 
-        ({headerTitle: ( () => <HomeHeader /> ), 
-          headerLeft: null, 
+        ({headerTitle: ( () => <HomeHeader /> ),  
+          headerTintColor: 'white',
+          headerBackTitleVisible: false,
           headerRight: null,
+          headerLeftContainerStyle: {
+            marginLeft: 8
+          },
           headerStyle: {
             backgroundColor: '#5d3c85',
           },
