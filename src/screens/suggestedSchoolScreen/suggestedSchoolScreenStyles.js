@@ -1,31 +1,22 @@
 
 
 const suggestedSchoolScreenStyles = {
-  
-    campfireTitle: {
-    fontSize: 27, 
-    fontWeight: '800', 
-    color: '#000437',
-    },
 
-    carouselContainer: {
-        height: '36%', 
-        width: 340,
-    },
 
-    carouselStyle: {
-        backgroundColor: '#25284f', 
+    genericGreyContainer: {
         width: '100%', 
-        borderRadius: 10,
-    },
-
-    carouselElement: {
-        backgroundColor: '#25284f', 
         height: '100%', 
-        width: 340, 
-        justifyContent: 'center', 
+        backgroundColor: '#e6e6e6', 
         alignItems: 'center',
     },
+
+    mainTitle: {
+        fontSize: 27, 
+        fontWeight: '800', 
+        color: '#000437',
+    },
+
+
 
     elementTitle: {
         fontSize: 21, 
@@ -61,7 +52,12 @@ const suggestedSchoolScreenStyles = {
     inputText: {
         color: 'white',
         fontSize: 14,
-        fontWeight: '300'
+        fontWeight: '300',
+        backgroundColor: '#25284f', 
+        height: 40, 
+        fontSize: 14, 
+        borderRadius: 4, 
+        paddingLeft: 10
     },
 
     inputContainer: {
