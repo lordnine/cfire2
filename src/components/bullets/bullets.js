@@ -1,6 +1,7 @@
 
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
+import bulletsStyles from './bulletsStyles';
 
 
 class Bullets extends React.Component {
@@ -9,8 +10,8 @@ class Bullets extends React.Component {
         return (
 
                 <View style={{flexDirection: 'row', paddingBottom: 6}} >
-                    <Text style={{fontSize: 50, fontWeight: '700', color: colorOne}}>.</Text>
-                    <Text style={{fontSize: 50, fontWeight: '700', color: colorTwo}}>.</Text>
+                    <Text style={[bulletsStyles.bulletFont, {color: colorOne}]}>.</Text>
+                    <Text style={[bulletsStyles.bulletFont, {color: colorTwo}]}>.</Text>
                 </View>
 
         );
