@@ -13,9 +13,6 @@ import { SearchBar } from 'react-native-elements';
 export default class SpecificCategoryScreen extends React.Component {
 
 
-
-
-
     /* Render function for the flat list  */
     renderArticles = ({item, index}, check) => {
         return (

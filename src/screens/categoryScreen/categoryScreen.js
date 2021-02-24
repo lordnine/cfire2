@@ -27,7 +27,7 @@ export default class CategoryScreen extends React.Component {
     noResults: true,
   };
   
-
+  // HANDLE SEARCH
   updateSearch = (search) => {
     this.setState({ search });
     let tempData = this.filterList(search);
@@ -36,6 +36,7 @@ export default class CategoryScreen extends React.Component {
     this.setState({filteredData: tempData});
   };
 
+  // FILTER BY SEARCH
   filterList (search) {
     return articles.filter(
       (item) => 
@@ -43,8 +44,8 @@ export default class CategoryScreen extends React.Component {
     );
   }
 
-
-  renderArticles = ({item, index}) => {
+  // RENDER THE CATEGORIES
+  renderCategories = ({item, index}) => {
     return (
       <View style={categoryScreenStyles.articleContainer}>
         <CategoryCard item={item} navigation={this.props.navigation}/>
@@ -52,75 +53,83 @@ export default class CategoryScreen extends React.Component {
     );
   }
 
-  renderSecondary = ({item, index}) => {
-  return (
-    <View style={categoryScreenStyles.articleContainer}>
-      <Card item={item} navigation={this.props.navigation}/>
-    </View>
-  );
-}
+  // RENDER THE CARDS DURING SEARCH
+  renderCards = ({item, index}) => {
+    return (
+      <View style={categoryScreenStyles.articleContainer}>
+        <Card item={item} navigation={this.props.navigation}/>
+      </View>
+    );
+  }
 
   
 
   render() {
+
     const { search } = this.state;
+
+    // THE FLATLIST RETURNED WHEN SEARCHED
     const searchFlatList = (
-          <FlatList
+      <FlatList
           data={this.state.noData ? this.state.data : this.state.filteredData}
           numColumns={2}
-          renderItem={this.renderSecondary}
+          renderItem={this.renderCards}
           >
-       </FlatList>);
+       </FlatList>
+    );
 
+    // FLATLIST FOR CATEGORIES
     const categoryFlatList = (
       <View>
-      <Text style={{marginLeft: 2, fontSize: 28, fontWeight: '700'}}> Categories </Text>
-      <FlatList
-        data={categories}
-        numColumns={2}
-        renderItem={this.renderArticles}
-        scrollEnabled={false}
-        >
-      </FlatList>
+        <Text style={categoryScreenStyles.categoryTitle}> Categories </Text>
+        <FlatList
+          data={categories}
+          numColumns={2}
+          renderItem={this.renderCategories}
+          scrollEnabled={false}
+          >
+        </FlatList>
       </View>
     );
 
+    // TEXT DISPLAYED IF NO RESULTS
     const noResultsFound = (
-      <Text style={{fontSize: 18, fontWeight: '600', textAlign: 'center'}}> No Deals Found </Text>
+      <Text style={categoryScreenStyles.noResults}> No Deals Found </Text>
     );
+
     return(
       
-      <View style={{height: '100%', width: '100%', backgroundColor: '#e6e6e6'}}>
+      <View style={categoryScreenStyles.basicGreyBackground}>
 
         <Divider style={adjustableStyleFunctions.transparentDivider('2.5%')} />
 
+        {/* SEARCH BAR */}
         <SearchBar 
           inputStyle={{backgroundColor: '#d6dbe0'}}
           inputContainerStyle={{backgroundColor: '#d6dbe0'}}
           searchIcon={{ size: 24 }}
-          containerStyle={{width: '98%', backgroundColor: '#e4e6eb', borderBottomColor: 'transparent', borderTopColor: 'transparent', marginHorizontal: '1%'}}
+          containerStyle={categoryScreenStyles.searchBarContainer}
           placeholder='Search'
           onChangeText={this.updateSearch}
           value={search}
         />
 
+        <Divider style={adjustableStyleFunctions.transparentDivider('1%')} />
 
-      <Divider style={adjustableStyleFunctions.transparentDivider('1%')} />
+        {/* CONDITIONALLY RENDER NO RESULTS FOUND */}
+        {!this.state.noData && this.state.noResults ? noResultsFound : null}  
 
-      {!this.state.noData && this.state.noResults ? noResultsFound : null}  
+        {/* RENDER CATEGORIES OR SEARCHED CARDS */}
+        <View style={categoryScreenStyles.listContainer}>
 
+          {!this.state.noData && !this.state.noResults ? searchFlatList : null }
 
-      <View style={categoryScreenStyles.listContainer}>
-
-
-      {!this.state.noData && !this.state.noResults ? searchFlatList : null }
-
-
+          {/* Render the cards in a list */}  
       
-     {/* Render the cards in a list */}  
-      
-        {this.state.noData ? categoryFlatList : null }
-      </View>
+          {this.state.noData ? categoryFlatList : null }
+
+        </View>
+        
       </View>
     );
   }
