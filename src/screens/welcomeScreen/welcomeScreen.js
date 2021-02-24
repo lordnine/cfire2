@@ -16,10 +16,42 @@ import { ScrollView } from 'react-native-gesture-handler';
 import welcomeScreenStyles from './welcomeScreenStyles.js';
 
 
+
+
+
+
 export default class WelcomeScreen extends React.Component {
+
+  state = {
+    carouselOne: true,
+    carouselTwo: false,
+  };
+
+
+  handleScrollEnd = (data) => {
+    if(data.nativeEvent.contentOffset.x > 0){
+      this.setState({carouselTwo: true, carouselOne: false});
+    }
+    else{
+      this.setState({carouselOne: true, carouselTwo: false});
+    }
+  };
 
 
     render() {
+     const displayOne = (
+        <View style={{flexDirection: 'row', paddingBottom: 6}}>
+        <Text style={{fontSize: 50, fontWeight: '700', color: 'white'}}>.</Text>
+        <Text style={{fontSize: 50, fontWeight: '700', color: '#526578'}}>.</Text>
+        </View>
+      );
+
+      const displayTwo = (
+        <View style={{flexDirection: 'row', paddingBottom: 6,}}>
+        <Text style={{fontSize: 50, fontWeight: '700', color: '#526578'}}>.</Text>
+        <Text style={{fontSize: 50, fontWeight: '700', color: 'white'}}>.</Text>
+        </View>
+      );
       return (
         <View style={containers.frameContainer}>
 
@@ -39,25 +71,28 @@ export default class WelcomeScreen extends React.Component {
             showsHorizontalScrollIndicator={false}   
             scrollEventThrottle={200}
             decelerationRate="fast"
-            pagingEnabled>
+            pagingEnabled
+            onMomentumScrollEnd={(data) => this.handleScrollEnd(data)}
+            
+            >
 
               <View style={welcomeScreenStyles.carouselElement}>
+                  <Divider style={adjustableStyleFunctions.transparentDivider('20%')} />
                   <Text style={welcomeScreenStyles.elementTitle}>What's Up</Text>
                   <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
                   <Text style={welcomeScreenStyles.elementSubTitle}>Looking for great deals in your college town?</Text>
-                  <Text style={{position: 'absolute', paddingTop: '60%', alignItems: 'center', color: 'white', fontSize: 76}}>.</Text>
               </View>
           
           
               <View style={welcomeScreenStyles.carouselElement}>
+                  <Divider style={adjustableStyleFunctions.transparentDivider('20%')} />
                   <Text style={welcomeScreenStyles.elementTitle}>Sign In</Text>
                   <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
                   <Text style={welcomeScreenStyles.elementSubTitle}>And get connected with local small businesses</Text>
-                  <Text style={{position: 'absolute', paddingTop: '60%', alignItems: 'center', color: 'white', fontSize: 76}}>..</Text>
               </View>
 
           </ScrollView>
-
+          {this.state.carouselOne ? displayOne : displayTwo}
         </View>
 
 

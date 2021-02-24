@@ -9,8 +9,11 @@ const welcomeScreenStyles = {
     },
 
     carouselContainer: {
-        height: '36%', 
+        height: '33%', 
         width: 340,
+        backgroundColor: '#25284f', 
+        borderRadius: 10,
+        alignItems: 'center'
     },
 
     carouselStyle: {
