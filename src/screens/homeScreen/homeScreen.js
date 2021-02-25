@@ -5,7 +5,6 @@ import {
   FlatList,
 } from 'react-native';
 import Card from '../../components/card';
-import articles from '../../constants/articles';
 import homeScreenStyles from './homeScreenStyles';
 import { db } from '../../utils/firebase.js';
 
@@ -41,25 +40,25 @@ export default class HomeScreen extends React.Component {
       return(
         
         <View style={homeScreenStyles.listContainer}>
-     
+        
 
        {/* Render the cards in a list */}  
-        <FlatList
-          data={this.state.items}
-          numColumns={1}
-          renderItem={this.renderArticles}
-          showsVerticalScrollIndicator={false}
-          keyExtractor={item => item.key.toString()}
-          
-      /*    data={articles}
-          numColumns={1}
-          renderItem={this.renderArticles}
-          keyExtractor={item => item.key.toString()}
-          showsVerticalScrollIndicator={false}
+          <FlatList
+             data={this.state.items}
+             numColumns={1}
+             renderItem={this.renderArticles}
+             showsVerticalScrollIndicator={false}
+             keyExtractor={item => item.key.toString()}
 
-      */
-          >
-        </FlatList>
+         /*    data={articles}
+             numColumns={1}
+             renderItem={this.renderArticles}
+             keyExtractor={item => item.key.toString()}
+             showsVerticalScrollIndicator={false}
+
+         */
+             >
+           </FlatList>
 
         </View>
         

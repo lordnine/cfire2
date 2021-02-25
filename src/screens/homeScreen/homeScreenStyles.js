@@ -5,9 +5,8 @@ const homeScreenStyles = {
 
     articleContainer: {
         width: '98%',
-        padding: '0%',
+        paddingTop: '1.5%',
         marginHorizontal: '1%',
-        marginVertical: '1%'
     },
 
     listContainer: {
