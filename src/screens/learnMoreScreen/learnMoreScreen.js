@@ -19,12 +19,8 @@ import text from '../../styles/text.js';
 
 export default class LearnMoreScreen extends React.Component {
 
-
-
-
-
-
-    renderArticles = ({item, index}) => {
+    // RENDER THE CATEGORIES
+    renderCategories = ({item, index}) => {
         return (
           <View style={learnMoreScreenStyles.articleContainer}>
             <CategoryCard item={item} navigation={this.props.navigation} disabled={true}/>
@@ -34,65 +30,71 @@ export default class LearnMoreScreen extends React.Component {
 
     render() {
 
-      /* gets card key from route */
 
       return (
-        <View style={{height: '100%', justifyContent: 'flex-end', backgroundColor: '#000437'}}>
-        <View style={{width: '100%', height: '95%', backgroundColor: 'white', alignItems: 'center', borderRadius:12}}>
-            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#000437', marginTop: '1%'}]}  resizeMode='contain' source={logo}/>
-            <View style={{alignItems: 'center', height: '60%'}}>
-            <Text style={{color: 'grey', fontSize: 27, fontWeight: '800', color: '#000437'}}> A New Way To Save </Text>
-            <Divider style={adjustableStyleFunctions.transparentDivider('2%')}></Divider>
 
-            <View style={{width: '92%', height: '64%', backgroundColor:'#e6e6e6', borderRadius: 18}}>
-                <View style={{marginHorizontal: '1.5%', marginVertical: '1%'}}>
-                 <FlatList
+        <View style={learnMoreScreenStyles.blueBackground}>
+          <View style={learnMoreScreenStyles.whiteBackground}>
+            <Divider style={adjustableStyleFunctions.transparentDivider('1%')} />
+            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#000437'}]}  
+            resizeMode='contain' 
+            source={logo}
+            />
+            <View style={learnMoreScreenStyles.bottomContent}>
+              <Text style={learnMoreScreenStyles.mainTitle}> A New Way To Save </Text>
+              <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
+
+              <View style={learnMoreScreenStyles.flatListBackground}>
+                <View style={learnMoreScreenStyles.flatListContainer}>
+                  <FlatList
                     data={categories}
                     numColumns={2}
-                    renderItem={this.renderArticles}
+                    renderItem={this.renderCategories}
                     scrollEnabled={false}
-                 >
-                </FlatList>
+                    >
+                  </FlatList>
                 </View>
-            </View>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')}></Divider>
-                <View style={{width: '90%', alignText: 'flex-start', marginTop: '3%'}}>
-                    <Text style={{marginHorizontal: '2%', fontWeight: '600', fontSize: 15, textAlign:'justify'}}>
-                        Get connected with small businesses near your campus through exclusive offerings and limited time sales. Don't miss out on an opportunity to save some cash. The best part? It's absolutely free to use! Just sign up with your college email address and start saving today.
-                    </Text>
-                    <Divider style={adjustableStyleFunctions.transparentDivider('8%')}></Divider>
-                    <Text style={{marginLeft: '2%', fontWeight: '600', fontSize: 15, textAlign: 'justify'}}>
-                        Don't see your school on our list? Click the link below and we'll get in touch. And sorry for any delays - we're new to this.
-                    </Text>
-                </View>
+              </View>
+
+
+              <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')}></Divider>
+
+              <View style={learnMoreScreenStyles.textContainer}>
+                <Text style={learnMoreScreenStyles.bodyText}>
+                    Get connected with small businesses near your campus through exclusive offerings and limited time sales. Don't miss out on an opportunity to save some cash. The best part? It's absolutely free to use! Just sign up with your college email address and start saving today.
+                </Text>
+                <Divider style={adjustableStyleFunctions.transparentDivider('6%')}></Divider>
+                <Text style={learnMoreScreenStyles.bodyText}>
+                    Don't see your school on our list? Click the link below and we'll get in touch. And sorry for any delays - we're new to this.
+                </Text>
+              </View>
+
+
                 <View style={learnMoreScreenStyles.buttonContainer}>
          
-              
-         <View style={learnMoreScreenStyles.buttonWidth}>
-              <Button
-                title="New School"
-                buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
-                titleStyle={text.learnMoreMinimalistButtonText}
-                onPress={() => this.props.navigation.navigate('SuggestedSchool')}
-               />
-             </View>
-             
-             
-             
-             <View style={learnMoreScreenStyles.buttonWidth}>
-               <Button
-                 title="Get Started"
-                 buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
-                 titleStyle={text.learnMoreInverseMinimalistButtonText}
-                 onPress={() => this.props.navigation.navigate('Drawer')}
-               />
-             </View>
-        </View>
+                    <View style={learnMoreScreenStyles.buttonWidth}>
+                      <Button
+                        title="New School"
+                        buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
+                        titleStyle={text.learnMoreMinimalistButtonText}
+                        onPress={() => this.props.navigation.navigate('SuggestedSchool')}
+                        />
+                    </View>
+          
+                    <View style={learnMoreScreenStyles.buttonWidth}>
+                      <Button
+                        title="Get Started"
+                        buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
+                        titleStyle={text.learnMoreInverseMinimalistButtonText}
+                        onPress={() => this.props.navigation.navigate('Drawer')}
+                        />
+                    </View>
+                </View>
             </View>
-
-
+            
+          </View>
         </View>
-        </View>
+
       );
     }
 }

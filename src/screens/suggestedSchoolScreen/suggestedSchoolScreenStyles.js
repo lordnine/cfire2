@@ -16,8 +16,6 @@ const suggestedSchoolScreenStyles = {
         color: '#000437',
     },
 
-
-
     elementTitle: {
         fontSize: 21, 
         fontWeight: '600', 

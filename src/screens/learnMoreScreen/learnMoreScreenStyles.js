@@ -30,7 +30,58 @@ const learnMoreScreenStyles = {
 
     buttonWidth: {
         width: '49%'
+    },
+
+    mainTitle: {
+        fontSize: 27, 
+        fontWeight: '800', 
+        color: '#000437',
+    },
+
+    blueBackground: {
+        height: '100%', 
+        justifyContent: 'flex-end', 
+        backgroundColor: '#000437'
+    },
+
+    whiteBackground: {
+        width: '100%', 
+        height: '95%', 
+        backgroundColor: 'white', 
+        alignItems: 'center', 
+        borderRadius:12
+    },
+
+    flatListBackground: {
+        width: '92%', 
+        height: '64%', 
+        backgroundColor:'#e6e6e6', 
+        borderRadius: 18,
+    },
+
+    flatListContainer: {
+        marginHorizontal: '1.5%', 
+        marginVertical: '1%',
+    },
+
+    textContainer: {
+        width: '90%', 
+        alignText: 'flex-start', 
+        marginTop: '3%'
+    },
+
+    bodyText: {
+        marginHorizontal: '2%', 
+        fontWeight: '600', 
+        fontSize: 15, 
+        textAlign:'justify'
+    },
+
+    bottomContent: {
+        alignItems: 'center', 
+        height: '60%'
     }
+
 
 };
 
