@@ -12,14 +12,14 @@ const welcomeScreenStyles = {
         height: '33%', 
         width: 340,
         backgroundColor: '#25284f', 
-        borderRadius: 10,
+        borderRadius: 18,
         alignItems: 'center'
     },
 
     carouselStyle: {
         backgroundColor: '#25284f', 
         width: '100%', 
-        borderRadius: 10,
+        borderRadius: 18,
     },
 
     buttonContainer: {

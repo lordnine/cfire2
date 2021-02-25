@@ -71,7 +71,7 @@ const suggestedSchoolScreenStyles = {
         height: 44,
         borderWidth: 2,
         borderColor: 'white',
-        borderRadius: 10
+        borderRadius: 12
     }
 
 };
