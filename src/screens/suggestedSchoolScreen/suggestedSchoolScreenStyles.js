@@ -60,7 +60,7 @@ const suggestedSchoolScreenStyles = {
 
     inputContainer: {
         backgroundColor: '#000437',
-        height: '42%%',
+        height: '64%%',
         width: '94%',
         justifyContent: 'center',
         paddingHorizontal: '4%',

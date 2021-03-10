@@ -18,10 +18,12 @@ import { db } from '../../utils/firebase';
 
 
 //adds the information provided by user to suggestedSchools in DB
-let addItem = (school, email) => {
+let addItem = (school, email, firstName, lastName) => {
     db.ref('/suggestedSchools').push({
         schoolName: school,
         email: email,
+        firstName: firstName,
+        lastName: lastName,
     });
   };
 
@@ -31,13 +33,17 @@ export default class suggestedSchoolScreen extends React.Component {
   state = {
     schoolName: '',
     email: '',
+    firstName: '',
+    lastName: '',
   };
 
 
   handleSubmit = () => {
-      addItem(this.state.schoolName, this.state.email);
+      addItem(this.state.schoolName, this.state.email, this.state.firstName, this.state.lastName);
       this.state.schoolName = '';
       this.state.email = '';
+      this.state.firstName = '';
+      this.state.lastName = '';
   };
 
   render() {
@@ -51,18 +57,47 @@ export default class suggestedSchoolScreen extends React.Component {
           source={logo}/>
 
           {/* HEADER */}
-          <Divider style={adjustableStyleFunctions.transparentDivider('9.5%')} />
+          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
           <Text style={suggestedSchoolScreenStyles.mainTitle}>Help Us Grow</Text>
           <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
  
 
           {/* INPUT CONTAINER AND BUTTONS */}
           <View style={suggestedSchoolScreenStyles.inputContainer}>
-
             {/* SCHOOL NAME INPUT */}
-            <Text style={suggestedSchoolScreenStyles.inputTitle}>School Name</Text>
+            <Text style={suggestedSchoolScreenStyles.inputTitle}>First Name</Text>
             <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
             <TextInput
+                style={suggestedSchoolScreenStyles.inputText}
+                maxLength={35}
+                placeholder="Stiven"
+                placeholderTextColor="white"
+                autoCapitalize="none"
+                spellCheck={false}
+                value={this.state.firstName}
+                onChangeText={newFirstName => this.setState({ firstName: newFirstName })}
+            />
+
+              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+
+            <Text style={suggestedSchoolScreenStyles.inputTitle}>Last Name</Text>
+            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+            <TextInput
+                style={suggestedSchoolScreenStyles.inputText}
+                maxLength={35}
+                placeholder="Isacrub"
+                placeholderTextColor="white"
+                autoCapitalize="none"
+                spellCheck={false}
+                value={this.state.lastName}
+                onChangeText={newLastName => this.setState({ lastName: newLastName })}
+            />
+
+              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+
+            <Text style={suggestedSchoolScreenStyles.inputTitle}>School Name</Text>
+            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+              <TextInput
                 style={suggestedSchoolScreenStyles.inputText}
                 maxLength={35}
                 placeholder="College University"
@@ -73,7 +108,7 @@ export default class suggestedSchoolScreen extends React.Component {
                 onChangeText={newSchoolName => this.setState({ schoolName: newSchoolName })}
             />
 
-              <Divider style={adjustableStyleFunctions.transparentDivider('7.5%')} />
+              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
               
               {/* SCHOOL EMAIL */}
               <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
@@ -88,7 +123,7 @@ export default class suggestedSchoolScreen extends React.Component {
                 value={this.state.email}
                 onChangeText={newEmail => this.setState({ email: newEmail })}
               />
-              <Divider style={adjustableStyleFunctions.transparentDivider('10%')} />
+              <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
 
               {/* BUTTON CONTAINER */}
               <View style={suggestedSchoolScreenStyles.buttonContainer}>

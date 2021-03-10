@@ -8,7 +8,7 @@ const cardStyles = {
         marginBottom: 2,
         borderWidth: 0,
         minHeight: 162,
-        borderRadius: 8,
+        borderRadius: 10,
         flex: 1,
         height:'40%',
         width: '100%'
@@ -23,7 +23,7 @@ const cardStyles = {
     },
 
     imageContainer: {
-        borderRadius: 4,
+        borderRadius: 10,
         elevation: 1,
         overflow: 'hidden',
         height: 130,
