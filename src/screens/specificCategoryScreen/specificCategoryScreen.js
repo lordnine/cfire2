@@ -8,50 +8,91 @@ import {
 import Card from '../../components/card';
 import articles from '../../constants/articles';
 import specificCategoryScreenStyles from './specificCategoryScreenStyles';
+import { db } from '../../utils/firebase';
 
 export default class SpecificCategoryScreen extends React.Component {
 
 
+  state={
+    items: []
+  };
+  componentDidMount() {
+    var dealBlurb = '';
+    var time = '';
+    var storeID = '0';
+    var storeName = '';
+    var categoryID = '';
+    var temp = [];
+    var key = "1";
+    const { check } = this.props.route.params;
+
+    db.collection("deals").where("categoryID", "==", check).get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+
+          if(doc.exists){
+            dealBlurb = doc.data().dealBlurb;
+            time = doc.data().time;
+            storeID = doc.data().storeID.toString();
+            storeName = doc.data().storeName;
+            categoryID = doc.data().categoryID;
+            key = doc.data().key;
+            temp.push({
+              dealBlurb: dealBlurb,
+              time: time,
+              storeName: storeName,
+              categoryID: categoryID,
+              key: key
+            });
+            this.setState({items: temp});
+
+          } 
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    });
+  }
     /* Render function for the flat list  */
-    renderArticles = ({item, index}, check) => {
-        return (
-          <View style={specificCategoryScreenStyles.articleContainer}>
-            <Card item={item} navigation={this.props.navigation}/>
-          </View>
-        );
+   
+   
+    renderArticles = ({item, index}) => {
+
+    return (
+        <View style={specificCategoryScreenStyles.articleContainer}>
+          <Card dealBlurb={item.dealBlurb} 
+          time={item.time} storeName={item.storeName} 
+          categoryID={item.categoryID} 
+          navigation={this.props.navigation}/>
+        </View>
+      );
     }
 
-    
+ 
+
+
     render() {
-      const { check } = this.props.route.params;
-      const newArticles = [];
-      for(let i=0; i < articles.length; i++){
-        if(articles[i].category == check){
-          newArticles.push(articles[i]);
-        }
-      };
-
+      const {check} = this.props.route.params;
+    
       return(
-
         
         <View style={specificCategoryScreenStyles.listContainer}>
-          
-       {/* Render the cards in a list */}  
-        <FlatList
-            data={newArticles}
-            numColumns={1}
-            renderItem={(item) => this.renderArticles(item, check)}
-            style={{}}
-            keyExtractor={item => item.key.toString()}
-            showsVerticalScrollIndicator={false}
-          >
-        </FlatList>
-        
+
+          <FlatList
+             data={this.state.items}
+             numColumns={1}
+             renderItem={this.renderArticles}
+             showsVerticalScrollIndicator={false}
+             keyExtractor={(item,index) => item.key}
+             >
+           </FlatList>
+
         </View>
         
       );
     }
 }
+
 
 
 const styles = StyleSheet.create({

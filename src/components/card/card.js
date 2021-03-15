@@ -17,19 +17,13 @@ import scissorslogo from '../../assets/images/scissorslogo.png';
 
 class Card extends React.Component {
     render() {
-        const { navigation, item, horizontal, full, style, ctaColor, imageStyle, food, key} = this.props;
+        const { navigation, dealBlurb, storeName, categoryID, key, time} = this.props;
 
         const crdContainer = [cardStyles.card, cardStyles.shadow];
-        const imgContainer = [cardStyles.imageContainer,
-            horizontal ? cardStyles.horizontalStyles : cardStyles.verticalStyles,
-            cardStyles.shadow
+        const imgContainer = [cardStyles.imageContainer, cardStyles.horizontalStyles, cardStyles.shadow
         ];
-        const backgroundStyles = [
-          item.food ? cardStyles.foodBackground : cardStyles.regBackground,
-        ];
-        const colorStyles = [
-          item.food ? cardStyles.foodStuff : cardStyles.regStuff,
-        ];
+        const backgroundStyles = [ cardStyles.regBackground];
+        const colorStyles = [cardStyles.regStuff];
 
         const categoryLogo = [burgerlogo, shoppinglogo, supplieslogo, scissorslogo];
 
@@ -38,22 +32,22 @@ class Card extends React.Component {
             <View style={crdContainer}>
 
               {/* Top portion of the card - contains company name and color currently */}
-              <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
+              <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { key: this.props.key})}>
                 <View style={[imgContainer, backgroundStyles]}>
                   <View style={cardStyles.companyNameContainer}>
-                    <Text style={colorStyles}>{item.companyName}</Text>
+                    <Text style={colorStyles}>{this.props.storeName}</Text>
                   </View>
 
                   <View style={cardStyles.dealContainer}>
-                    <Text style={cardStyles.dealText}>{item.deal}</Text>
+                    <Text style={cardStyles.dealText}>{this.props.dealBlurb}</Text>
                   </View>
 
                   <View style={cardStyles.dateContainer}>
-                    <Text style={cardStyles.dateText}>{item.date}d</Text>
+                    <Text style={cardStyles.dateText}>{this.props.time}d</Text>
                   </View>
 
                   <View style={cardStyles.categoryContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
-                    <Image style={cardStyles.categoryImage} source={categoryLogo[item.category]} resizeMode='contain'></Image>
+                    <Image style={cardStyles.categoryImage} source={categoryLogo[this.props.categoryID]} resizeMode='contain'></Image>
                   </View>
 
                   <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { element: item})}>

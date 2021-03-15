@@ -17,15 +17,6 @@ import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 import { db } from '../../utils/firebase';
 
 
-//adds the information provided by user to suggestedSchools in DB
-let addItem = (school, email, firstName, lastName) => {
-    db.ref('/suggestedSchools').push({
-        schoolName: school,
-        email: email,
-        firstName: firstName,
-        lastName: lastName,
-    });
-  };
 
 
 export default class suggestedSchoolScreen extends React.Component {
