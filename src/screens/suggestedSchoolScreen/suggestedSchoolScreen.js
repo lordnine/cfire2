@@ -16,7 +16,7 @@ import text from '../../styles/text';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 import { db } from '../../utils/firebase';
 
-
+var suggestedSchoolRef = db.collection("suggestedSchools");
 
 
 export default class suggestedSchoolScreen extends React.Component {
@@ -30,7 +30,12 @@ export default class suggestedSchoolScreen extends React.Component {
 
 
   handleSubmit = () => {
-      addItem(this.state.schoolName, this.state.email, this.state.firstName, this.state.lastName);
+      suggestedSchoolRef.doc(this.state.schoolName).set({
+        schoolName: this.state.schoolName,
+        email: this.state.email,
+        firstName: this.state.firstName,
+        lastName: this.state.lastName
+      });
       this.state.schoolName = '';
       this.state.email = '';
       this.state.firstName = '';
