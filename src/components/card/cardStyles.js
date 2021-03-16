@@ -40,18 +40,8 @@ const cardStyles = {
         backgroundColor: 'grey',
     },
 
-    foodStuff: {
-        fontSize: 20,
-        fontWeight: '800',
-        color: '#5d3c85',
-        paddingLeft: '4%',
-        paddingRight: '4%',
-        paddingBottom: '2%',
-        textAlign: 'center',
-    },
-
-    regStuff: {
-        fontSize: 20,
+    companyNameText: {
+        fontSize: 22,
         fontWeight: '800',
         color: '#5d3c85',
         paddingLeft: '4%',
@@ -59,10 +49,6 @@ const cardStyles = {
         paddingTop: '2%',
         paddingBottom: '2%',
         textAlign: 'center',
-    },
-
-    foodBackground:{
-        backgroundColor: 'white',
     },
 
     regBackground:{
@@ -92,7 +78,8 @@ const cardStyles = {
     
     companyNameContainer: {
         width: '100%', 
-        height:'94%', 
+        height:'92%',
+        marginTop: '4%', 
         alignItems:'center', 
         justifyContent: 'center', 
         position: 'absolute',
@@ -106,9 +93,20 @@ const cardStyles = {
         position: 'absolute',
     },
 
+    shareContainer: {
+        //height: '12%', 
+        justifyContent: 'flex-end',
+        height: '7.8%',
+        width: '8%',
+        alignItems: 'flex-end',
+        marginTop: '47.8%',
+        marginLeft: '3%',
+        fontSize: 13, 
+        fontWeight: '600', 
+    },
+
     dealText: {
         color: '#242526', 
-        marginLeft: '4.5%', 
         fontSize: 16, 
         fontWeight: '600', 
         marginBottom: '4%'
@@ -139,7 +137,7 @@ const cardStyles = {
     },
 
     categoryImage: {
-        height: '9%', 
+        height: '8%', 
         flexWrap: 'nowrap', 
         marginTop: '4%', 
         marginRight: '86%',
@@ -155,11 +153,15 @@ const cardStyles = {
     },
 
     qrImage: {
-        height: '12%', 
-        flexWrap: 'nowrap', 
-        marginBottom: '4.5%', 
-        marginLeft: '84%',
-        tintColor: 'cornflowerblue'
+        height: '8.5%', 
+        justifyContent: 'flex-end',
+        alignItems: 'flex-end',
+        marginBottom: '4%',
+        marginLeft: '85%',
+        tintColor: `#8095ed`
+        //color: 'steelblue',
+       // fontSize: 13, 
+       // fontWeight: '600', 
     },
 
 };

@@ -11,11 +11,15 @@ import { db } from '../../utils/firebase';
 
 var dealRef = db.collection("deals");
 
+
 export default class HomeScreen extends React.Component {
   
   state={
-    items: []
+    items: [],
+    dealBlurb: ''
   };
+
+  
   componentDidMount() {
     var dealBlurb = '';
     var time = '';
@@ -50,13 +54,61 @@ export default class HomeScreen extends React.Component {
     })
     .catch((error) => {
         console.log("Error getting documents: ", error);
+    })
+    .finally(() => {
+      
     });
   }
     /* Render function for the flat list  */
-   
-   
-    renderArticles = ({item, index}) => {
 
+  
+    renderArticles = ({item, index}) => {
+     /*
+     
+      var time = '';
+      var storeID = '0';
+      var storeName = '';
+      var categoryID = '';
+      var key = "1";
+      var dealBlurb = '';
+      async function processDeals() {
+        let dealRef = db.collection("deals").doc(item.toString());
+        let activeDeal = await dealRef.get();
+        time = activeDeal.data().time;
+        storeName = activeDeal.data().storeName;
+        categoryID = activeDeal.data().categoryID;
+        dealBlurb = activeDeal.data().dealBlurb;
+      };
+      try{
+        processDeals();
+      }
+      catch(err){
+        console.log("erorr getting dod", err);
+      }
+
+*/
+
+    /*  db.collection("deals").doc(item.toString()).get().then(
+        (doc) => {
+          if(doc.exists){
+            dealBlurb = doc.data().dealBlurb;
+          }
+        })
+        .catch((error) => {
+          console.log("Error getting documents: ", error);
+      })
+      .finally(() => {
+        console.log('hello world');
+        return (
+          <View style={homeScreenStyles.articleContainer}>
+            <Card dealBlurb={item.dealBlurb} 
+            time={item.time} storeName={item.storeName} 
+            categoryID={item.categoryID} 
+            navigation={this.props.navigation}/>
+          </View>
+        );
+      });
+*/
     return (
         <View style={homeScreenStyles.articleContainer}>
           <Card dealBlurb={item.dealBlurb} 
@@ -65,6 +117,8 @@ export default class HomeScreen extends React.Component {
           navigation={this.props.navigation}/>
         </View>
       );
+
+
     }
 
  
@@ -81,7 +135,7 @@ export default class HomeScreen extends React.Component {
              numColumns={1}
              renderItem={this.renderArticles}
              showsVerticalScrollIndicator={false}
-             keyExtractor={(item,index) => item.key}
+             keyExtractor={(item,index) => item.key.toString()}
              >
            </FlatList>
 
