@@ -26,7 +26,7 @@ class BigCard extends React.Component {
 
                   {/* Render company image at the top of the card */}
                     <View style={bigCardStyles.imageContainer}> 
-                        <Image source={imgArray[this.props.id]} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
+                        <Image source={{uri: 'https://www.magiccityweekend.com/wp-content/uploads/2020/09/chipotle-burrito-bowl.jpg' }} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
                     </View>
 
                     <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>
