@@ -68,7 +68,7 @@ const suggestedSchoolScreenStyles = {
     },
 
     button: {
-        height: 44,
+        minHeight: 50,
         borderWidth: 2,
         borderColor: 'white',
         borderRadius: 12

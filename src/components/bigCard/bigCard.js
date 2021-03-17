@@ -12,7 +12,7 @@ import imgArray from '../../constants/imgArray';
 
 class BigCard extends React.Component {
     render() {
-        const { key, storeName, categoryID, address, dealText} = this.props;
+        const { id, storeName, categoryID, address, dealText} = this.props;
 
         const crdContainer = [bigCardStyles.card, bigCardStyles.shadow];
         const touchableContainer = [bigCardStyles.wrappedContainer, bigCardStyles.cardStyles]
@@ -26,7 +26,7 @@ class BigCard extends React.Component {
 
                   {/* Render company image at the top of the card */}
                     <View style={bigCardStyles.imageContainer}> 
-                        <Image source={imgArray[this.props.key]} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
+                        <Image source={imgArray[this.props.id]} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
                     </View>
 
                     <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>

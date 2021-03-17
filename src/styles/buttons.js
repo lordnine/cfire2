@@ -5,6 +5,7 @@ const buttons = {
   
     mainButton: {
         height: 50,
+        minHeight: 50,
         borderWidth: 2,
         borderRadius: 12,
     },

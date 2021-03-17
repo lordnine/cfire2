@@ -26,6 +26,7 @@ export default class suggestedSchoolScreen extends React.Component {
     email: '',
     firstName: '',
     lastName: '',
+    processSubmit: false
   };
 
 
@@ -37,14 +38,18 @@ export default class suggestedSchoolScreen extends React.Component {
         firstName: this.state.firstName,
         lastName: this.state.lastName
       });
-      this.state.schoolName = '';
-      this.state.email = '';
-      this.state.firstName = '';
-      this.state.lastName = '';
+      this.setState({schoolName: '', email: '', firstName: '', lastName: ''});
+      this.setState({processSubmit: true});
     }
   };
 
+
   render() {
+    const handleAwait = (
+          <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={{color: 'darkcyan', fontWeight: '700'}}> SUBMITTED! </Text>
+          </View>
+    );
     return (
       <View style={[suggestedSchoolScreenStyles.genericGreyContainer, {justifyContent: 'center'}]}>
 
@@ -70,7 +75,7 @@ export default class suggestedSchoolScreen extends React.Component {
           <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
           </View> 
 
-          <Divider style={adjustableStyleFunctions.transparentDivider('6%')}/>
+          <Divider style={adjustableStyleFunctions.transparentDivider('5%')}/>
           <View style={{height: '78%'}}>
             {/* SCHOOL NAME INPUT */}
             <Text style={suggestedSchoolScreenStyles.inputTitle}>First Name</Text>
@@ -131,8 +136,7 @@ export default class suggestedSchoolScreen extends React.Component {
                 value={this.state.email}
                 onChangeText={newEmail => this.setState({ email: newEmail })}
               />
-              <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
-
+              <Divider style={adjustableStyleFunctions.transparentDivider('6.5%')} />
               {/* BUTTON CONTAINER */}
               <View style={suggestedSchoolScreenStyles.buttonContainer}>
 
@@ -157,6 +161,8 @@ export default class suggestedSchoolScreen extends React.Component {
                 </View>
 
               </View>
+              <Divider style={adjustableStyleFunctions.transparentDivider('3.5%')} />
+                      {this.state.processSubmit ? handleAwait : null}
               </View>
 
           </View>
