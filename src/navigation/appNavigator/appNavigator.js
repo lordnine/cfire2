@@ -15,6 +15,8 @@ import appNavigatorStyles from './appNavigatorStyles.js';
 import SpecificCategoryScreen from '../../screens/specificCategoryScreen';
 import LearnMoreScreen from '../../screens/learnMoreScreen';
 import SuggestedSchoolScreen from '../../screens/suggestedSchoolScreen';
+import CreateAccountScreen from '../../screens/createAccountScreen';
+import LoginScreen from '../../screens/loginScreen';
 
 
 const Stack = createStackNavigator();
@@ -92,6 +94,12 @@ const AppNavigator = () => (
       />
       <Stack.Screen 
         name="SuggestedSchool" component={SuggestedSchoolScreen} options={{headerShown: false}}
+      />
+      <Stack.Screen 
+        name="CreateAccount" component={CreateAccountScreen} options={{headerShown: false}}
+      />
+      <Stack.Screen 
+        name="Login" component={LoginScreen} options={{headerShown: false}}
       />
       <Stack.Screen 
       name="Learn" component={LearnMoreScreen} 
