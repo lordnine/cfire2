@@ -137,7 +137,7 @@ const AppNavigator = () => (
             marginLeft: 8
           },
           headerStyle: {
-            backgroundColor: '#5d3c85',
+            backgroundColor: '#8426E6',
           },
         } 
         )}  
@@ -149,7 +149,7 @@ const AppNavigator = () => (
           headerLeft: null, 
           headerRight: ( () => <DrawerBurger />),
           headerStyle: {
-            backgroundColor: '#5d3c85',
+            backgroundColor: '#8426E6',
           },
         } 
         )}  
@@ -162,7 +162,7 @@ const AppNavigator = () => (
           headerBackTitleVisible: false,
           headerRight: null,
           headerStyle: {
-            backgroundColor: '#5d3c85',
+            backgroundColor: '#8426E6',
           },
           headerLeftContainerStyle: {
             marginLeft: 8

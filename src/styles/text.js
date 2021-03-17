@@ -1,6 +1,5 @@
 
-
-export const CAMPFIRE_RED = '#000437';
+import { CAMPFIRE_RED } from './colors';
 
 const text = {
 
@@ -16,7 +15,7 @@ const text = {
 
     learnMoreMinimalistButtonText: {
         fontWeight: 'bold',
-        color: '#000437',
+        color: CAMPFIRE_RED,
     },
 
     learnMoreInverseMinimalistButtonText: {

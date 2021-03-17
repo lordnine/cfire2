@@ -1,4 +1,5 @@
 
+import { CAMPFIRE_RED } from './colors';
 
 const buttons = {
   
@@ -19,13 +20,13 @@ const buttons = {
     },
 
     learnMoreMinimalistButton: {
-        borderColor: '#000437',
+        borderColor: CAMPFIRE_RED,
         backgroundColor: 'transparent',
     },
 
     learnMoreMinimalistInverseButton: {
-        borderColor: '#000437',
-        backgroundColor: '#000437',
+        borderColor: '#8426E6',
+        backgroundColor: '#8426E6',
     }
 
 };

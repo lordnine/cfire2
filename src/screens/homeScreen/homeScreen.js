@@ -16,7 +16,7 @@ export default class HomeScreen extends React.Component {
   
   state={
     items: [],
-    dealBlurb: ''
+    dealBlurb: '',
   };
 
   
@@ -62,9 +62,8 @@ export default class HomeScreen extends React.Component {
     /* Render function for the flat list  */
 
   
-    renderArticles = ({item, index}) => {
+    renderArticles = ({item, index}, didPull = false) => {
      /*
-     
       var time = '';
       var storeID = '0';
       var storeName = '';
@@ -72,7 +71,7 @@ export default class HomeScreen extends React.Component {
       var key = "1";
       var dealBlurb = '';
       async function processDeals() {
-        let dealRef = db.collection("deals").doc(item.toString());
+        let dealRef = db.collection("deals").doc(item.key.toString());
         let activeDeal = await dealRef.get();
         time = activeDeal.data().time;
         storeName = activeDeal.data().storeName;
@@ -86,37 +85,22 @@ export default class HomeScreen extends React.Component {
         console.log("erorr getting dod", err);
       }
 
-*/
-
-    /*  db.collection("deals").doc(item.toString()).get().then(
-        (doc) => {
-          if(doc.exists){
-            dealBlurb = doc.data().dealBlurb;
+      */
+          function getComponent(navigation) {
+            return(
+              <View style={homeScreenStyles.articleContainer}>
+              <Card dealBlurb={item.dealBlurb} 
+                    time={item.time} storeName={item.storeName} 
+                    categoryID={item.categoryID} 
+                    id={item.key}
+                    navigation={navigation}/>
+            </View>
+            );
           }
-        })
-        .catch((error) => {
-          console.log("Error getting documents: ", error);
-      })
-      .finally(() => {
-        console.log('hello world');
-        return (
-          <View style={homeScreenStyles.articleContainer}>
-            <Card dealBlurb={item.dealBlurb} 
-            time={item.time} storeName={item.storeName} 
-            categoryID={item.categoryID} 
-            navigation={this.props.navigation}/>
-          </View>
-        );
-      });
-*/
-    return (
-        <View style={homeScreenStyles.articleContainer}>
-          <Card dealBlurb={item.dealBlurb} 
-          time={item.time} storeName={item.storeName} 
-          categoryID={item.categoryID} 
-          navigation={this.props.navigation}/>
-        </View>
-      );
+
+          return (
+            getComponent(this.props.navigation)
+          );
 
 
     }

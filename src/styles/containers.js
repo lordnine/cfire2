@@ -7,7 +7,7 @@ const containers = {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        backgroundColor: CAMPFIRE_RED,
+        backgroundColor:  '#8426E6',////// CAMPFIRE_RED,
         paddingHorizontal: '3%'
       },
     

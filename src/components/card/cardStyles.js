@@ -1,5 +1,5 @@
 
-
+import { CAMPFIRE_RED } from '../../styles/colors';
 const cardStyles = {
 
     card: {
@@ -41,9 +41,9 @@ const cardStyles = {
     },
 
     companyNameText: {
-        fontSize: 22,
+        fontSize: 20,
         fontWeight: '800',
-        color: '#5d3c85',
+        color: CAMPFIRE_RED,///'#551199',//////'#5d3c85',
         paddingLeft: '4%',
         paddingRight: '4%',
         paddingTop: '2%',
@@ -106,9 +106,9 @@ const cardStyles = {
     },
 
     dealText: {
-        color: '#242526', 
+        color: 'grey', 
         fontSize: 16, 
-        fontWeight: '600', 
+        fontWeight: '500', 
         marginBottom: '4%'
     },
     
@@ -123,7 +123,7 @@ const cardStyles = {
     dateText: {
         color: 'darkgrey', 
         marginRight: '4.5%', 
-        fontSize: 12, 
+        fontSize: 13, 
         fontWeight: '600', 
         marginTop: '4%',
     },
@@ -158,7 +158,7 @@ const cardStyles = {
         alignItems: 'flex-end',
         marginBottom: '4%',
         marginLeft: '85%',
-        tintColor: `#8095ed`
+        tintColor: `darkgrey`
         //color: 'steelblue',
        // fontSize: 13, 
        // fontWeight: '600', 

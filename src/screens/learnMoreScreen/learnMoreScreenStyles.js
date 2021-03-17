@@ -35,21 +35,21 @@ const learnMoreScreenStyles = {
     mainTitle: {
         fontSize: 27, 
         fontWeight: '800', 
-        color: '#000437',
+        color: '#8426E6',
     },
 
     blueBackground: {
         height: '100%', 
         justifyContent: 'flex-end', 
-        backgroundColor: '#000437'
+        backgroundColor: '#8426E6'
     },
 
     whiteBackground: {
         width: '100%', 
-        height: '95%', 
+        height: '100%', 
         backgroundColor: 'white', 
         alignItems: 'center', 
-        borderRadius:12
+        borderRadius:40
     },
 
     flatListBackground: {

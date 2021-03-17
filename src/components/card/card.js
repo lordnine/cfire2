@@ -33,7 +33,7 @@ class Card extends React.Component {
             <View style={crdContainer}>
 
               {/* Top portion of the card - contains company name and color currently */}
-              <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { key: this.props.key})}>
+              <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { element: 3})}>
                 <View style={[imgContainer, backgroundStyles]}>
                   <View style={cardStyles.companyNameContainer}>
                     <Text style={cardStyles.companyNameText}>{this.props.storeName}</Text>
@@ -44,17 +44,17 @@ class Card extends React.Component {
                     <Text style={cardStyles.dateText}>{this.props.time}d</Text>
                   </View>
 
-                  <View style={cardStyles.categoryContainer} onPress={() => this.props.navigation.navigate('Card', { key: this.props.key})}>
+                  <View style={cardStyles.categoryContainer} onPress={() => this.props.navigation.navigate('Card', { element: 2})}>
                     <Image style={[cardStyles.categoryImage, /*{tintColor: categoryColor[this.props.categoryID]}*/]} source={categoryLogo[this.props.categoryID]} resizeMode='contain'></Image>
                   </View>
 
-                  <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { element: this.props.key})}>
+                  <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { element: this.props.id})}>
                    {/*<Text style={cardStyles.qrImage}>QR</Text> */}
                     <Image style={cardStyles.qrImage}source={qrlogo} resizeMode='contain'></Image>   
                   </TouchableOpacity>
 
                   <View style={cardStyles.shareContainer}>
-                    <Image style={{height: '100%', width: '100%', tintColor: `#8095ed`}} source={sharelogo} resizeMode='contain'></Image>
+                    <Image style={{height: '100%', width: '100%', tintColor: `darkgrey`}} source={sharelogo} resizeMode='contain'></Image>
                   </View>
 
                 </View>

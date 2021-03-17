@@ -35,15 +35,16 @@ export default class LearnMoreScreen extends React.Component {
 
         <View style={learnMoreScreenStyles.blueBackground}>
           <View style={learnMoreScreenStyles.whiteBackground}>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1%')} />
-            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#000437'}]}  
+            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#8426E6'}]}  
             resizeMode='contain' 
             source={logo}
             />
+             <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
             <View style={learnMoreScreenStyles.bottomContent}>
               <Text style={learnMoreScreenStyles.mainTitle}> A New Way To Save </Text>
               <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
-
+            {/* 
               <View style={learnMoreScreenStyles.flatListBackground}>
                 <View style={learnMoreScreenStyles.flatListContainer}>
                   <FlatList
@@ -55,13 +56,13 @@ export default class LearnMoreScreen extends React.Component {
                   </FlatList>
                 </View>
               </View>
+*/}
 
-
-              <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')}></Divider>
+              <Divider style={adjustableStyleFunctions.transparentDivider('3%')}></Divider>
 
               <View style={learnMoreScreenStyles.textContainer}>
                 <Text style={learnMoreScreenStyles.bodyText}>
-                    Get connected with small businesses near your campus through exclusive offerings and limited time sales. Don't miss out on an opportunity to save some cash. The best part? It's absolutely free to use! Just sign up with your college email address and start saving today.
+                    Get connected with small businesses near your campus through exclusive offerings and limited time sales. Don't miss out on an opportunity to save some cash. The best part? It's free! Just sign up with your college email address and start saving today.
                 </Text>
                 <Divider style={adjustableStyleFunctions.transparentDivider('6%')}></Divider>
                 <Text style={learnMoreScreenStyles.bodyText}>
@@ -69,7 +70,7 @@ export default class LearnMoreScreen extends React.Component {
                 </Text>
               </View>
 
-
+              <Divider style={adjustableStyleFunctions.transparentDivider('6%')}></Divider>
                 <View style={learnMoreScreenStyles.buttonContainer}>
          
                     <View style={learnMoreScreenStyles.buttonWidth}>
