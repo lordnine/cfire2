@@ -12,6 +12,7 @@ import categoryScreenStyles from './categoryScreenStyles';
 import { SearchBar, Divider } from 'react-native-elements';
 import Card from '../../components/card';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
+import { db } from '../../utils/firebase';
 
 export default class CategoryScreen extends React.Component {
 
@@ -22,7 +23,40 @@ export default class CategoryScreen extends React.Component {
     filteredData: [],
     noData: true,
     noResults: true,
+    categories: [],
   };
+
+  componentDidMount() {
+    var categoryName = '';
+    var categoryColor = '';
+    var temp = [];
+    var key = "1";
+
+    db.collection("categories").get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+
+          if(doc.exists){
+            categoryName = doc.data().categoryName;
+            categoryColor = doc.data().categoryColor;
+            key = doc.data().key;
+            temp.push({
+              categoryName: categoryName,
+              categoryColor: categoryColor,
+              key: key,
+            });
+            this.setState({categories: temp});
+
+          } 
+        });
+    })
+    .catch((error) => {
+        console.log("Error getting documents: ", error);
+    })
+    .finally(() => {
+      
+    });
+  }
   
   // HANDLE SEARCH
   updateSearch = (search) => {
@@ -45,7 +79,7 @@ export default class CategoryScreen extends React.Component {
   renderCategories = ({item, index}) => {
     return (
       <View style={categoryScreenStyles.articleContainer}>
-        <CategoryCard item={item} navigation={this.props.navigation}/>
+        <CategoryCard item={item} categoryName={item.categoryName} categoryColor={item.categoryColor} id={item.key} navigation={this.props.navigation}/>
       </View>
     );
   }
@@ -80,7 +114,7 @@ export default class CategoryScreen extends React.Component {
       <View>
         <Text style={categoryScreenStyles.categoryTitle}> Categories </Text>
         <FlatList
-          data={categories}
+          data={this.state.categories}
           numColumns={2}
           renderItem={this.renderCategories}
           scrollEnabled={false}
