@@ -49,6 +49,9 @@ export default class CreateAccountScreen extends React.Component {
       });
       this.setState({password1 : '', password2: '', email: ''});
     }
+    else(
+      this.setState({processSubmit: false})
+    )
   };
 
 

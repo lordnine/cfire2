@@ -4,7 +4,8 @@ import {
   Text,
   View,
   TextInput,
-  Image
+  Image,
+  ActivityIndicator
 } from 'react-native';
 import {
   Button, Divider,
@@ -23,29 +24,29 @@ export default class LoginScreen extends React.Component {
   state = {
     password1: '',
     email: '',
-    processSubmit: false
+    processSubmit: null
   };
 
 
   handleSubmit = () => {
     if(this.state.password1 && this.state.email){
-      console.log('why hello there');
+      this.setState({processSubmit: true});
       const email = this.state.email;
       const password = this.state.password1;
       auth.signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in
         this.setState({password1 : '', email: ''});
-        this.setState({processSubmit: true});
         var user = userCredential.user;
         this.props.navigation.navigate('Drawer');
+        this.setState({processSubmit: null})
+        this.setState({password1 : '', email: ''});
         // ...
       })
       .catch((error) => {
         console.log("an error occurred");
+        this.setState({processSubmit: false})
       })
-      this.setState({password1 : '', email: ''});
-      this.setState({processSubmit: true});
     }
   };
 
@@ -53,9 +54,15 @@ export default class LoginScreen extends React.Component {
   render() {
     const handleAwait = (
           <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <Text style={{color: 'darkcyan', fontWeight: '700'}}> ADDED! </Text>
+           <ActivityIndicator size="large" color='#a854Fd'/>
           </View>
     );
+
+    const handleError = (
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
+       <Text style={{color: 'red', fontWeight: '700'}}>AN ERROR OCCURRED</Text>
+      </View>
+);
 
     const activeButton = (
       <View style={suggestedSchoolScreenStyles.buttonWidth}>
@@ -159,9 +166,8 @@ export default class LoginScreen extends React.Component {
 
               </View>
               <Divider style={adjustableStyleFunctions.transparentDivider('3.5%')} />
-                      {this.state.processSubmit ? handleAwait : null}
+                      {this.state.processSubmit ? handleAwait : this.state.processSubmit == null ? null : handleError}
               </View>
-
           </View>
 
         </View>
