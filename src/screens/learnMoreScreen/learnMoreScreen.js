@@ -83,7 +83,7 @@ export default class LearnMoreScreen extends React.Component {
                         title="Get Started"
                         buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
                         titleStyle={text.learnMoreInverseMinimalistButtonText}
-                        onPress={() => this.props.navigation.navigate('Drawer')}
+                        onPress={() => this.props.navigation.navigate('CreateAccount')}
                         />
                     </View>
                 </View>

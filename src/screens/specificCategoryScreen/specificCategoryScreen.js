@@ -36,13 +36,13 @@ export default class SpecificCategoryScreen extends React.Component {
             storeID = doc.data().storeID.toString();
             storeName = doc.data().storeName;
             categoryID = doc.data().categoryID;
-            key = doc.data().key;
+            id = doc.data().key;
             temp.push({
               dealBlurb: dealBlurb,
               time: time,
               storeName: storeName,
               categoryID: categoryID,
-              key: key
+              id: id
             });
             this.setState({items: temp});
 
@@ -63,7 +63,9 @@ export default class SpecificCategoryScreen extends React.Component {
           <Card dealBlurb={item.dealBlurb} 
           time={item.time} storeName={item.storeName} 
           categoryID={item.categoryID} 
-          navigation={this.props.navigation}/>
+          navigation={this.props.navigation}
+          id={item.id}
+          />
         </View>
       );
     }
@@ -83,7 +85,7 @@ export default class SpecificCategoryScreen extends React.Component {
              numColumns={1}
              renderItem={this.renderArticles}
              showsVerticalScrollIndicator={false}
-             keyExtractor={(item,index) => item.key}
+             keyExtractor={(item,index) => item.id}
              >
            </FlatList>
 

@@ -140,8 +140,8 @@ export default class suggestedSchoolScreen extends React.Component {
                 {/* LEFT BUTTON */}
                 <View style={suggestedSchoolScreenStyles.buttonWidth}>
                   <Button
-                    title="Get Started"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton]}
+                    title="Skip"
+                    buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
                     titleStyle={text.learnMoreMinimalistButtonText}
                     onPress={() => this.props.navigation.navigate('Drawer')}
                   />
@@ -151,7 +151,7 @@ export default class suggestedSchoolScreen extends React.Component {
                 <View style={suggestedSchoolScreenStyles.buttonWidth}>
                   <Button
                     title="Submit"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
+                    buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
                     titleStyle={text.learnMoreInverseMinimalistButtonText}
                     onPress={this.handleSubmit}
                   />

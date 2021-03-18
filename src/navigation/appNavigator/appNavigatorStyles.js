@@ -26,7 +26,7 @@ const appNavigatorStyles = {
 
     burgerStyles: {
         height: 20,
-        width: 20, 
+        width: 24, 
         tintColor: 'white',
     }
 
