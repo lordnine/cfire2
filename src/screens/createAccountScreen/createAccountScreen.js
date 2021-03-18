@@ -57,7 +57,7 @@ export default class CreateAccountScreen extends React.Component {
           </View>
     );
     return (
-      <View style={[suggestedSchoolScreenStyles.genericGreyContainer, {justifyContent: 'center'}]}>
+      <View style={[suggestedSchoolScreenStyles.genericGreyContainer, {width: '100%'}]}>
 
           {/* LOGO */}
        {/*   <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
@@ -74,43 +74,13 @@ export default class CreateAccountScreen extends React.Component {
           {/* HEADER */}
           <View style={{alignItems: 'center'}}>
           <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
-          <Text style={suggestedSchoolScreenStyles.mainTitle}>Create an Account</Text>
+          <Text style={suggestedSchoolScreenStyles.mainTitle}>Create Account</Text>
           <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
           </View> 
 
           <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>
           <View style={{height: '78%'}}>
-            {/* SCHOOL NAME INPUT */}
-           {/*  <Text style={suggestedSchoolScreenStyles.inputTitle}>First Name</Text>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-            <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
-                maxLength={35}
-                placeholder="First"
-                placeholderTextColor="white"
-                autoCapitalize="none"
-                spellCheck={false}
-                value={this.state.firstName}
-                onChangeText={newFirstName => this.setState({ firstName: newFirstName })}
-            />
 
-              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-
-            <Text style={suggestedSchoolScreenStyles.inputTitle}>Last Name</Text>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-            <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
-                maxLength={35}
-                placeholder="Last"
-                placeholderTextColor="white"
-                autoCapitalize="none"
-                spellCheck={false}
-                value={this.state.lastName}
-                onChangeText={newLastName => this.setState({ lastName: newLastName })}
-            />
-
-              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-              */}
               {/* SCHOOL EMAIL */}
               <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
               <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
@@ -126,39 +96,39 @@ export default class CreateAccountScreen extends React.Component {
               />
 
 
-<Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
 
-<Text style={suggestedSchoolScreenStyles.inputTitle}>Password</Text>
-<Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-  <TextInput
-    style={suggestedSchoolScreenStyles.inputText}
-    maxLength={35}
-    placeholder="Password"
-    placeholderTextColor="white"
-    autoCapitalize="none"
-    spellCheck={false}
-    value={this.state.schoolName}
-    secureTextEntry={true}
-    onChangeText={newPassword => this.setState({ password1: newPassword })}
-/>
+            <Text style={suggestedSchoolScreenStyles.inputTitle}>Password</Text>
+            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+              <TextInput
+                style={suggestedSchoolScreenStyles.inputText}
+                maxLength={35}
+                placeholder="Password"
+                placeholderTextColor="white"
+                autoCapitalize="none"
+                spellCheck={false}
+                value={this.state.schoolName}
+                secureTextEntry={true}
+                onChangeText={newPassword => this.setState({ password1: newPassword })}
+            />
 
 
 
-<Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
 
-<Text style={suggestedSchoolScreenStyles.inputTitle}>Confirm Password</Text>
-<Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-  <TextInput
-    style={suggestedSchoolScreenStyles.inputText}
-    maxLength={35}
-    placeholder="Password"
-    placeholderTextColor="white"
-    autoCapitalize="none"
-    spellCheck={false}
-    value={this.state.schoolName}
-    secureTextEntry={true}
-    onChangeText={newPassword => this.setState({ password2: newPassword })}
-/>
+            <Text style={suggestedSchoolScreenStyles.inputTitle}>Confirm Password</Text>
+            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+              <TextInput
+                style={suggestedSchoolScreenStyles.inputText}
+                maxLength={35}
+                placeholder="Password"
+                placeholderTextColor="white"
+                autoCapitalize="none"
+                spellCheck={false}
+                value={this.state.schoolName}
+                secureTextEntry={true}
+                onChangeText={newPassword => this.setState({ password2: newPassword })}
+            />
 
 
 
@@ -167,26 +137,37 @@ export default class CreateAccountScreen extends React.Component {
               <View style={suggestedSchoolScreenStyles.buttonContainer}>
 
                 {/* LEFT BUTTON */}
-                <View style={suggestedSchoolScreenStyles.buttonWidth}>
-                  <Button
-                    title="Log In"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton]}
-                    titleStyle={text.learnMoreMinimalistButtonText}
-                    onPress={() => this.props.navigation.navigate('Login')}
-                  />
-                </View>
+                
 
                 {/* RIGHT BUTTON */}
-                <View style={suggestedSchoolScreenStyles.buttonWidth}>
+                <View style={[suggestedSchoolScreenStyles.buttonWidth, {alignItems: 'center'}]}>
                   <Button
-                    title="Create Account"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
+                    title="Create account"
+                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 206}]}
                     titleStyle={text.learnMoreInverseMinimalistButtonText}
                     onPress={this.handleSubmit}
                   />
                 </View>
 
               </View>
+
+
+              <View style={suggestedSchoolScreenStyles.buttonContainer}>
+
+
+              <View style={[suggestedSchoolScreenStyles.buttonWidth]}>
+
+                  <Button
+                    title="Log in"
+                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton, {borderColor: 'transparent'}]}
+                    titleStyle={[text.learnMoreMinimalistButtonText, {color: 'black', fontSize: 16}]}
+                    onPress={() => this.props.navigation.navigate('Login')}
+                  />
+                </View>
+
+
+                </View>
+
               <Divider style={adjustableStyleFunctions.transparentDivider('3.5%')} />
                       {this.state.processSubmit ? handleAwait : null}
               </View>

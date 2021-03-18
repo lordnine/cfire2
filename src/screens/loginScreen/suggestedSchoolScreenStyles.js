@@ -13,7 +13,7 @@ const suggestedSchoolScreenStyles = {
     mainTitle: {
         fontSize: 27, 
         fontWeight: '800', 
-        color: '#8426E6',
+        color: 'black',
     },
 
     elementTitle: {
@@ -41,7 +41,7 @@ const suggestedSchoolScreenStyles = {
     },
 
     inputTitle: {
-        color: '#8426E6',
+        color: 'black',
         fontSize: 16,
         fontWeight: '700',
         marginLeft: 4
