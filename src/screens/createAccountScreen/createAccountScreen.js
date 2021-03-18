@@ -149,7 +149,7 @@ export default class CreateAccountScreen extends React.Component {
 
 <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
 
-<Text style={suggestedSchoolScreenStyles.inputTitle}>Re-Enter Password</Text>
+<Text style={suggestedSchoolScreenStyles.inputTitle}>Confirm Password</Text>
 <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
   <TextInput
     style={suggestedSchoolScreenStyles.inputText}
@@ -172,7 +172,7 @@ export default class CreateAccountScreen extends React.Component {
                 {/* LEFT BUTTON */}
                 <View style={suggestedSchoolScreenStyles.buttonWidth}>
                   <Button
-                    title="Get Started"
+                    title="Log In"
                     buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton]}
                     titleStyle={text.learnMoreMinimalistButtonText}
                     onPress={() => this.props.navigation.navigate('Login')}
@@ -182,7 +182,7 @@ export default class CreateAccountScreen extends React.Component {
                 {/* RIGHT BUTTON */}
                 <View style={suggestedSchoolScreenStyles.buttonWidth}>
                   <Button
-                    title="Submit"
+                    title="Create Account"
                     buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
                     titleStyle={text.learnMoreInverseMinimalistButtonText}
                     onPress={this.handleSubmit}

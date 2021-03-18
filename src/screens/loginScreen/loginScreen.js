@@ -22,31 +22,29 @@ export default class LoginScreen extends React.Component {
 
   state = {
     password1: '',
-    password2: '',
     email: '',
-    firstName: '',
-    lastName:'',
     processSubmit: false
   };
 
 
   handleSubmit = () => {
-    if(this.state.password1 == this.state.password2){
+    if(this.state.password1 && this.state.email){
+      console.log('why hello there');
       const email = this.state.email;
       const password = this.state.password1;
       auth.signInWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in
-        console.log('why hello there');
-        this.props.navigation.navigate('Drawer');
+        this.setState({password1 : '', email: ''});
+        this.setState({processSubmit: true});
         var user = userCredential.user;
+        this.props.navigation.navigate('Drawer');
         // ...
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
+        console.log("an error occurred");
       })
-      this.setState({password1 : '', password2: '', email: '', firstName: '', lastName: ''});
+      this.setState({password1 : '', email: ''});
       this.setState({processSubmit: true});
     }
   };
@@ -119,23 +117,6 @@ export default class LoginScreen extends React.Component {
 
 
 
-<Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-
-<Text style={suggestedSchoolScreenStyles.inputTitle}>Re-Enter Password</Text>
-<Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-  <TextInput
-    style={suggestedSchoolScreenStyles.inputText}
-    maxLength={35}
-    placeholder="Password"
-    placeholderTextColor="white"
-    autoCapitalize="none"
-    spellCheck={false}
-    value={this.state.schoolName}
-    secureTextEntry={true}
-    onChangeText={newPassword => this.setState({ password2: newPassword })}
-/>
-
-
 
               <Divider style={adjustableStyleFunctions.transparentDivider('6.5%')} />
               {/* BUTTON CONTAINER */}
@@ -144,7 +125,7 @@ export default class LoginScreen extends React.Component {
                 {/* LEFT BUTTON */}
                 <View style={suggestedSchoolScreenStyles.buttonWidth}>
                   <Button
-                    title="Get Started"
+                    title="Skip"
                     buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton]}
                     titleStyle={text.learnMoreMinimalistButtonText}
                     onPress={() => this.props.navigation.navigate('Drawer')}
@@ -154,7 +135,7 @@ export default class LoginScreen extends React.Component {
                 {/* RIGHT BUTTON */}
                 <View style={suggestedSchoolScreenStyles.buttonWidth}>
                   <Button
-                    title="Submit"
+                    title="Sign In"
                     buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
                     titleStyle={text.learnMoreInverseMinimalistButtonText}
                     onPress={this.handleSubmit}

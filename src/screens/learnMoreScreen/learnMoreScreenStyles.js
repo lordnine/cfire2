@@ -49,7 +49,7 @@ const learnMoreScreenStyles = {
         height: '100%', 
         backgroundColor: 'white', 
         alignItems: 'center', 
-        borderRadius:40
+        borderRadius:28
     },
 
     flatListBackground: {

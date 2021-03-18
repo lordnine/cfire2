@@ -45,7 +45,7 @@ export default class HomeScreen extends React.Component {
               time: time,
               storeName: storeName,
               categoryID: categoryID,
-              key: key
+              key: key,
             });
             this.setState({items: temp});
 
@@ -93,7 +93,8 @@ export default class HomeScreen extends React.Component {
                     time={item.time} storeName={item.storeName} 
                     categoryID={item.categoryID} 
                     id={item.key}
-                    navigation={navigation}/>
+                    navigation={navigation}
+                    />
             </View>
             );
           }

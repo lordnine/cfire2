@@ -24,8 +24,9 @@ export default class CardScreen extends React.Component {
     var dealText = doc.data().dealText;
     var address = doc.data().address;
     var categoryID = doc.data().categoryID;
-    var storeName = doc.data().storeName
-    this.setState({dealBlurb: dealBlurb, id: element, dealText: dealText, address: address, categoryID: categoryID, storeName: storeName });
+    var storeName = doc.data().storeName;
+    var imgLink = doc.data().imgLink;
+    this.setState({dealBlurb: dealBlurb, id: element, dealText: dealText, address: address, categoryID: categoryID, storeName: storeName, imgLink: imgLink});
     }
     ).catch((error) => {
       console.log("Error getting documents: ", error);
@@ -48,7 +49,9 @@ export default class CardScreen extends React.Component {
         <View style={cardScreenStyles.cardScreenContainer}>
 
             {/* renders BigCard component with key */}
-          <BigCard storeName={this.state.storeName} dealBlurb={this.state.dealBlurb} id={element} dealText={this.state.dealText} address={this.state.address} categoryID={this.state.categoryID} />
+          <BigCard storeName={this.state.storeName} dealBlurb={this.state.dealBlurb} id={element} dealText={this.state.dealText} address={this.state.address} categoryID={this.state.categoryID} 
+          imgLink={this.state.imgLink}
+          />
 
         </View>
 
