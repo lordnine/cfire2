@@ -68,17 +68,13 @@ export default class LoginScreen extends React.Component {
           <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
 */} 
           {/* INPUT CONTAINER AND BUTTONS */}
-          <View style={[suggestedSchoolScreenStyles.inputContainer,{height: '90%', justifyContent: 'flex-start', alignItems: 'center'}]}>
-
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
-          <Image style={[adjustableStyleFunctions.imgSize('10%','10%'), {tintColor: '#8426E6'}]}  
-          resizeMode='contain' 
-          source={logo}/>
+          <View style={[suggestedSchoolScreenStyles.inputContainer,{height: '100%', justifyContent: 'flex-start', alignItems: 'center'}]}>
+          <Divider style={adjustableStyleFunctions.transparentDivider('6%')} />
           {/* HEADER */}
           <View style={{alignItems: 'center'}}>
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
+          <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
           <Text style={suggestedSchoolScreenStyles.mainTitle}>Login</Text>
-          <Divider style={adjustableStyleFunctions.transparentDivider('8.5%')} />
+          <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
           </View> 
 
           <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>

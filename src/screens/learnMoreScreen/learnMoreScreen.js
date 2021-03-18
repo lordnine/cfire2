@@ -36,10 +36,6 @@ export default class LearnMoreScreen extends React.Component {
         <View style={learnMoreScreenStyles.blueBackground}>
           <View style={learnMoreScreenStyles.whiteBackground}>
             <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-            <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#8426E6'}]}  
-            resizeMode='contain' 
-            source={logo}
-            />
              <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
             <View style={learnMoreScreenStyles.bottomContent}>
               <Text style={learnMoreScreenStyles.mainTitle}> A New Way To Save </Text>

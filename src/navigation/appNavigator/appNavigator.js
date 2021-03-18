@@ -2,6 +2,7 @@ import React from 'react';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator , HeaderStyleInterpolators } from '@react-navigation/stack';
 import { Image, Text, Button, TouchableOpacity} from 'react-native';
+import { CAMPFIRE_RED } from '../../styles/colors';
 
 import WelcomeScreen from '../../screens/welcomeScreen';
 import HomeScreen from '../../screens/homeScreen';
@@ -24,6 +25,12 @@ const Stack = createStackNavigator();
 function HomeHeader() {
   return (
     <Image style={appNavigatorStyles.homeHeader} resizeMode='contain' source={logo}/>
+  );
+}
+
+function BeginHeader() {
+  return (
+    <Image style={[appNavigatorStyles.homeHeader, {tintColor: CAMPFIRE_RED}]} resizeMode='contain' source={logo}/>
   );
 }
 
@@ -93,17 +100,57 @@ const AppNavigator = () => (
         name="Welcome" component={WelcomeScreen} options={{headerShown: false}}
       />
       <Stack.Screen 
-        name="SuggestedSchool" component={SuggestedSchoolScreen} options={{headerShown: false}}
+        name="SuggestedSchool" component={SuggestedSchoolScreen}
+        options={({navigation}) => 
+        ({headerTitle: ( () => <BeginHeader /> ), 
+          headerTintColor: CAMPFIRE_RED,
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: 'white',
+            shadowColor: 'transparent',
+          },
+          headerLeftContainerStyle: {
+            marginLeft: 8
+          }
+        } 
+        )}   
       />
       <Stack.Screen 
-        name="CreateAccount" component={CreateAccountScreen} options={{headerShown: false}}
+        name="CreateAccount" component={CreateAccountScreen}
+        options={({navigation}) => 
+        ({headerTitle: ( () => <BeginHeader /> ), 
+          headerTintColor: CAMPFIRE_RED,
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: 'white',
+            shadowColor: 'transparent',
+          },
+          headerLeftContainerStyle: {
+            marginLeft: 8
+          }
+        } 
+        )}  
       />
       <Stack.Screen 
         name="Login" component={LoginScreen} options={{headerShown: false}}
+        options={({navigation}) => 
+        ({headerTitle: ( () => <BeginHeader /> ),
+          headerTintColor: CAMPFIRE_RED,
+          headerBackTitleVisible: false, 
+          headerStyle: {
+            backgroundColor: 'white',
+            shadowColor: 'transparent'
+          },
+          headerLeftContainerStyle: {
+            marginLeft: 8
+          }
+        } 
+        )}  
       />
       <Stack.Screen 
       name="Learn" component={LearnMoreScreen} 
-      options={{headerShown: false, gestureDirection: 'vertical', transitionSpec: { open: config, close: config}, headerStyleInterpolator: HeaderStyleInterpolators.forFade,
+      options={{headerShown: false, gestureDirection: 'vertical', 
+/* transitionSpec: { open: config, close: config}, headerStyleInterpolator: HeaderStyleInterpolators.forFade,
       cardStyleInterpolator: ({ current, next, layouts }) => {
         return {
           cardStyle: {
@@ -124,7 +171,21 @@ const AppNavigator = () => (
           },
         };
       },
+      */
     }}
+    options={({navigation}) => 
+    ({headerTitle: ( () => <BeginHeader /> ), 
+      headerTintColor: CAMPFIRE_RED,
+      headerBackTitleVisible: false,
+      headerStyle: {
+        backgroundColor: 'white',
+        shadowColor: 'transparent',
+      },
+      headerLeftContainerStyle: {
+        marginLeft: 8
+      }
+    } 
+    )} 
       />
       <Stack.Screen
         name="Home" component={HomeScreen} 

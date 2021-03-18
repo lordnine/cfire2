@@ -24,8 +24,8 @@ export default class CreateAccountScreen extends React.Component {
     password1: '',
     password2: '',
     email: '',
-    firstName: '',
-    lastName:'',
+    //firstName: '',
+    //lastName:'',
     processSubmit: false
   };
 
@@ -44,7 +44,7 @@ export default class CreateAccountScreen extends React.Component {
         var errorCode = error.code;
         var errorMessage = error.message;
       });
-      this.setState({password1 : '', password2: '', email: '', firstName: '', lastName: ''});
+      this.setState({password1 : '', password2: '', email: ''});
       this.setState({processSubmit: true});
     }
   };
@@ -68,23 +68,20 @@ export default class CreateAccountScreen extends React.Component {
           <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
 */} 
           {/* INPUT CONTAINER AND BUTTONS */}
-          <View style={[suggestedSchoolScreenStyles.inputContainer,{height: '90%', justifyContent: 'flex-start', alignItems: 'center'}]}>
+          <View style={[suggestedSchoolScreenStyles.inputContainer,{height: '100%', justifyContent: 'flex-start', alignItems: 'center'}]}>
 
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
-          <Image style={[adjustableStyleFunctions.imgSize('10%','10%'), {tintColor: '#8426E6'}]}  
-          resizeMode='contain' 
-          source={logo}/>
+          <Divider style={adjustableStyleFunctions.transparentDivider('6%')} />
           {/* HEADER */}
           <View style={{alignItems: 'center'}}>
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
+          <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
           <Text style={suggestedSchoolScreenStyles.mainTitle}>Create an Account</Text>
-          <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+          <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
           </View> 
 
           <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>
           <View style={{height: '78%'}}>
             {/* SCHOOL NAME INPUT */}
-            <Text style={suggestedSchoolScreenStyles.inputTitle}>First Name</Text>
+           {/*  <Text style={suggestedSchoolScreenStyles.inputTitle}>First Name</Text>
             <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
             <TextInput
                 style={suggestedSchoolScreenStyles.inputText}
@@ -113,7 +110,7 @@ export default class CreateAccountScreen extends React.Component {
             />
 
               <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-              
+              */}
               {/* SCHOOL EMAIL */}
               <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
               <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />

@@ -65,9 +65,6 @@ export default class suggestedSchoolScreen extends React.Component {
           <View style={[suggestedSchoolScreenStyles.inputContainer,{height: '90%', justifyContent: 'flex-start', alignItems: 'center'}]}>
 
           <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
-          <Image style={[adjustableStyleFunctions.imgSize('10%','10%'), {tintColor: '#8426E6'}]}  
-          resizeMode='contain' 
-          source={logo}/>
           {/* HEADER */}
           <View style={{alignItems: 'center'}}>
           <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />

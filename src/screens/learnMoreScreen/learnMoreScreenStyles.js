@@ -41,7 +41,7 @@ const learnMoreScreenStyles = {
     blueBackground: {
         height: '100%', 
         justifyContent: 'flex-end', 
-        backgroundColor: '#8426E6'
+        backgroundColor: 'white'
     },
 
     whiteBackground: {
@@ -49,7 +49,7 @@ const learnMoreScreenStyles = {
         height: '100%', 
         backgroundColor: 'white', 
         alignItems: 'center', 
-        borderRadius:28
+        borderRadius: 14
     },
 
     flatListBackground: {
