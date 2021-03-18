@@ -142,8 +142,8 @@ export default class CreateAccountScreen extends React.Component {
                 {/* RIGHT BUTTON */}
                 <View style={[suggestedSchoolScreenStyles.buttonWidth, {alignItems: 'center'}]}>
                   <Button
-                    title="Create account"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 206}]}
+                    title="Sign up"
+                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 160}]}
                     titleStyle={text.learnMoreInverseMinimalistButtonText}
                     onPress={this.handleSubmit}
                   />
@@ -160,7 +160,7 @@ export default class CreateAccountScreen extends React.Component {
                   <Button
                     title="Log in"
                     buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton, {borderColor: 'transparent'}]}
-                    titleStyle={[text.learnMoreMinimalistButtonText, {color: 'black', fontSize: 16}]}
+                    titleStyle={[text.learnMoreMinimalistButtonText, {color: 'black', fontSize: 16, textDecorationLine: 'underline'}]}
                     onPress={() => this.props.navigation.navigate('Login')}
                   />
                 </View>
