@@ -56,6 +56,32 @@ export default class LoginScreen extends React.Component {
           <Text style={{color: 'darkcyan', fontWeight: '700'}}> ADDED! </Text>
           </View>
     );
+
+    const activeButton = (
+      <View style={suggestedSchoolScreenStyles.buttonWidth}>
+        <Button
+            title="Sign In"
+            buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
+            titleStyle={text.learnMoreInverseMinimalistButtonText}
+            onPress={this.handleSubmit}
+        />
+      </View>
+    );
+
+    const inactiveButton = (
+      <View style={suggestedSchoolScreenStyles.buttonWidth}>
+        <Button
+            title="Sign In"
+            buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
+            titleStyle={text.learnMoreInverseMinimalistButtonText}
+            onPress={this.handleSubmit}
+            disabled={true}
+            disabledStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {opacity: .55}]}
+            disabledTitleStyle={text.learnMoreInverseMinimalistButtonText}
+        />
+      </View>
+    );
+
     return (
       <View style={[suggestedSchoolScreenStyles.genericGreyContainer, {justifyContent: 'center'}]}>
 
@@ -129,14 +155,7 @@ export default class LoginScreen extends React.Component {
                 </View>
 
                 {/* RIGHT BUTTON */}
-                <View style={suggestedSchoolScreenStyles.buttonWidth}>
-                  <Button
-                    title="Sign In"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
-                    titleStyle={text.learnMoreInverseMinimalistButtonText}
-                    onPress={this.handleSubmit}
-                  />
-                </View>
+                {(this.state.password1 && this.state.email) ? activeButton : inactiveButton}
 
               </View>
               <Divider style={adjustableStyleFunctions.transparentDivider('3.5%')} />

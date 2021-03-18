@@ -26,7 +26,7 @@ export default class CreateAccountScreen extends React.Component {
     email: '',
     //firstName: '',
     //lastName:'',
-    processSubmit: false
+    processSubmit: null
   };
 
 
@@ -37,25 +37,63 @@ export default class CreateAccountScreen extends React.Component {
       auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
         // Signed in
+        this.setState({processSubmit: true});
+        this.props.navigation.navigate('Login');
         var user = userCredential.user;
         // ...
       })
       .catch((error) => {
         var errorCode = error.code;
         var errorMessage = error.message;
+        this.setState({processSubmit: false});
       });
       this.setState({password1 : '', password2: '', email: ''});
-      this.setState({processSubmit: true});
     }
   };
 
 
+
   render() {
-    const handleAwait = (
+    const handleProcessed = (
           <View style={{justifyContent: 'center', alignItems: 'center'}}>
           <Text style={{color: 'darkcyan', fontWeight: '700'}}> ADDED! </Text>
           </View>
     );
+
+    const handleProblem = (
+      <View style={{justifyContent: 'center', alignItems: 'center'}}>
+      <Text style={{color: 'red', fontWeight: '700'}}> INVALID EMAIL OR PASSWORD </Text>
+      </View>
+    );
+
+    const inactiveButton = (
+      <View style={[suggestedSchoolScreenStyles.buttonWidth, {alignItems: 'center'}]}>
+      <Button
+        title="Sign up"
+        buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 160}]}
+        titleStyle={text.learnMoreInverseMinimalistButtonText}
+        onPress={this.handleSubmit}
+        disabled={true}
+        disabledStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 160, opacity: .55}]}
+        disabledTitleStyle={text.learnMoreInverseMinimalistButtonText}
+      />
+    </View>
+
+    );
+
+    const activeButton = (
+      <View style={[suggestedSchoolScreenStyles.buttonWidth, {alignItems: 'center'}]}>
+      <Button
+        title="Sign up"
+        buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 160}]}
+        titleStyle={text.learnMoreInverseMinimalistButtonText}
+        onPress={this.handleSubmit}
+      />
+    </View>
+
+    );
+
+    
     return (
       <View style={[suggestedSchoolScreenStyles.genericGreyContainer, {width: '100%'}]}>
 
@@ -140,21 +178,13 @@ export default class CreateAccountScreen extends React.Component {
                 
 
                 {/* RIGHT BUTTON */}
-                <View style={[suggestedSchoolScreenStyles.buttonWidth, {alignItems: 'center'}]}>
-                  <Button
-                    title="Sign up"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 160}]}
-                    titleStyle={text.learnMoreInverseMinimalistButtonText}
-                    onPress={this.handleSubmit}
-                  />
-                </View>
-
+                    {(this.state.password1 && this.state.password2 && this.state.email) ? activeButton : inactiveButton}
               </View>
 
 
               <View style={suggestedSchoolScreenStyles.buttonContainer}>
 
-
+            
               <View style={[suggestedSchoolScreenStyles.buttonWidth]}>
 
                   <Button
@@ -169,7 +199,7 @@ export default class CreateAccountScreen extends React.Component {
                 </View>
 
               <Divider style={adjustableStyleFunctions.transparentDivider('3.5%')} />
-                      {this.state.processSubmit ? handleAwait : null}
+                      { this.state.processSubmit == null ? null : this.state.processSubmit ? handleProcessed : handleProblem}
               </View>
 
           </View>

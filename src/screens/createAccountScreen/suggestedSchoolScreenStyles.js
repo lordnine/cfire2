@@ -53,7 +53,7 @@ const suggestedSchoolScreenStyles = {
         color: 'white',
         fontSize: 14,
         fontWeight: '800',
-        backgroundColor: '#a854Fd', 
+        backgroundColor: '#a854Fd',
         height: 40, 
         fontSize: 14, 
         borderRadius: 4, 
