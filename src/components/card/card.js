@@ -60,17 +60,6 @@ class Card extends React.Component {
                 </View>
               </TouchableOpacity>
 
-              {/* Bottom portion of card - contains description of deal */}
-             
-             {/* 
-              <TouchableOpacity onPress = {() => this.props.navigation.navigate('Card',{ key: item.key })}>
-                <View style={cardStyles.cardDescription}>
-                    <Text numberOfLines={2} style={cardStyles.cardTitle}>{item.title}</Text>
-                    <Text style={cardStyles.cardCTA}>{item.cta}</Text>
-                </View>
-              </TouchableOpacity>
-            */}
-
             </View>
         );
     }

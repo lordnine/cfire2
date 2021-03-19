@@ -6,8 +6,10 @@ import {
   Button
 } from 'react-native';
 import Card from '../../components/card';
-import articles from '../../constants/articles';
+
 import specificCategoryScreenStyles from './specificCategoryScreenStyles';
+import cardRenderStyles from '../../styles/commonScreenStyles/cardRenderStyles';
+
 import { db } from '../../utils/firebase';
 
 export default class SpecificCategoryScreen extends React.Component {
@@ -59,7 +61,7 @@ export default class SpecificCategoryScreen extends React.Component {
     renderArticles = ({item, index}) => {
 
     return (
-        <View style={specificCategoryScreenStyles.articleContainer}>
+        <View style={cardRenderStyles.articleContainer}>
           <Card dealBlurb={item.dealBlurb} 
           time={item.time} storeName={item.storeName} 
           categoryID={item.categoryID} 
@@ -78,7 +80,7 @@ export default class SpecificCategoryScreen extends React.Component {
     
       return(
         
-        <View style={specificCategoryScreenStyles.listContainer}>
+        <View style={cardRenderStyles.listContainer}>
 
           <FlatList
              data={this.state.items}
