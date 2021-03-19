@@ -9,12 +9,12 @@ import {
 import {
   Button, Divider,
 } from 'react-native-elements';
-import logo from '../../assets/images/logo.png';
 import suggestedSchoolScreenStyles from './suggestedSchoolScreenStyles';
 import buttons from '../../styles/buttons';
 import text from '../../styles/text';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 import { db } from '../../utils/firebase';
+import loginFlowStyles from '../../styles/commonScreenStyles/loginFlowStyles';
 
 var suggestedSchoolRef = db.collection("suggestedSchools");
 
@@ -25,60 +25,71 @@ export default class suggestedSchoolScreen extends React.Component {
     schoolName: '',
     email: '',
     firstName: '',
-    lastName: '',
-    processSubmit: false
+    processSubmit: false,
+    
   };
 
 
   handleSubmit = () => {
-    if(this.state.schoolName){
       suggestedSchoolRef.doc(this.state.schoolName).set({
         schoolName: this.state.schoolName,
         email: this.state.email,
         firstName: this.state.firstName,
-        lastName: this.state.lastName
       });
-      this.setState({schoolName: '', email: '', firstName: '', lastName: ''});
+      this.setState({schoolName: '', email: '', firstName: ''});
       this.setState({processSubmit: true});
-    }
   };
 
 
   render() {
     const handleAwait = (
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <Text style={{color: 'darkcyan', fontWeight: '700'}}> SUBMITTED! </Text>
+          <View style={loginFlowStyles.alertContainer}>
+            <Text style={loginFlowStyles.successText}> WE'LL REACH OUT SOON! </Text>
           </View>
     );
+
+    const activeButton = (
+      <View style={loginFlowStyles.twoButtonWidth}>
+        <Button
+            title="Register"
+            buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
+            titleStyle={text.learnMoreInverseMinimalistButtonText}
+            onPress={this.handleSubmit}
+        />
+      </View>
+    );
+
+    //display disabled button
+    const inactiveButton = (
+      <View style={loginFlowStyles.twoButtonWidth}>
+        <Button
+            title="Register"
+            onPress={this.handleSubmit}
+            disabled={true}
+            disabledStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton, loginFlowStyles.disabledButton]}
+            disabledTitleStyle={text.learnMoreInverseMinimalistButtonText}
+        />
+      </View>
+    );
+
     return (
-      <View style={[suggestedSchoolScreenStyles.genericGreyContainer, {justifyContent: 'center'}]}>
+      <View style={loginFlowStyles.genericWhiteContainer}>
 
-          {/* LOGO */}
-       {/*   <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
-          <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#8426E6'}]}  
-          resizeMode='contain' 
-          source={logo}/>
-          
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
-*/} 
-          {/* INPUT CONTAINER AND BUTTONS */}
-          <View style={[suggestedSchoolScreenStyles.inputContainer,{height: '90%', justifyContent: 'flex-start', alignItems: 'center'}]}>
 
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
+        <View style={loginFlowStyles.primaryContainer}>
+
           {/* HEADER */}
-          <View style={{alignItems: 'center'}}>
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
-          <Text style={suggestedSchoolScreenStyles.mainTitle}>Help Us Grow</Text>
-          <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-          </View> 
+          <Divider style={loginFlowStyles.headingDivider} />
+          <Text style={loginFlowStyles.mainTitle}>Help Us Grow</Text>
+          <Divider style={loginFlowStyles.mainContentDivider} />
 
-          <Divider style={adjustableStyleFunctions.transparentDivider('5%')}/>
-          <View style={{height: '78%'}}>
-            {/* SCHOOL NAME INPUT */}
-            <Text style={suggestedSchoolScreenStyles.inputTitle}>First Name</Text>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+          {/* INPUT CONTAINER AND BUTTONS */}
+          <View style={loginFlowStyles.inputContainer}>
+
+            <Text style={loginFlowStyles.inputTitle}>First Name</Text>
+            <Divider style={loginFlowStyles.inputTitleDivider} />
             <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
+                style={loginFlowStyles.inputStyle}
                 maxLength={35}
                 placeholder="First"
                 placeholderTextColor="white"
@@ -88,27 +99,13 @@ export default class suggestedSchoolScreen extends React.Component {
                 onChangeText={newFirstName => this.setState({ firstName: newFirstName })}
             />
 
-              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+            <Divider style={loginFlowStyles.inputDivider} />
 
-            <Text style={suggestedSchoolScreenStyles.inputTitle}>Last Name</Text>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-            <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
-                maxLength={35}
-                placeholder="Last"
-                placeholderTextColor="white"
-                autoCapitalize="none"
-                spellCheck={false}
-                value={this.state.lastName}
-                onChangeText={newLastName => this.setState({ lastName: newLastName })}
-            />
 
-              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-
-            <Text style={suggestedSchoolScreenStyles.inputTitle}>School Name</Text>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+            <Text style={loginFlowStyles.inputTitle}>School Name</Text>
+            <Divider style={loginFlowStyles.inputTitleDivider} />
               <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
+                style={loginFlowStyles.inputStyle}
                 maxLength={35}
                 placeholder="College University"
                 placeholderTextColor="white"
@@ -118,13 +115,13 @@ export default class suggestedSchoolScreen extends React.Component {
                 onChangeText={newSchoolName => this.setState({ schoolName: newSchoolName })}
             />
 
-              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+              <Divider style={loginFlowStyles.inputDivider} />
               
               {/* SCHOOL EMAIL */}
-              <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
-              <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+              <Text style={loginFlowStyles.inputTitle}>School Email</Text>
+              <Divider style={loginFlowStyles.inputTitleDivider} />
               <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
+                style={loginFlowStyles.inputStyle}
                 maxLength={40}
                 placeholder="first.last@college.edu"
                 placeholderTextColor="white"
@@ -133,12 +130,13 @@ export default class suggestedSchoolScreen extends React.Component {
                 value={this.state.email}
                 onChangeText={newEmail => this.setState({ email: newEmail })}
               />
-              <Divider style={adjustableStyleFunctions.transparentDivider('6.5%')} />
+              <Divider style={loginFlowStyles.buttonDivider} />
+
               {/* BUTTON CONTAINER */}
-              <View style={suggestedSchoolScreenStyles.buttonContainer}>
+              <View style={loginFlowStyles.twoButtonContainer}>
 
                 {/* LEFT BUTTON */}
-                <View style={suggestedSchoolScreenStyles.buttonWidth}>
+                <View style={loginFlowStyles.twoButtonWidth}>
                   <Button
                     title="Skip"
                     buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
@@ -148,20 +146,14 @@ export default class suggestedSchoolScreen extends React.Component {
                 </View>
 
                 {/* RIGHT BUTTON */}
-                <View style={suggestedSchoolScreenStyles.buttonWidth}>
-                  <Button
-                    title="Submit"
-                    buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
-                    titleStyle={text.learnMoreInverseMinimalistButtonText}
-                    onPress={this.handleSubmit}
-                  />
-                </View>
+                {(this.state.firstName && this.state.schoolName && this.state.email) ? activeButton : inactiveButton}
 
               </View>
-              <Divider style={adjustableStyleFunctions.transparentDivider('3.5%')} />
-                      {this.state.processSubmit ? handleAwait : null}
-              </View>
-
+              <Divider style={loginFlowStyles.alertDivider} />
+              {/* CONDITIONALLY RENDER UPON COMPLETION */}
+              {this.state.processSubmit ? handleAwait : null}
+            </View>
+        
           </View>
 
         </View>

@@ -22,13 +22,13 @@ export default class LearnMoreScreen extends React.Component {
       return (
 
           <View style={loginFlowStyles.genericWhiteContainer}>
-            <Divider style={loginFlowStyles.headingDivider} />
-
-            {/* HEADING */}
+            
             <View style={loginFlowStyles.primaryContainer}>
               
-              <Text style={loginFlowStyles.mainTitle}> A New Way To Save </Text>
+              {/* HEADING */}
               <Divider style={loginFlowStyles.headingDivider} />
+              <Text style={loginFlowStyles.mainTitle}> A New Way To Save </Text>
+              <Divider style={loginFlowStyles.mainContentDivider} />
 
               {/* MAIN TEXT */}
               <View style={loginFlowStyles.inputContainer}>
