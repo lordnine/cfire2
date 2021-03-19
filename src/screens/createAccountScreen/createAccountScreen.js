@@ -19,8 +19,6 @@ import text from '../../styles/text';
 
 import { auth } from '../../utils/firebase';
 
-
-
 export default class CreateAccountScreen extends React.Component {
 
   state = {
@@ -179,7 +177,7 @@ export default class CreateAccountScreen extends React.Component {
               </View>
 
               <Divider style={loginFlowStyles.alertDivider} />
-              
+
                   {/* CONDITIONALLY RENDER ERROR OR SUCCESS */}
                   { this.state.processSubmit == null ? null : this.state.processSubmit ? handleProcessed : handleProblem}
 
