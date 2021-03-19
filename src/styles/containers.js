@@ -12,7 +12,7 @@ const containers = {
       },
 
       genericWhiteContainer: {
-        width: '100%', 
+        minWidth: '100%', 
         height: '100%', 
         backgroundColor: 'white', 
         alignItems: 'center',

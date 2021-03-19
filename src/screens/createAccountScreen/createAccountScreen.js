@@ -7,13 +7,16 @@ import {
   Image
 } from 'react-native';
 import {
-  Button, Divider,
+  Button, 
+  Divider,
 } from 'react-native-elements';
-import logo from '../../assets/images/logo.png';
-import suggestedSchoolScreenStyles from './suggestedSchoolScreenStyles';
+
+
+import createAccountScreenStyles from './createAccountScreenStyles';
+import loginFlowStyles from '../../styles/commonScreenStyles/loginFlowStyles';
 import buttons from '../../styles/buttons';
 import text from '../../styles/text';
-import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
+
 import { auth } from '../../utils/firebase';
 
 
@@ -24,8 +27,6 @@ export default class CreateAccountScreen extends React.Component {
     password1: '',
     password2: '',
     email: '',
-    //firstName: '',
-    //lastName:'',
     processSubmit: null
   };
 
@@ -40,11 +41,9 @@ export default class CreateAccountScreen extends React.Component {
         this.setState({processSubmit: true});
         this.props.navigation.navigate('Login');
         var user = userCredential.user;
-        // ...
+        this.setState({password1 : '', email: ''});
       })
       .catch((error) => {
-        var errorCode = error.code;
-        var errorMessage = error.message;
         this.setState({processSubmit: false});
       });
       this.setState({password1 : '', password2: '', email: ''});
@@ -58,26 +57,24 @@ export default class CreateAccountScreen extends React.Component {
 
   render() {
     const handleProcessed = (
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <Text style={{color: 'darkcyan', fontWeight: '700'}}> ADDED! </Text>
+          <View style={loginFlowStyles.alertContainer}>
+          <Text style={loginFlowStyles.successText}> ADDED! </Text>
           </View>
     );
 
     const handleProblem = (
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-      <Text style={{color: 'red', fontWeight: '700'}}> INVALID EMAIL OR PASSWORD </Text>
+      <View style={loginFlowStyles.alertContainer}>
+        <Text style={loginFlowStyles.errorText}> INVALID EMAIL OR PASSWORD </Text>
       </View>
     );
 
     const inactiveButton = (
-      <View style={[suggestedSchoolScreenStyles.buttonWidth, {alignItems: 'center'}]}>
+      <View style={loginFlowStyles.buttonWidth}>
       <Button
         title="Sign up"
-        buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 160}]}
-        titleStyle={text.learnMoreInverseMinimalistButtonText}
         onPress={this.handleSubmit}
         disabled={true}
-        disabledStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 160, opacity: .55}]}
+        disabledStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton, loginFlowStyles.disabledButton]}
         disabledTitleStyle={text.learnMoreInverseMinimalistButtonText}
       />
     </View>
@@ -85,10 +82,10 @@ export default class CreateAccountScreen extends React.Component {
     );
 
     const activeButton = (
-      <View style={[suggestedSchoolScreenStyles.buttonWidth, {alignItems: 'center'}]}>
+      <View style={loginFlowStyles.buttonWidth}>
       <Button
         title="Sign up"
-        buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {borderRadius: 34, width: 160}]}
+        buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
         titleStyle={text.learnMoreInverseMinimalistButtonText}
         onPress={this.handleSubmit}
       />
@@ -98,35 +95,23 @@ export default class CreateAccountScreen extends React.Component {
 
     
     return (
-      <View style={[suggestedSchoolScreenStyles.genericGreyContainer, {width: '100%'}]}>
+      <View style={loginFlowStyles.genericWhiteContainer}>
 
-          {/* LOGO */}
-       {/*   <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
-          <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#8426E6'}]}  
-          resizeMode='contain' 
-          source={logo}/>
-          
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
-*/} 
-          {/* INPUT CONTAINER AND BUTTONS */}
-          <View style={[suggestedSchoolScreenStyles.inputContainer,{height: '100%', justifyContent: 'flex-start', alignItems: 'center'}]}>
+        <View style={loginFlowStyles.primaryContainer}>
 
-          <Divider style={adjustableStyleFunctions.transparentDivider('6%')} />
           {/* HEADER */}
-          <View style={{alignItems: 'center'}}>
-          <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
-          <Text style={suggestedSchoolScreenStyles.mainTitle}>Create Account</Text>
-          <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
-          </View> 
+          <Divider style={loginFlowStyles.headingDivider} />
+          <Text style={loginFlowStyles.mainTitle}>Create Account</Text>
+          <Divider style={loginFlowStyles.mainContentDivider} />
 
-          <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>
-          <View style={{height: '78%'}}>
+          {/* TEXT INPUTS AND BUTTONS */}
+          <View style={loginFlowStyles.inputContainer}>
 
               {/* SCHOOL EMAIL */}
-              <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
-              <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+              <Text style={loginFlowStyles.inputTitle}>School Email</Text>
+              <Divider style={loginFlowStyles.inputTitleDivider} />
               <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
+                style={loginFlowStyles.inputStyle}
                 maxLength={40}
                 placeholder="first.last@college.edu"
                 placeholderTextColor="white"
@@ -136,78 +121,73 @@ export default class CreateAccountScreen extends React.Component {
                 onChangeText={newEmail => this.setState({ email: newEmail })}
               />
 
+              <Divider style={loginFlowStyles.inputDivider} />
 
-            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-
-            <Text style={suggestedSchoolScreenStyles.inputTitle}>Password</Text>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+              {/* PASSWORD 1 */}
+              <Text style={loginFlowStyles.inputTitle}>Password</Text>
+              <Divider style={loginFlowStyles.inputTitleDivider} />
               <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
-                maxLength={35}
-                placeholder="Password"
-                placeholderTextColor="white"
-                autoCapitalize="none"
-                spellCheck={false}
-                value={this.state.schoolName}
-                secureTextEntry={true}
-                onChangeText={newPassword => this.setState({ password1: newPassword })}
-            />
+                  style={loginFlowStyles.inputStyle}
+                  maxLength={35}
+                  placeholder="Password"
+                  placeholderTextColor="white"
+                  autoCapitalize="none"
+                  spellCheck={false}
+                  value={this.state.schoolName}
+                  secureTextEntry={true}
+                  onChangeText={newPassword => this.setState({ password1: newPassword })}
+              />
+
+              <Divider style={loginFlowStyles.inputDivider} />
+
+              {/* PASSWORD 2 */}
+              <Text style={loginFlowStyles.inputTitle}>Confirm Password</Text>
+              <Divider style={loginFlowStyles.inputTitleDivider} />
+                <TextInput
+                  style={loginFlowStyles.inputStyle}
+                  maxLength={35}
+                  placeholder="Password"
+                  placeholderTextColor="white"
+                  autoCapitalize="none"
+                  spellCheck={false}
+                  value={this.state.schoolName}
+                  secureTextEntry={true}
+                  onChangeText={newPassword => this.setState({ password2: newPassword })}
+              />
+
+              <Divider style={loginFlowStyles.buttonDivider} />
 
 
-
-            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-
-            <Text style={suggestedSchoolScreenStyles.inputTitle}>Confirm Password</Text>
-            <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-              <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
-                maxLength={35}
-                placeholder="Password"
-                placeholderTextColor="white"
-                autoCapitalize="none"
-                spellCheck={false}
-                value={this.state.schoolName}
-                secureTextEntry={true}
-                onChangeText={newPassword => this.setState({ password2: newPassword })}
-            />
-
-
-
-              <Divider style={adjustableStyleFunctions.transparentDivider('6.5%')} />
               {/* BUTTON CONTAINER */}
-              <View style={suggestedSchoolScreenStyles.buttonContainer}>
-
-                {/* LEFT BUTTON */}
-                
-
-                {/* RIGHT BUTTON */}
+              <View style={loginFlowStyles.buttonContainer}>
+                    {/* CONDITIONALLY RENDER SIGN UP BUTTON */}
                     {(this.state.password1 && this.state.password2 && this.state.email) ? activeButton : inactiveButton}
               </View>
 
+              <View style={loginFlowStyles.buttonContainer}>
+                <View style={loginFlowStyles.buttonWidth}>
 
-              <View style={suggestedSchoolScreenStyles.buttonContainer}>
-
-            
-              <View style={[suggestedSchoolScreenStyles.buttonWidth]}>
-
-                  <Button
-                    title="Log in"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton, {borderColor: 'transparent'}]}
-                    titleStyle={[text.learnMoreMinimalistButtonText, {color: 'black', fontSize: 16, textDecorationLine: 'underline'}]}
-                    onPress={() => this.props.navigation.navigate('Login')}
-                  />
-                </View>
-
+                    {/* LOG IN BUTTON */}
+                    <Button
+                      title="Log in"
+                      buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton, createAccountScreenStyles.loginButton]}
+                      titleStyle={[text.learnMoreMinimalistButtonText, createAccountScreenStyles.loginButtonText]}
+                      onPress={() => this.props.navigation.navigate('Login')}
+                    />
 
                 </View>
-
-              <Divider style={adjustableStyleFunctions.transparentDivider('3.5%')} />
-                      { this.state.processSubmit == null ? null : this.state.processSubmit ? handleProcessed : handleProblem}
               </View>
+
+              <Divider style={loginFlowStyles.alertDivider} />
+              
+                  {/* CONDITIONALLY RENDER ERROR OR SUCCESS */}
+                  { this.state.processSubmit == null ? null : this.state.processSubmit ? handleProcessed : handleProblem}
+
+            </View>
 
           </View>
 
-        </View>
+      </View>
 
     );
   }

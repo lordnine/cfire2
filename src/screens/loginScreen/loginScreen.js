@@ -12,7 +12,7 @@ import {
 } from 'react-native-elements';
 
 import loginScreenStyles from './loginScreenStyles';
-import loginFlowStyles from '../../styles/loginFlowStyles';
+import loginFlowStyles from '../../styles/commonScreenStyles/loginFlowStyles';
 import buttons from '../../styles/buttons';
 import text from '../../styles/text';
 import { CAMPFIRE_SECONDARY } from '../../styles/colors';

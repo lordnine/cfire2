@@ -1,7 +1,7 @@
 
-import text from './text';
-import containers from './containers';
-import { CAMPFIRE_SECONDARY } from './colors';
+import text from '../text';
+import containers from '../containers';
+import { CAMPFIRE_SECONDARY } from '../colors';
 
 const loginFlowStyles = {
 
@@ -10,11 +10,23 @@ const loginFlowStyles = {
 
     mainTitle: text.loginFLowTitle,
 
+    buttonContainer: {
+        justifyContent: 'center',
+        minWidth: '100%'
+    },
+    
+    buttonWidth: {
+        width: '100%',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+
     twoButtonContainer: {
         flexDirection: 'row', 
         alignItems: 'center', 
         justifyContent: 'space-between',
     },
+
 
     twoButtonWidth: {
         width: '49%'
@@ -22,6 +34,7 @@ const loginFlowStyles = {
 
     inputContainer: {
         height: '78%',
+        minWidth: '100%'
     },
 
     inputTitle: text.loginFlowInputTitle,
@@ -39,15 +52,30 @@ const loginFlowStyles = {
 
     primaryContainer: {
         backgroundColor: 'white',
-        width: '100%',
+        minWidth: '100%',
         justifyContent: 'center',
-        paddingHorizontal: '7%',
+        paddingHorizontal: '8%',
         justifyContent: 'flex-start', 
         alignItems: 'center'
     },
 
     disabledButton: {
         opacity: .55
+    },
+
+    alertContainer: {
+        justifyContent: 'center', 
+        alignItems: 'center'
+    },
+
+    errorText: {
+        color: 'red', 
+        fontWeight: '700'
+    },
+
+    successText: {
+        color: 'darkcyan', 
+        fontWeight: '700'
     },
 
     headingDivider: {
