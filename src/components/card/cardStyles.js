@@ -1,5 +1,5 @@
 
-import { CAMPFIRE_RED } from '../../styles/colors';
+import { CAMPFIRE_PRIMARY } from '../../styles/colors';
 const cardStyles = {
 
     card: {
@@ -43,7 +43,7 @@ const cardStyles = {
     companyNameText: {
         fontSize: 20,
         fontWeight: '800',
-        color: CAMPFIRE_RED,///'#551199',//////'#5d3c85',
+        color: CAMPFIRE_PRIMARY,
         paddingLeft: '4%',
         paddingRight: '4%',
         paddingTop: '2%',
@@ -94,7 +94,6 @@ const cardStyles = {
     },
 
     shareContainer: {
-        //height: '12%', 
         justifyContent: 'flex-end',
         height: '7.8%',
         width: '8%',
@@ -159,9 +158,6 @@ const cardStyles = {
         marginBottom: '4%',
         marginLeft: '85%',
         tintColor: `darkgrey`
-        //color: 'steelblue',
-       // fontSize: 13, 
-       // fontWeight: '600', 
     },
 
 };
