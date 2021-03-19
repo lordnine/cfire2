@@ -4,18 +4,17 @@ import {
   Text,
   View,
   TextInput,
-  Image,
   ActivityIndicator
 } from 'react-native';
 import {
   Button, Divider,
 } from 'react-native-elements';
-import logo from '../../assets/images/logo.png';
 import suggestedSchoolScreenStyles from './suggestedSchoolScreenStyles';
 import buttons from '../../styles/buttons';
 import text from '../../styles/text';
 import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
 import { auth } from '../../utils/firebase';
+import loginFlowStyles from '../../styles/loginFlowStyles';
 
 
 
@@ -90,34 +89,22 @@ export default class LoginScreen extends React.Component {
     );
 
     return (
-      <View style={[suggestedSchoolScreenStyles.genericGreyContainer, {justifyContent: 'center'}]}>
+      <View style={loginFlowStyles.genericWhiteContainer}>
 
-          {/* LOGO */}
-       {/*   <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
-          <Image style={[adjustableStyleFunctions.imgSize('8%','10%'), {tintColor: '#8426E6'}]}  
-          resizeMode='contain' 
-          source={logo}/>
-          
-          <Divider style={adjustableStyleFunctions.transparentDivider('3%')} />
-*/} 
           {/* INPUT CONTAINER AND BUTTONS */}
-          <View style={[suggestedSchoolScreenStyles.inputContainer,{height: '100%', justifyContent: 'flex-start', alignItems: 'center'}]}>
-          <Divider style={adjustableStyleFunctions.transparentDivider('6%')} />
+          <View style={loginFlowStyles.primaryContainer}>
+          <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
           {/* HEADER */}
-          <View style={{alignItems: 'center'}}>
-          <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
           <Text style={suggestedSchoolScreenStyles.mainTitle}>Login</Text>
-          <Divider style={adjustableStyleFunctions.transparentDivider('5%')} />
-          </View> 
-
-          <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>
-          <View style={{height: '78%'}}>
+          <Divider style={adjustableStyleFunctions.transparentDivider('6%')} />
+          
+          <View style={loginFlowStyles.inputContainer}>
             {/* SCHOOL NAME INPUT */}
               {/* SCHOOL EMAIL */}
-              <Text style={suggestedSchoolScreenStyles.inputTitle}>School Email</Text>
+              <Text style={loginFlowStyles.inputTitle}>School Email</Text>
               <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
               <TextInput
-                style={suggestedSchoolScreenStyles.inputText}
+                style={loginFlowStyles.inputStyle}
                 maxLength={40}
                 placeholder="first.last@college.edu"
                 placeholderTextColor="white"
@@ -126,33 +113,30 @@ export default class LoginScreen extends React.Component {
                 value={this.state.email}
                 onChangeText={newEmail => this.setState({ email: newEmail })}
               />
-
-
-<Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-
-<Text style={suggestedSchoolScreenStyles.inputTitle}>Password</Text>
-<Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
-  <TextInput
-    style={suggestedSchoolScreenStyles.inputText}
-    maxLength={35}
-    placeholder="Password"
-    placeholderTextColor="white"
-    autoCapitalize="none"
-    spellCheck={false}
-    value={this.state.schoolName}
-    secureTextEntry={true}
-    onChangeText={newPassword => this.setState({ password1: newPassword })}
-/>
-
-
+              
+              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+              
+              <Text style={loginFlowStyles.inputTitle}>Password</Text>
+              <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+                <TextInput
+                  style={loginFlowStyles.inputStyle}
+                  maxLength={35}
+                  placeholder="Password"
+                  placeholderTextColor="white"
+                  autoCapitalize="none"
+                  spellCheck={false}
+                  value={this.state.schoolName}
+                  secureTextEntry={true}
+                  onChangeText={newPassword => this.setState({ password1: newPassword })}
+              />
 
 
               <Divider style={adjustableStyleFunctions.transparentDivider('6.5%')} />
               {/* BUTTON CONTAINER */}
-              <View style={suggestedSchoolScreenStyles.buttonContainer}>
+              <View style={loginFlowStyles.twoButtonContainer}>
 
                 {/* LEFT BUTTON */}
-                <View style={suggestedSchoolScreenStyles.buttonWidth}>
+                <View style={loginFlowStyles.twoButtonWidth}>
                   <Button
                     title="Skip"
                     buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton]}

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator , HeaderStyleInterpolators } from '@react-navigation/stack';
 import { Image, Text, Button, TouchableOpacity} from 'react-native';
-import { CAMPFIRE_RED } from '../../styles/colors';
+import { CAMPFIRE_PRIMARY } from '../../styles/colors';
 
 import WelcomeScreen from '../../screens/welcomeScreen';
 import HomeScreen from '../../screens/homeScreen';
@@ -30,7 +30,7 @@ function HomeHeader() {
 
 function BeginHeader() {
   return (
-    <Image style={[appNavigatorStyles.homeHeader, {tintColor: CAMPFIRE_RED}]} resizeMode='contain' source={logo}/>
+    <Image style={[appNavigatorStyles.homeHeader, {tintColor: CAMPFIRE_PRIMARY}]} resizeMode='contain' source={logo}/>
   );
 }
 
@@ -103,7 +103,7 @@ const AppNavigator = () => (
         name="SuggestedSchool" component={SuggestedSchoolScreen}
         options={({navigation}) => 
         ({headerTitle: ( () => <BeginHeader /> ), 
-          headerTintColor: CAMPFIRE_RED,
+          headerTintColor: CAMPFIRE_PRIMARY,
           headerBackTitleVisible: false,
           headerStyle: {
             backgroundColor: 'white',
@@ -119,7 +119,7 @@ const AppNavigator = () => (
         name="CreateAccount" component={CreateAccountScreen}
         options={({navigation}) => 
         ({headerTitle: ( () => <BeginHeader /> ), 
-          headerTintColor: CAMPFIRE_RED,
+          headerTintColor: CAMPFIRE_PRIMARY,
           headerBackTitleVisible: false,
           headerStyle: {
             backgroundColor: 'white',
@@ -135,7 +135,7 @@ const AppNavigator = () => (
         name="Login" component={LoginScreen} options={{headerShown: false}}
         options={({navigation}) => 
         ({headerTitle: ( () => <BeginHeader /> ),
-          headerTintColor: CAMPFIRE_RED,
+          headerTintColor: CAMPFIRE_PRIMARY,
           headerBackTitleVisible: false, 
           headerStyle: {
             backgroundColor: 'white',
@@ -175,7 +175,7 @@ const AppNavigator = () => (
     }}
     options={({navigation}) => 
     ({headerTitle: ( () => <BeginHeader /> ), 
-      headerTintColor: CAMPFIRE_RED,
+      headerTintColor: CAMPFIRE_PRIMARY,
       headerBackTitleVisible: false,
       headerStyle: {
         backgroundColor: 'white',
