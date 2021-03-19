@@ -5,9 +5,7 @@ import { Image, Text, Button, TouchableOpacity} from 'react-native';
 import { CAMPFIRE_PRIMARY } from '../../styles/colors';
 
 import WelcomeScreen from '../../screens/welcomeScreen';
-import HomeScreen from '../../screens/homeScreen';
 import CardScreen from '../../screens/cardScreen';
-import { NativeAppEventEmitter } from 'react-native';
 import logo from '../../assets/images/logo.png';
 import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import { DrawerActions } from '@react-navigation/native';
@@ -30,19 +28,7 @@ function HomeHeader() {
 
 function BeginHeader() {
   return (
-    <Image style={[appNavigatorStyles.homeHeader, {tintColor: CAMPFIRE_PRIMARY}]} resizeMode='contain' source={logo}/>
-  );
-}
-
-function HomeLeft() {
-  return(
-    <Text style={appNavigatorStyles.homeLeft}>drawer</Text>
-  );
-}
-
-function HomeRight() {
-  return(
-    <Text style={appNavigatorStyles.homeRight}>search</Text>
+    <Image style={appNavigatorStyles.beginHeader} resizeMode='contain' source={logo}/>
   );
 }
 
@@ -73,8 +59,6 @@ const verticalAnimation = {
     };
   },
 };
-
-
 
 const config = {
   animation: 'spring',
@@ -187,14 +171,7 @@ const AppNavigator = () => (
     } 
     )} 
       />
-      <Stack.Screen
-        name="Home" component={HomeScreen} 
-        options={{headerTitle: ( () => <HomeHeader /> ), 
-          headerTintColor: 'black', 
-          headerLeft: null, 
-          headerRight: ( () => <HomeRight />), 
-          headerLeft: ( () => <HomeLeft />)  }}
-      />
+    
       <Stack.Screen
         name="Card" component={CardScreen} 
         options={({navigation}) => 
