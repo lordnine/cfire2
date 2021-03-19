@@ -7,16 +7,17 @@ import {
   ActivityIndicator
 } from 'react-native';
 import {
-  Button, Divider,
+  Button, 
+  Divider,
 } from 'react-native-elements';
-import suggestedSchoolScreenStyles from './suggestedSchoolScreenStyles';
+
+import loginScreenStyles from './loginScreenStyles';
+import loginFlowStyles from '../../styles/loginFlowStyles';
 import buttons from '../../styles/buttons';
 import text from '../../styles/text';
-import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
+import { CAMPFIRE_SECONDARY } from '../../styles/colors';
+
 import { auth } from '../../utils/firebase';
-import loginFlowStyles from '../../styles/loginFlowStyles';
-
-
 
 export default class LoginScreen extends React.Component {
 
@@ -40,10 +41,8 @@ export default class LoginScreen extends React.Component {
         this.props.navigation.navigate('Drawer');
         this.setState({processSubmit: null})
         this.setState({password1 : '', email: ''});
-        // ...
       })
       .catch((error) => {
-        console.log("an error occurred");
         this.setState({processSubmit: false})
       })
     }
@@ -51,38 +50,41 @@ export default class LoginScreen extends React.Component {
 
 
   render() {
+
+    //display spinner
     const handleAwait = (
-          <View style={{justifyContent: 'center', alignItems: 'center'}}>
-           <ActivityIndicator size="large" color='#a854Fd'/>
-          </View>
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <ActivityIndicator size="large" color={CAMPFIRE_SECONDARY}/>
+        </View>
     );
 
+    //display error
     const handleError = (
-      <View style={{justifyContent: 'center', alignItems: 'center'}}>
-       <Text style={{color: 'red', fontWeight: '700'}}>AN ERROR OCCURRED</Text>
-      </View>
-);
+        <View style={{justifyContent: 'center', alignItems: 'center'}}>
+          <Text style={{color: 'red', fontWeight: '700'}}>AN ERROR OCCURRED</Text>
+        </View>
+    );
 
+    //display pressable button
     const activeButton = (
-      <View style={suggestedSchoolScreenStyles.buttonWidth}>
+      <View style={loginFlowStyles.twoButtonWidth}>
         <Button
             title="Sign In"
-            buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
+            buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
             titleStyle={text.learnMoreInverseMinimalistButtonText}
             onPress={this.handleSubmit}
         />
       </View>
     );
 
+    //display disabled button
     const inactiveButton = (
-      <View style={suggestedSchoolScreenStyles.buttonWidth}>
+      <View style={loginFlowStyles.twoButtonWidth}>
         <Button
             title="Sign In"
-            buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton]}
-            titleStyle={text.learnMoreInverseMinimalistButtonText}
             onPress={this.handleSubmit}
             disabled={true}
-            disabledStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistInverseButton, {opacity: .55}]}
+            disabledStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton, loginFlowStyles.disabledButton]}
             disabledTitleStyle={text.learnMoreInverseMinimalistButtonText}
         />
       </View>
@@ -91,18 +93,19 @@ export default class LoginScreen extends React.Component {
     return (
       <View style={loginFlowStyles.genericWhiteContainer}>
 
-          {/* INPUT CONTAINER AND BUTTONS */}
-          <View style={loginFlowStyles.primaryContainer}>
-          <Divider style={adjustableStyleFunctions.transparentDivider('8%')} />
+        <View style={loginFlowStyles.primaryContainer}>
+
           {/* HEADER */}
-          <Text style={suggestedSchoolScreenStyles.mainTitle}>Login</Text>
-          <Divider style={adjustableStyleFunctions.transparentDivider('6%')} />
+          <Divider style={loginFlowStyles.headingDivider} />
+          <Text style={loginFlowStyles.mainTitle}>Login</Text>
+          <Divider style={loginFlowStyles.mainContentDivider} />
           
+
+          {/* INPUT CONTAINER */}
           <View style={loginFlowStyles.inputContainer}>
-            {/* SCHOOL NAME INPUT */}
-              {/* SCHOOL EMAIL */}
+
               <Text style={loginFlowStyles.inputTitle}>School Email</Text>
-              <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+              <Divider style={loginFlowStyles.inputTitleDivider} />
               <TextInput
                 style={loginFlowStyles.inputStyle}
                 maxLength={40}
@@ -114,10 +117,10 @@ export default class LoginScreen extends React.Component {
                 onChangeText={newEmail => this.setState({ email: newEmail })}
               />
               
-              <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+              <Divider style={loginFlowStyles.inputDivider} />
               
               <Text style={loginFlowStyles.inputTitle}>Password</Text>
-              <Divider style={adjustableStyleFunctions.transparentDivider('1.5%')} />
+              <Divider style={loginFlowStyles.inputTitleDivider} />
                 <TextInput
                   style={loginFlowStyles.inputStyle}
                   maxLength={35}
@@ -130,8 +133,8 @@ export default class LoginScreen extends React.Component {
                   onChangeText={newPassword => this.setState({ password1: newPassword })}
               />
 
+              <Divider style={loginFlowStyles.buttonDivider} />
 
-              <Divider style={adjustableStyleFunctions.transparentDivider('6.5%')} />
               {/* BUTTON CONTAINER */}
               <View style={loginFlowStyles.twoButtonContainer}>
 
@@ -139,19 +142,23 @@ export default class LoginScreen extends React.Component {
                 <View style={loginFlowStyles.twoButtonWidth}>
                   <Button
                     title="Skip"
-                    buttonStyle={[suggestedSchoolScreenStyles.button, buttons.learnMoreMinimalistButton]}
+                    buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
                     titleStyle={text.learnMoreMinimalistButtonText}
                     onPress={() => this.props.navigation.navigate('Drawer')}
                   />
                 </View>
 
-                {/* RIGHT BUTTON */}
+                {/* CONDITIONALLY RENDER RIGHT BUTTON */}
                 {(this.state.password1 && this.state.email) ? activeButton : inactiveButton}
 
               </View>
-              <Divider style={adjustableStyleFunctions.transparentDivider('3.5%')} />
-                      {this.state.processSubmit ? handleAwait : this.state.processSubmit == null ? null : handleError}
-              </View>
+
+              {/* ALERT OR SPINNER */}
+              <Divider style={loginFlowStyles.alertDivider} />
+              {this.state.processSubmit ? handleAwait : this.state.processSubmit == null ? null : handleError}
+
+            </View>
+
           </View>
 
         </View>

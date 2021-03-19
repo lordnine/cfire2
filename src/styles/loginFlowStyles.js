@@ -46,11 +46,38 @@ const loginFlowStyles = {
         alignItems: 'center'
     },
 
-    button: {
-        minHeight: 50,
-        borderWidth: 2,
-        borderColor: 'white',
-        borderRadius: 12
+    disabledButton: {
+        opacity: .55
+    },
+
+    headingDivider: {
+        height: '7%',
+        backgroundColor: 'transparent'
+    },
+
+    mainContentDivider: {
+        height: '6%',
+        backgroundColor: 'transparent'
+    },
+
+    inputTitleDivider: {
+        height: '1.5%',
+        backgroundColor: 'transparent'
+    },
+
+    inputDivider: {
+        height: '4%',
+        backgroundColor: 'transparent'
+    },
+
+    buttonDivider: {
+        height: '6.5%',
+        backgroundColor: 'transparent'
+    },
+
+    alertDivider: {
+        height: '3.5%',
+        backgroundColor: 'transparent'
     }
 
 };
