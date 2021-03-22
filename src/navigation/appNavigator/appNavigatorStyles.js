@@ -1,6 +1,7 @@
 
 import { CAMPFIRE_PRIMARY } from '../../styles/colors';
 
+
 const appNavigatorStyles = {
 
     homeHeader: {
@@ -9,7 +10,7 @@ const appNavigatorStyles = {
         tintColor: 'white',
     },
 
-    beginHeader: {
+    purpleLogo: {
         height: '75%',
         marginBottom: '4%',
         tintColor: CAMPFIRE_PRIMARY,

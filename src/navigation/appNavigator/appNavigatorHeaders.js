@@ -6,16 +6,16 @@ import appNavigatorStyles from './appNavigatorStyles';
 import { CAMPFIRE_PRIMARY } from '../../styles/colors';
 
 
-function BeginHeader() {
+function PurpleLogo() {
   return (
-    <Image style={appNavigatorStyles.beginHeader} resizeMode='contain' source={logo}/>
+    <Image style={appNavigatorStyles.purpleLogo} resizeMode='contain' source={logo}/>
   );
 }
 
 
 const appNavigatorHeaders ={
-    headerOne: {
-        headerTitle: (() => <BeginHeader />),
+    loginFlowHeader: {
+        headerTitle: (() => <PurpleLogo />),
         headerTintColor: CAMPFIRE_PRIMARY,
         headerBackTitleVisible: false,
         headerStyle: {

@@ -112,60 +112,21 @@ function AppNavigator(props) {
               />
               <Stack.Screen
                 name="CreateAccount" component={CreateAccountScreen}
-                options={({ navigation }) =>
-                ({
-                  headerTitle: (() => <BeginHeader />),
-                  headerTintColor: CAMPFIRE_PRIMARY,
-                  headerBackTitleVisible: false,
-                  headerStyle: {
-                    backgroundColor: 'white',
-                    shadowColor: 'transparent',
-                  },
-                  headerLeftContainerStyle: {
-                    marginLeft: 8
-                  }
-                }
-                )}
+                options={appNavigatorHeaders.loginFlowHeader}
               />
 
               <Stack.Screen
                 name="Login" component={LoginScreen} options={{ headerShown: false }}
-                options={({ navigation }) =>
-                ({
-                  headerTitle: (() => <BeginHeader />),
-                  headerTintColor: CAMPFIRE_PRIMARY,
-                  headerBackTitleVisible: false,
-                  headerStyle: {
-                    backgroundColor: 'white',
-                    shadowColor: 'transparent'
-                  },
-                  headerLeftContainerStyle: {
-                    marginLeft: 8
-                  }
-                }
-                )}
+                options={appNavigationHeaders.loginFlowHeader}
               />
 
               <Stack.Screen
                 name="SuggestedSchool" component={SuggestedSchoolScreen}
-                options={({ navigation }) =>
-                ({
-                  headerTitle: (() => <BeginHeader />),
-                  headerTintColor: CAMPFIRE_PRIMARY,
-                  headerBackTitleVisible: false,
-                  headerStyle: {
-                    backgroundColor: 'white',
-                    shadowColor: 'transparent',
-                  },
-                  headerLeftContainerStyle: {
-                    marginLeft: 8
-                  }
-                }
-                )}
+                options={appNavigatorHeaders.loginFlowHeader}
               />
               <Stack.Screen
                 name="Learn" component={LearnMoreScreen}
-                options={appNavigatorHeaders.headerOne}
+                options={appNavigatorHeaders.loginFlowHeader}
               />
         </>
       )}
