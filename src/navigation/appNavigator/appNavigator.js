@@ -18,6 +18,7 @@ import SuggestedSchoolScreen from '../../screens/suggestedSchoolScreen';
 import { State } from 'react-native-gesture-handler';
 import CreateAccountScreen from '../../screens/createAccountScreen';
 import LoginScreen from '../../screens/loginScreen';
+import appNavigatorHeaders from './appNavigatorHeaders';
 
 
 const Stack = createStackNavigator();
@@ -164,23 +165,7 @@ function AppNavigator(props) {
               />
               <Stack.Screen
                 name="Learn" component={LearnMoreScreen}
-                options={{
-                  headerShown: false, gestureDirection: 'vertical',
-                }}
-                options={({ navigation }) =>
-                ({
-                  headerTitle: (() => <BeginHeader />),
-                  headerTintColor: CAMPFIRE_PRIMARY,
-                  headerBackTitleVisible: false,
-                  headerStyle: {
-                    backgroundColor: 'white',
-                    shadowColor: 'transparent',
-                  },
-                  headerLeftContainerStyle: {
-                    marginLeft: 8
-                  }
-                }
-                )}
+                options={appNavigatorHeaders.headerOne}
               />
         </>
       )}
