@@ -12,67 +12,53 @@ import burgerlogo from '../../assets/images/burgerlogo.png';
 import shoppinglogo from '../../assets/images/shoppinglogo.png';
 import supplieslogo from '../../assets/images/supplieslogo.png';
 import scissorslogo from '../../assets/images/scissorslogo.png';
+import sharelogo from '../../assets/images/sharelogo.png';
 
 
 
 class Card extends React.Component {
     render() {
-        const { navigation, item, horizontal, full, style, ctaColor, imageStyle, food, key} = this.props;
+        const { navigation, dealBlurb, storeName, categoryID, key, time} = this.props;
 
         const crdContainer = [cardStyles.card, cardStyles.shadow];
-        const imgContainer = [cardStyles.imageContainer,
-            horizontal ? cardStyles.horizontalStyles : cardStyles.verticalStyles,
-            cardStyles.shadow
+        const imgContainer = [cardStyles.imageContainer, cardStyles.horizontalStyles, cardStyles.shadow
         ];
-        const backgroundStyles = [
-          item.food ? cardStyles.foodBackground : cardStyles.regBackground,
-        ];
-        const colorStyles = [
-          item.food ? cardStyles.foodStuff : cardStyles.regStuff,
-        ];
+        const backgroundStyles = [ cardStyles.regBackground];
 
         const categoryLogo = [burgerlogo, shoppinglogo, supplieslogo, scissorslogo];
 
+        const categoryColor = ['#485063', '#039be5', '#009688', '#ff99cc'];
 
         return (
             <View style={crdContainer}>
 
               {/* Top portion of the card - contains company name and color currently */}
-              <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
+              <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { element: 3})}>
                 <View style={[imgContainer, backgroundStyles]}>
                   <View style={cardStyles.companyNameContainer}>
-                    <Text style={colorStyles}>{item.companyName}</Text>
-                  </View>
-
-                  <View style={cardStyles.dealContainer}>
-                    <Text style={cardStyles.dealText}>{item.deal}</Text>
+                    <Text style={cardStyles.companyNameText}>{this.props.storeName}</Text>
+                    <Text style={cardStyles.dealText}>{this.props.dealBlurb}</Text>
                   </View>
 
                   <View style={cardStyles.dateContainer}>
-                    <Text style={cardStyles.dateText}>{item.date}d</Text>
+                    <Text style={cardStyles.dateText}>{this.props.time}d</Text>
                   </View>
 
-                  <View style={cardStyles.categoryContainer} onPress={() => this.props.navigation.navigate('Card', { key: item.key})}>
-                    <Image style={cardStyles.categoryImage} source={categoryLogo[item.category]} resizeMode='contain'></Image>
+                  <View style={cardStyles.categoryContainer} onPress={() => this.props.navigation.navigate('Card', { element: 2})}>
+                    <Image style={[cardStyles.categoryImage, /*{tintColor: categoryColor[this.props.categoryID]}*/]} source={categoryLogo[this.props.categoryID]} resizeMode='contain'></Image>
                   </View>
 
-                  <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { element: item})}>
-                    <Image style={cardStyles.qrImage}source={qrlogo} resizeMode='contain'></Image>
+                  <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { element: this.props.id})}>
+                   {/*<Text style={cardStyles.qrImage}>QR</Text> */}
+                    <Image style={cardStyles.qrImage}source={qrlogo} resizeMode='contain'></Image>   
                   </TouchableOpacity>
 
-                </View>
-              </TouchableOpacity>
+                  <View style={cardStyles.shareContainer}>
+                    <Image style={{height: '100%', width: '100%', tintColor: `darkgrey`}} source={sharelogo} resizeMode='contain'></Image>
+                  </View>
 
-              {/* Bottom portion of card - contains description of deal */}
-             
-             {/* 
-              <TouchableOpacity onPress = {() => this.props.navigation.navigate('Card',{ key: item.key })}>
-                <View style={cardStyles.cardDescription}>
-                    <Text numberOfLines={2} style={cardStyles.cardTitle}>{item.title}</Text>
-                    <Text style={cardStyles.cardCTA}>{item.cta}</Text>
                 </View>
               </TouchableOpacity>
-            */}
 
             </View>
         );

@@ -22,16 +22,16 @@ export default class WelcomeScreen extends React.Component {
     //sets the bullets to default colors 
     state = {
       carouselOne: 'white',
-      carouselTwo: '#526578',
+      carouselTwo: '#7026E6',
     };
 
     //changes the color of the carousel bullets depending upon user input
     handleScrollEnd = (data) => {
       if(data.nativeEvent.contentOffset.x > 0){
-        this.setState({carouselOne: '#526578', carouselTwo: 'white'});
+        this.setState({carouselOne: '#7026E6', carouselTwo: 'white'});
       }
       else{
-        this.setState({carouselOne: 'white', carouselTwo: '#526578'});
+        this.setState({carouselOne: 'white', carouselTwo: '#7026E6'});
       }
     };
 
@@ -90,7 +90,7 @@ export default class WelcomeScreen extends React.Component {
                   title="Get Started"
                   buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
                   titleStyle={text.inverseMinimalistButtonText}
-                  onPress={() => this.props.navigation.navigate('Drawer')}
+                  onPress={() => this.props.navigation.navigate('CreateAccount')}
                 />
             </View>
           

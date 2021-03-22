@@ -4,7 +4,7 @@
     const carouselElementStyles = {
 
         carouselElement: {
-            backgroundColor: '#25284f', 
+            backgroundColor: '#a854Fd', //////'#25284f', 
             height: '100%', 
             width: 340, 
             justifyContent: 'center', 

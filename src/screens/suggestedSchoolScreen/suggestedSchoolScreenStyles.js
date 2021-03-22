@@ -6,14 +6,14 @@ const suggestedSchoolScreenStyles = {
     genericGreyContainer: {
         width: '100%', 
         height: '100%', 
-        backgroundColor: '#e6e6e6', 
+        backgroundColor: 'white', 
         alignItems: 'center',
     },
 
     mainTitle: {
         fontSize: 27, 
         fontWeight: '800', 
-        color: '#000437',
+        color: 'black',
     },
 
     elementTitle: {
@@ -41,7 +41,7 @@ const suggestedSchoolScreenStyles = {
     },
 
     inputTitle: {
-        color: 'white',
+        color: 'black',
         fontSize: 16,
         fontWeight: '700',
         marginLeft: 4
@@ -50,8 +50,8 @@ const suggestedSchoolScreenStyles = {
     inputText: {
         color: 'white',
         fontSize: 14,
-        fontWeight: '300',
-        backgroundColor: '#25284f', 
+        fontWeight: '800',
+        backgroundColor: '#a854Fd', 
         height: 40, 
         fontSize: 14, 
         borderRadius: 4, 
@@ -59,7 +59,7 @@ const suggestedSchoolScreenStyles = {
     },
 
     inputContainer: {
-        backgroundColor: '#000437',
+        backgroundColor: 'white',
         height: '64%%',
         width: '94%',
         justifyContent: 'center',
@@ -68,7 +68,7 @@ const suggestedSchoolScreenStyles = {
     },
 
     button: {
-        height: 44,
+        minHeight: 50,
         borderWidth: 2,
         borderColor: 'white',
         borderRadius: 12

@@ -12,7 +12,7 @@ import imgArray from '../../constants/imgArray';
 
 class BigCard extends React.Component {
     render() {
-        const { item } = this.props;
+        const { id, storeName, categoryID, address, dealText, imgLink} = this.props;
 
         const crdContainer = [bigCardStyles.card, bigCardStyles.shadow];
         const touchableContainer = [bigCardStyles.wrappedContainer, bigCardStyles.cardStyles]
@@ -26,7 +26,7 @@ class BigCard extends React.Component {
 
                   {/* Render company image at the top of the card */}
                     <View style={bigCardStyles.imageContainer}> 
-                        <Image source={imgArray[item.key]} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
+                        <Image source={{uri: this.props.imgLink }} style={bigCardStyles.imageResizeContainer} resizeMode='cover' />     
                     </View>
 
                     <Divider style={adjustableStyleFunctions.transparentDivider('1%')}/>
@@ -37,18 +37,18 @@ class BigCard extends React.Component {
                     <View style={bigCardStyles.bigCardContainer}>
                   
                      <View style={bigCardStyles.titleContainer}>
-                       <Text style={bigCardStyles.companyTitle}>{item.companyName} </Text> 
-                        <Image source={categoryLogo[item.category]} resizeMode='contain' style={bigCardStyles.categoryLogo}/>
+                       <Text style={bigCardStyles.companyTitle}>{this.props.storeName} </Text> 
+                        <Image source={categoryLogo[this.props.categoryID]} resizeMode='contain' style={bigCardStyles.categoryLogo}/>
                       </View>
                    
                       <View style={bigCardStyles.locationContainer}>
                         <Image source={locationlogo} resizeMode='contain' style={bigCardStyles.locationLogo}  />
-                        <Text numberOfLines={1} style={bigCardStyles.description}><Text  style={bigCardStyles.locationTitle}>Address: {item.address}</Text></Text> 
+                        <Text numberOfLines={1} style={bigCardStyles.description}><Text  style={bigCardStyles.locationTitle}>Address: {this.props.address}</Text></Text> 
                       </View>
 
                       <Divider style={adjustableStyleFunctions.transparentDivider('7%')}/>
                 
-                      <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Deal: </Text>{item.title}</Text>
+                      <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Deal: </Text>{this.props.dealText}</Text>
                       <Text style={bigCardStyles.description}><Text style={bigCardStyles.subTitle}>Code: </Text>This page or a valid Student ID</Text>
                     </View>
                     

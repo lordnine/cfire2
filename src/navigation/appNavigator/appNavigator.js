@@ -3,11 +3,10 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator , HeaderStyleInterpolators } from '@react-navigation/stack';
 import { Image, Text, Button, TouchableOpacity} from 'react-native';
 import { connect } from 'react-redux';
+import { CAMPFIRE_PRIMARY } from '../../styles/colors';
 
 import WelcomeScreen from '../../screens/welcomeScreen';
-import HomeScreen from '../../screens/homeScreen';
 import CardScreen from '../../screens/cardScreen';
-import { NativeAppEventEmitter } from 'react-native';
 import logo from '../../assets/images/logo.png';
 import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import { DrawerActions } from '@react-navigation/native';
@@ -17,7 +16,8 @@ import SpecificCategoryScreen from '../../screens/specificCategoryScreen';
 import LearnMoreScreen from '../../screens/learnMoreScreen';
 import SuggestedSchoolScreen from '../../screens/suggestedSchoolScreen';
 import { State } from 'react-native-gesture-handler';
-import SignInScreen from '../../screens/signInScreen';
+import CreateAccountScreen from '../../screens/createAccountScreen';
+import LoginScreen from '../../screens/loginScreen';
 
 
 const Stack = createStackNavigator();
@@ -28,15 +28,9 @@ function HomeHeader() {
   );
 }
 
-function HomeLeft() {
-  return(
-    <Text style={appNavigatorStyles.homeLeft}>drawer</Text>
-  );
-}
-
-function HomeRight() {
-  return(
-    <Text style={appNavigatorStyles.homeRight}>search</Text>
+function BeginHeader() {
+  return (
+    <Image style={appNavigatorStyles.beginHeader} resizeMode='contain' source={logo}/>
   );
 }
 
@@ -68,8 +62,6 @@ const verticalAnimation = {
   },
 };
 
-
-
 const config = {
   animation: 'spring',
   config: {
@@ -82,81 +74,16 @@ const config = {
   },
 };
 
-
-
-function parentMethod() {
-  console.log("boop");
-};
 function AppNavigator(props) {
-  console.log("App Navigator props");
-  console.log(JSON.stringify(props));
   return (
   <NavigationContainer>
       
     <Stack.Navigator
-        initialRouteName={props.authed == true ? ("Welcome") : ("SignIn") }
+        initialRouteName={props.authed == true ? ("Drawer") : ("Welcome") }
     >
+      {/* props.authed is from Redux and controls whether the user sees the auth flow or the logged in flow */}
       {props.authed == true ? (
         <>
-            <Stack.Screen
-              name="Welcome" component={WelcomeScreen} options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="SuggestedSchool" component={SuggestedSchoolScreen} options={{ headerShown: false }}
-            />
-            <Stack.Screen
-              name="Learn" component={LearnMoreScreen}
-              options={{
-                headerShown: false, gestureDirection: 'vertical', transitionSpec: { open: config, close: config }, headerStyleInterpolator: HeaderStyleInterpolators.forFade,
-                cardStyleInterpolator: ({ current, next, layouts }) => {
-                  return {
-                    cardStyle: {
-                      transform: [
-                        {
-                          translateY: current.progress.interpolate({
-                            inputRange: [0, 1],
-                            outputRange: [layouts.screen.height, 0],
-                          }),
-                        },
-                      ],
-                    },
-                    overlayStyle: {
-                      opacity: current.progress.interpolate({
-                        inputRange: [0, 1],
-                        outputRange: [0, 0.5],
-                      }),
-                    },
-                  };
-                },
-              }}
-            />
-            <Stack.Screen
-              name="Home" component={HomeScreen}
-              options={{
-                headerTitle: (() => <HomeHeader />),
-                headerTintColor: 'black',
-                headerLeft: null,
-                headerRight: (() => <HomeRight />),
-                headerLeft: (() => <HomeLeft />)
-              }}
-            />
-            <Stack.Screen
-              name="Card" component={CardScreen}
-              options={({ navigation }) =>
-              ({
-                headerTitle: (() => <HomeHeader />),
-                headerTintColor: 'white',
-                headerBackTitleVisible: false,
-                headerRight: null,
-                headerLeftContainerStyle: {
-                  marginLeft: 8
-                },
-                headerStyle: {
-                  backgroundColor: '#5d3c85',
-                },
-              }
-              )}
-            />
             <Stack.Screen
               name="Drawer" component={DrawerNavigator}
               options={({ navigation }) =>
@@ -165,57 +92,156 @@ function AppNavigator(props) {
                 headerLeft: null,
                 headerRight: (() => <DrawerBurger />),
                 headerStyle: {
-                  backgroundColor: '#5d3c85',
+                  backgroundColor: '#8426E6',
                 },
               }
               )}
             />
-            <Stack.Screen
-              name="Specific" component={SpecificCategoryScreen}
-              options={({ navigation }) =>
-              ({
-                headerTitle: (() => <HomeHeader />),
-                headerTintColor: 'white',
-                headerBackTitleVisible: false,
-                headerRight: null,
-                headerStyle: {
-                  backgroundColor: '#5d3c85',
-                },
-                headerLeftContainerStyle: {
-                  marginLeft: 8
-                }
-              }
-              )}
-            />
-        </>
-      ) : (
-        <>
-              <Stack.Screen
-                name="SignIn" component={SignInScreen}
-              />
           <Stack.Screen
-            name="Home" component={HomeScreen}
-            options={{
+            name="Card" component={CardScreen}
+            options={({ navigation }) =>
+            ({
               headerTitle: (() => <HomeHeader />),
-              headerTintColor: 'black',
-              headerLeft: null,
-              headerRight: (() => <HomeRight />),
-              headerLeft: (() => <HomeLeft />)
-            }}
+              headerTintColor: 'white',
+              headerBackTitleVisible: false,
+              headerRight: null,
+              headerLeftContainerStyle: {
+                marginLeft: 8
+              },
+              headerStyle: {
+                backgroundColor: '#8426E6',
+              },
+            }
+            )}
           />
           
+          <Stack.Screen
+            name="Specific" component={SpecificCategoryScreen}
+            options={({ navigation }) =>
+            ({
+              headerTitle: (() => <HomeHeader />),
+              headerTintColor: 'white',
+              headerBackTitleVisible: false,
+              headerRight: null,
+              headerStyle: {
+                backgroundColor: '#8426E6',
+              },
+              headerLeftContainerStyle: {
+                marginLeft: 8
+              }
+            }
+            )}
+          />
+        </>
+      ) : (
+        
+        <>
+              <Stack.Screen
+                name="Welcome" component={WelcomeScreen} options={{ headerShown: false }}
+              />
+              <Stack.Screen
+                name="CreateAccount" component={CreateAccountScreen}
+                options={({ navigation }) =>
+                ({
+                  headerTitle: (() => <BeginHeader />),
+                  headerTintColor: CAMPFIRE_PRIMARY,
+                  headerBackTitleVisible: false,
+                  headerStyle: {
+                    backgroundColor: 'white',
+                    shadowColor: 'transparent',
+                  },
+                  headerLeftContainerStyle: {
+                    marginLeft: 8
+                  }
+                }
+                )}
+              />
+
+              <Stack.Screen
+                name="Login" component={LoginScreen} options={{ headerShown: false }}
+                options={({ navigation }) =>
+                ({
+                  headerTitle: (() => <BeginHeader />),
+                  headerTintColor: CAMPFIRE_PRIMARY,
+                  headerBackTitleVisible: false,
+                  headerStyle: {
+                    backgroundColor: 'white',
+                    shadowColor: 'transparent'
+                  },
+                  headerLeftContainerStyle: {
+                    marginLeft: 8
+                  }
+                }
+                )}
+              />
+
+              <Stack.Screen
+                name="SuggestedSchool" component={SuggestedSchoolScreen}
+                options={({ navigation }) =>
+                ({
+                  headerTitle: (() => <BeginHeader />),
+                  headerTintColor: CAMPFIRE_PRIMARY,
+                  headerBackTitleVisible: false,
+                  headerStyle: {
+                    backgroundColor: 'white',
+                    shadowColor: 'transparent',
+                  },
+                  headerLeftContainerStyle: {
+                    marginLeft: 8
+                  }
+                }
+                )}
+              />
+              <Stack.Screen
+                name="Learn" component={LearnMoreScreen}
+                options={{
+                  headerShown: false, gestureDirection: 'vertical',
+                  /* transitionSpec: { open: config, close: config}, headerStyleInterpolator: HeaderStyleInterpolators.forFade,
+                        cardStyleInterpolator: ({ current, next, layouts }) => {
+                          return {
+                            cardStyle: {
+                              transform: [
+                                {
+                                  translateY: current.progress.interpolate({
+                                    inputRange: [0, 1],
+                                    outputRange: [layouts.screen.height, 0],
+                                  }),
+                                },
+                              ],
+                            },
+                            overlayStyle: {
+                              opacity: current.progress.interpolate({
+                                inputRange: [0, 1],
+                                outputRange: [0, 0.5],
+                              }),
+                            },
+                          };
+                        },
+                        */
+                }}
+                options={({ navigation }) =>
+                ({
+                  headerTitle: (() => <BeginHeader />),
+                  headerTintColor: CAMPFIRE_PRIMARY,
+                  headerBackTitleVisible: false,
+                  headerStyle: {
+                    backgroundColor: 'white',
+                    shadowColor: 'transparent',
+                  },
+                  headerLeftContainerStyle: {
+                    marginLeft: 8
+                  }
+                }
+                )}
+              />
         </>
       )}
-      
-
-
     </Stack.Navigator>
     </NavigationContainer>
   );
       };
 
 mapStateToProps = (state) => {
-  console.log("NAVIGATOR STATE:" + JSON.stringify(state));
   return {
     authed: state.user.authed,
   };

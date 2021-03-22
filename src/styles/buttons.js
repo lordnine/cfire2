@@ -1,11 +1,13 @@
 
+import { CAMPFIRE_PRIMARY } from './colors';
 
 const buttons = {
   
     mainButton: {
-        height: 50,
+        minHeight: 50,
+        minWidth: '49%',
         borderWidth: 2,
-        borderRadius: 12,
+        borderRadius: 28,
     },
 
     minimalistButton: {
@@ -19,13 +21,13 @@ const buttons = {
     },
 
     learnMoreMinimalistButton: {
-        borderColor: '#000437',
+        borderColor: CAMPFIRE_PRIMARY,
         backgroundColor: 'transparent',
     },
 
     learnMoreMinimalistInverseButton: {
-        borderColor: '#000437',
-        backgroundColor: '#000437',
+        borderColor: CAMPFIRE_PRIMARY,
+        backgroundColor: CAMPFIRE_PRIMARY,
     }
 
 };

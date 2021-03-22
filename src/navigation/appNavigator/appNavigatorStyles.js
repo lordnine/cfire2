@@ -1,4 +1,5 @@
 
+import { CAMPFIRE_PRIMARY } from '../../styles/colors';
 
 const appNavigatorStyles = {
 
@@ -6,6 +7,12 @@ const appNavigatorStyles = {
         height: '75%',
         marginBottom: '4%',
         tintColor: 'white',
+    },
+
+    beginHeader: {
+        height: '75%',
+        marginBottom: '4%',
+        tintColor: CAMPFIRE_PRIMARY,
     },
 
     homeLeft: {
@@ -26,7 +33,7 @@ const appNavigatorStyles = {
 
     burgerStyles: {
         height: 20,
-        width: 20, 
+        width: 24, 
         tintColor: 'white',
     }
 

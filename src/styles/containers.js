@@ -1,5 +1,5 @@
 
-import { CAMPFIRE_RED } from './colors';
+import { CAMPFIRE_PRIMARY } from './colors';
 
 const containers = {
   
@@ -7,9 +7,18 @@ const containers = {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'flex-start',
-        backgroundColor: CAMPFIRE_RED,
+        backgroundColor:  CAMPFIRE_PRIMARY,////// CAMPFIRE_RED,
         paddingHorizontal: '3%'
       },
+
+      genericWhiteContainer: {
+        minWidth: '100%', 
+        height: '100%', 
+        backgroundColor: 'white', 
+        alignItems: 'center',
+    },
+
+
     
 
 };
