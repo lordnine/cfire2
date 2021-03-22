@@ -10,6 +10,14 @@ import {
 } from './actionTypes';
 import { firebaseAuth } from '../utils/firebase';
 
+// Create an action setting the "authed" state of the user
+export const setAuthed = (val) => {
+  const authedAction = {
+    type: SET_USER_AUTHED,
+    payload: val,
+  };
+  return authedAction;
+};
 /**
  * Logs in the user given the email and password combination
  * @param {string } email

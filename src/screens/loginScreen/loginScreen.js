@@ -11,6 +11,9 @@ import {
   Divider,
 } from 'react-native-elements';
 
+import { setAuthed } from '../../actions/userActions'
+import { connect } from 'react-redux';
+
 import loginScreenStyles from './loginScreenStyles';
 import loginFlowStyles from '../../styles/commonScreenStyles/loginFlowStyles';
 import buttons from '../../styles/buttons';
@@ -19,7 +22,7 @@ import { CAMPFIRE_SECONDARY } from '../../styles/colors';
 
 import { auth } from '../../utils/firebase';
 
-export default class LoginScreen extends React.Component {
+class LoginScreen extends React.Component {
 
   state = {
     password1: '',
@@ -38,9 +41,11 @@ export default class LoginScreen extends React.Component {
         // Signed in
         this.setState({password1 : '', email: ''});
         var user = userCredential.user;
-        this.props.navigation.navigate('Drawer');
+        // this.props.navigation.navigate('Drawer');
         this.setState({processSubmit: null})
         this.setState({password1 : '', email: ''});
+        // set redux "authed" state to true
+        this.props.setAuthed(true);
       })
       .catch((error) => {
         this.setState({processSubmit: false})
@@ -166,3 +171,9 @@ export default class LoginScreen extends React.Component {
     );
   }
 }
+
+const mapDispatchToProps = {
+  setAuthed
+};
+
+export default connect(null, mapDispatchToProps)(LoginScreen);
