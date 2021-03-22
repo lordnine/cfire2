@@ -11,7 +11,7 @@ import {
   Divider,
 } from 'react-native-elements';
 
-import { setAuthed } from '../../actions/userActions'
+import { setAuthed } from '../../actions/userActions';
 import { connect } from 'react-redux';
 
 import loginScreenStyles from './loginScreenStyles';
@@ -41,7 +41,6 @@ class LoginScreen extends React.Component {
         // Signed in
         this.setState({password1 : '', email: ''});
         var user = userCredential.user;
-        // this.props.navigation.navigate('Drawer');
         this.setState({processSubmit: null})
         this.setState({password1 : '', email: ''});
         // set redux "authed" state to true

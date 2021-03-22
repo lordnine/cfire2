@@ -3,12 +3,16 @@ import {
   View,
   StyleSheet,
   Text,
-  Image
 } from 'react-native';
-import { Divider } from 'react-native-elements';
+import { Divider, Button } from 'react-native-elements';
+
+import { setAuthed } from '../../actions/userActions';
+import { connect } from 'react-redux';
+
 import settingsScreenStyles from './settingsScreenStyles';
 
-export default class SettingsScreen extends React.Component {
+
+class SettingsScreen extends React.Component {
 
 
 
@@ -21,6 +25,7 @@ export default class SettingsScreen extends React.Component {
         <View style={{width: '100%', height: '100%', alignItems: 'center'}}>
           <Divider style={{height: '4%'}}/>
             <Text style={{fontSize: 28, fontWeight: '600', color: 'grey'}}>Settings</Text>
+            <Button title="logout" onPress={()=> this.props.setAuthed(false)}/>
 
         </View>
 
@@ -28,7 +33,11 @@ export default class SettingsScreen extends React.Component {
     }
 }
 
+const mapDispatchToProps = {
+  setAuthed
+};
 
+export default connect(null, mapDispatchToProps)(SettingsScreen);
 
 const styles = StyleSheet.create({
 
