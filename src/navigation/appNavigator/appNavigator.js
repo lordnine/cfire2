@@ -44,36 +44,6 @@ function DrawerBurger () {
   );
 }
 
-const verticalAnimation = {
-  gestureDirection: 'vertical',
-  cardStyleInterpolator: ({ current, layouts }) => {
-    return {
-      cardStyle: {
-        transform: [
-          {
-            translateY: current.progress.interpolate({
-              inputRange: [0, 1],
-              outputRange: [layouts.screen.height, 0],
-            }),
-          },
-        ],
-      },
-    };
-  },
-};
-
-const config = {
-  animation: 'spring',
-  config: {
-    stiffness: 100,
-    damping: 500,
-    mass: 3,
-    overshootClamping: true,
-    restDisplacementThreshold: 0.01,
-    restSpeedThreshold: 0.01,
-  },
-};
-
 function AppNavigator(props) {
   return (
   <NavigationContainer>
@@ -196,28 +166,6 @@ function AppNavigator(props) {
                 name="Learn" component={LearnMoreScreen}
                 options={{
                   headerShown: false, gestureDirection: 'vertical',
-                  /* transitionSpec: { open: config, close: config}, headerStyleInterpolator: HeaderStyleInterpolators.forFade,
-                        cardStyleInterpolator: ({ current, next, layouts }) => {
-                          return {
-                            cardStyle: {
-                              transform: [
-                                {
-                                  translateY: current.progress.interpolate({
-                                    inputRange: [0, 1],
-                                    outputRange: [layouts.screen.height, 0],
-                                  }),
-                                },
-                              ],
-                            },
-                            overlayStyle: {
-                              opacity: current.progress.interpolate({
-                                inputRange: [0, 1],
-                                outputRange: [0, 0.5],
-                              }),
-                            },
-                          };
-                        },
-                        */
                 }}
                 options={({ navigation }) =>
                 ({
