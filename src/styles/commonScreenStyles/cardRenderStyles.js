@@ -12,7 +12,7 @@ const cardRenderStyles = {
         flexDirection: 'column',
         justifyContent: 'center',
         paddingHorizontal: '2%',
-        backgroundColor: '#e4e6eb'
+        backgroundColor: '#f1f1f1'
     },
 
 }

@@ -7,7 +7,7 @@ import logo from '../../assets/images/logo.png';
 import drawerlogo from '../../assets/images/drawerlogo.png';
 
 import appNavigatorStyles from './appNavigatorStyles';
-import { CAMPFIRE_PRIMARY } from '../../styles/colors';
+import { CAMPFIRE_PRIMARY, CAMPFIRE_SECONDARY } from '../../styles/colors';
 
 function PurpleLogo() {
   return (
@@ -63,6 +63,7 @@ const appNavigatorHeaders ={
         headerRight: null,
         headerStyle: {
           backgroundColor: CAMPFIRE_PRIMARY,
+          shadowColor: CAMPFIRE_PRIMARY,
         },
         headerLeftContainerStyle: {
           marginLeft: 8

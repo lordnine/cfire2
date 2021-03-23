@@ -4,6 +4,8 @@ import {
   StyleSheet,
   FlatList,
   Text,
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 import CategoryCard from '../../components/categoryCard';
 import categories from '../../constants/categories';
@@ -136,8 +138,8 @@ export default class CategoryScreen extends React.Component {
 
         {/* SEARCH BAR */}
         <SearchBar 
-          inputStyle={{backgroundColor: '#d6dbe0'}}
-          inputContainerStyle={{backgroundColor: '#d6dbe0'}}
+          inputStyle={{backgroundColor: '#e0e0e0'}}
+          inputContainerStyle={{backgroundColor: '#e0e0e0'}}
           searchIcon={{ size: 24 }}
           containerStyle={categoryScreenStyles.searchBarContainer}
           placeholder='Search'
@@ -160,6 +162,7 @@ export default class CategoryScreen extends React.Component {
           {this.state.noData ? categoryFlatList : null }
 
         </View>
+        
         
       </View>
     );

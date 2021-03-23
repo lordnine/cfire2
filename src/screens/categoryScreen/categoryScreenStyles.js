@@ -6,7 +6,7 @@ const categoryScreenStyles = {
     basicGreyBackground: {
         height: '100%', 
         width: '100%', 
-        backgroundColor: '#e6e6e6'
+        backgroundColor: '#f1f1f1'
     },
 
     articleContainer: {
@@ -23,7 +23,7 @@ const categoryScreenStyles = {
         justifyContent: 'center',
         alignItems: 'space-between',
         paddingHorizontal: '2%',
-        backgroundColor: '#e4e6eb',
+        backgroundColor: '#f1f1f1',
     },
 
     categoryTitle: {
@@ -40,7 +40,7 @@ const categoryScreenStyles = {
 
     searchBarContainer: {
         width: '98%', 
-        backgroundColor: '#e4e6eb', 
+        backgroundColor: '#f1f1f1', 
         borderBottomColor: 'transparent', 
         borderTopColor: 'transparent', 
         marginHorizontal: '1%'
