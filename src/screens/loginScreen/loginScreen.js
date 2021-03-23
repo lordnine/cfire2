@@ -71,7 +71,7 @@ class LoginScreen extends React.Component {
 
     //display pressable button
     const activeButton = (
-      <View style={loginFlowStyles.twoButtonWidth}>
+      <View style={loginFlowStyles.buttonWidth}>
         <Button
             title="Sign In"
             buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistInverseButton]}
@@ -83,7 +83,7 @@ class LoginScreen extends React.Component {
 
     //display disabled button
     const inactiveButton = (
-      <View style={loginFlowStyles.twoButtonWidth}>
+      <View style={loginFlowStyles.buttonWidth}>
         <Button
             title="Sign In"
             onPress={this.handleSubmit}
@@ -140,17 +140,9 @@ class LoginScreen extends React.Component {
               <Divider style={loginFlowStyles.buttonDivider} />
 
               {/* BUTTON CONTAINER */}
-              <View style={loginFlowStyles.twoButtonContainer}>
+              <View style={loginFlowStyles.buttonContainer}>
 
                 {/* LEFT BUTTON */}
-                <View style={loginFlowStyles.twoButtonWidth}>
-                  <Button
-                    title="Skip"
-                    buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
-                    titleStyle={text.learnMoreMinimalistButtonText}
-                    onPress={() => this.props.navigation.navigate('Drawer')}
-                  />
-                </View>
 
                 {/* CONDITIONALLY RENDER RIGHT BUTTON */}
                 {(this.state.password1 && this.state.email) ? activeButton : inactiveButton}
