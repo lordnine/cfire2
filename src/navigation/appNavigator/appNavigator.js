@@ -1,112 +1,53 @@
-import React, { useState } from 'react';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import { createStackNavigator , HeaderStyleInterpolators } from '@react-navigation/stack';
-import { Image, Text, Button, TouchableOpacity} from 'react-native';
-import { connect } from 'react-redux';
-import { CAMPFIRE_PRIMARY } from '../../styles/colors';
 
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import { connect } from 'react-redux';
+
+//screens
+import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
 import WelcomeScreen from '../../screens/welcomeScreen';
 import CardScreen from '../../screens/cardScreen';
-import logo from '../../assets/images/logo.png';
-import DrawerNavigator from './drawerNavigator/drawerNavigator.js';
-import { DrawerActions } from '@react-navigation/native';
-import drawerlogo from '../../assets/images/drawerlogo.png';
-import appNavigatorStyles from './appNavigatorStyles.js';
 import SpecificCategoryScreen from '../../screens/specificCategoryScreen';
 import LearnMoreScreen from '../../screens/learnMoreScreen';
 import SuggestedSchoolScreen from '../../screens/suggestedSchoolScreen';
-import { State } from 'react-native-gesture-handler';
 import CreateAccountScreen from '../../screens/createAccountScreen';
 import LoginScreen from '../../screens/loginScreen';
+
 import appNavigatorHeaders from './appNavigatorHeaders';
+import appNavigatorStyles from './appNavigatorStyles.js';
 
 
 const Stack = createStackNavigator();
 
-function HomeHeader() {
-  return (
-    <Image style={appNavigatorStyles.homeHeader} resizeMode='contain' source={logo}/>
-  );
-}
-
-function BeginHeader() {
-  return (
-    <Image style={appNavigatorStyles.beginHeader} resizeMode='contain' source={logo}/>
-  );
-}
-
-function DrawerBurger () {
-  const navigation = useNavigation();
-  return(
-    <TouchableOpacity style={appNavigatorStyles.burgerContainer} 
-    onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())}>
-        <Image source={drawerlogo} style={appNavigatorStyles.burgerStyles} resizeMode='contain' />
-    </TouchableOpacity> 
-  );
-}
-
 function AppNavigator(props) {
   return (
-  <NavigationContainer>
-      
-    <Stack.Navigator
-        initialRouteName={props.authed == true ? ("Drawer") : ("Welcome") }
-    >
-      {/* props.authed is from Redux and controls whether the user sees the auth flow or the logged in flow */}
-      {props.authed == true ? (
-        <>
-            <Stack.Screen
-              name="Drawer" component={DrawerNavigator}
-              options={({ navigation }) =>
-              ({
-                headerTitle: (() => <HomeHeader />),
-                headerLeft: null,
-                headerRight: (() => <DrawerBurger />),
-                headerStyle: {
-                  backgroundColor: '#8426E6',
-                },
-              }
-              )}
-            />
-          <Stack.Screen
-            name="Card" component={CardScreen}
-            options={({ navigation }) =>
-            ({
-              headerTitle: (() => <HomeHeader />),
-              headerTintColor: 'white',
-              headerBackTitleVisible: false,
-              headerRight: null,
-              headerLeftContainerStyle: {
-                marginLeft: 8
-              },
-              headerStyle: {
-                backgroundColor: '#8426E6',
-              },
-            }
-            )}
-          />
-          
-          <Stack.Screen
-            name="Specific" component={SpecificCategoryScreen}
-            options={({ navigation }) =>
-            ({
-              headerTitle: (() => <HomeHeader />),
-              headerTintColor: 'white',
-              headerBackTitleVisible: false,
-              headerRight: null,
-              headerStyle: {
-                backgroundColor: '#8426E6',
-              },
-              headerLeftContainerStyle: {
-                marginLeft: 8
-              }
-            }
-            )}
-          />
-        </>
-      ) : (
-        
-        <>
+    <NavigationContainer>
+
+      <Stack.Navigator
+          initialRouteName={props.authed == true ? ("Drawer") : ("Welcome") }
+      >
+        {/* props.authed is from Redux and controls whether the user sees the auth flow or the logged in flow */}
+        {props.authed == true ? (
+          <>
+              <Stack.Screen
+                name="Drawer" component={DrawerNavigator}
+                options={appNavigatorHeaders.drawerHeader}
+              />
+              <Stack.Screen
+                name="Card" component={CardScreen}
+                options={appNavigatorHeaders.purpleHeader}
+              />
+
+              <Stack.Screen
+                name="Specific" component={SpecificCategoryScreen}
+                options={appNavigatorHeaders.purpleHeader}
+              />
+          </>
+
+        ) : (
+
+          <>
               <Stack.Screen
                 name="Welcome" component={WelcomeScreen} options={{ headerShown: false }}
               />
@@ -114,12 +55,10 @@ function AppNavigator(props) {
                 name="CreateAccount" component={CreateAccountScreen}
                 options={appNavigatorHeaders.loginFlowHeader}
               />
-
               <Stack.Screen
                 name="Login" component={LoginScreen} options={{ headerShown: false }}
-                options={appNavigationHeaders.loginFlowHeader}
+                options={appNavigatorHeaders.loginFlowHeader}
               />
-
               <Stack.Screen
                 name="SuggestedSchool" component={SuggestedSchoolScreen}
                 options={appNavigatorHeaders.loginFlowHeader}
@@ -128,12 +67,13 @@ function AppNavigator(props) {
                 name="Learn" component={LearnMoreScreen}
                 options={appNavigatorHeaders.loginFlowHeader}
               />
-        </>
-      )}
-    </Stack.Navigator>
+          </>
+        )}
+
+      </Stack.Navigator>
     </NavigationContainer>
   );
-      };
+};
 
 mapStateToProps = (state) => {
   return {
