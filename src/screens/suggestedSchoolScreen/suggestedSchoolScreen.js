@@ -138,10 +138,10 @@ export default class suggestedSchoolScreen extends React.Component {
                 {/* LEFT BUTTON */}
                 <View style={loginFlowStyles.twoButtonWidth}>
                   <Button
-                    title="Skip"
+                    title="Partner Schools"
                     buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
                     titleStyle={text.learnMoreMinimalistButtonText}
-                    onPress={() => this.props.navigation.navigate('Drawer')}
+                    onPress={() => this.props.navigation.navigate('CreateAccount')}
                   />
                 </View>
 
