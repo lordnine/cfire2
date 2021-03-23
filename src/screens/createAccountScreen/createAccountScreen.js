@@ -4,7 +4,8 @@ import {
   Text,
   View,
   TextInput,
-  Image
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 import {
   Button, 
@@ -94,6 +95,7 @@ export default class CreateAccountScreen extends React.Component {
     
     return (
       <View style={loginFlowStyles.genericWhiteContainer}>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 
         <View style={loginFlowStyles.primaryContainer}>
 
@@ -184,7 +186,7 @@ export default class CreateAccountScreen extends React.Component {
             </View>
 
           </View>
-
+        </TouchableWithoutFeedback>
       </View>
 
     );

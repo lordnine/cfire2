@@ -4,7 +4,9 @@ import {
   Text,
   View,
   TextInput,
-  ActivityIndicator
+  ActivityIndicator,
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 import {
   Button, 
@@ -58,7 +60,7 @@ class LoginScreen extends React.Component {
     //display spinner
     const handleAwait = (
         <View style={{justifyContent: 'center', alignItems: 'center'}}>
-          <ActivityIndicator size="large" color={CAMPFIRE_SECONDARY}/>
+          <ActivityIndicator size="small" color={CAMPFIRE_SECONDARY}/>
         </View>
     );
 
@@ -96,6 +98,7 @@ class LoginScreen extends React.Component {
 
     return (
       <View style={loginFlowStyles.genericWhiteContainer}>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 
         <View style={loginFlowStyles.primaryContainer}>
 
@@ -157,6 +160,7 @@ class LoginScreen extends React.Component {
 
           </View>
 
+          </TouchableWithoutFeedback>
         </View>
 
     );

@@ -52,6 +52,7 @@ const appNavigatorHeaders ={
         headerRight: (() => <DrawerBurger />),
         headerStyle: {
           backgroundColor: CAMPFIRE_PRIMARY,
+          shadowColor: CAMPFIRE_PRIMARY,
         },
       },
 

@@ -4,17 +4,20 @@ import {
   Text,
   View,
   TextInput,
-  Image
+  TouchableWithoutFeedback,
+  Keyboard
 } from 'react-native';
 import {
   Button, Divider,
 } from 'react-native-elements';
+
+
 import suggestedSchoolScreenStyles from './suggestedSchoolScreenStyles';
+import loginFlowStyles from '../../styles/commonScreenStyles/loginFlowStyles';
 import buttons from '../../styles/buttons';
 import text from '../../styles/text';
-import adjustableStyleFunctions from '../../styles/adjustableStyleFunctions';
+
 import { db } from '../../utils/firebase';
-import loginFlowStyles from '../../styles/commonScreenStyles/loginFlowStyles';
 
 var suggestedSchoolRef = db.collection("suggestedSchools");
 
@@ -74,6 +77,7 @@ export default class suggestedSchoolScreen extends React.Component {
 
     return (
       <View style={loginFlowStyles.genericWhiteContainer}>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
 
 
         <View style={loginFlowStyles.primaryContainer}>
@@ -138,7 +142,7 @@ export default class suggestedSchoolScreen extends React.Component {
                 {/* LEFT BUTTON */}
                 <View style={loginFlowStyles.twoButtonWidth}>
                   <Button
-                    title="Partner Schools"
+                    title="School List"
                     buttonStyle={[buttons.mainButton, buttons.learnMoreMinimalistButton]}
                     titleStyle={text.learnMoreMinimalistButtonText}
                     onPress={() => this.props.navigation.navigate('CreateAccount')}
@@ -156,6 +160,7 @@ export default class suggestedSchoolScreen extends React.Component {
         
           </View>
 
+          </TouchableWithoutFeedback>
         </View>
 
     );
