@@ -1,4 +1,6 @@
 
+import { CAMPFIRE_SECONDARY } from '../../styles/colors';
+
 
 const welcomeScreenStyles = {
   
@@ -11,13 +13,13 @@ const welcomeScreenStyles = {
     carouselContainer: {
         height: '33%',
         width: 340,
-        backgroundColor: '#a854Fd', //////'#25284f', 
+        backgroundColor: CAMPFIRE_SECONDARY, //////'#25284f', 
         borderRadius: 18,
         alignItems: 'center'
     },
 
     carouselStyle: {
-        backgroundColor:'#a854Fd', //// '#25284f', 
+        backgroundColor: CAMPFIRE_SECONDARY, //// '#25284f', 
         width: '100%', 
         borderRadius: 18,
     },

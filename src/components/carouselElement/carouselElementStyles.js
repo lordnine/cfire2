@@ -1,10 +1,11 @@
 
+import { CAMPFIRE_SECONDARY } from '../../styles/colors';
 
 
     const carouselElementStyles = {
 
         carouselElement: {
-            backgroundColor: '#a854Fd', //////'#25284f', 
+            backgroundColor: CAMPFIRE_SECONDARY, //////'#25284f', 
             height: '100%', 
             width: 340, 
             justifyContent: 'center', 
