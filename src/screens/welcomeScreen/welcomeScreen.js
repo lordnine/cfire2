@@ -22,16 +22,16 @@ export default class WelcomeScreen extends React.Component {
     //sets the bullets to default colors 
     state = {
       carouselOne: 'white',
-      carouselTwo: '#7d47d3',
+      carouselTwo: 'black',
     };
 
     //changes the color of the carousel bullets depending upon user input
     handleScrollEnd = (data) => {
       if(data.nativeEvent.contentOffset.x > 0){
-        this.setState({carouselOne: '#7d47d3', carouselTwo: 'white'});
+        this.setState({carouselOne: 'black', carouselTwo: 'white'});
       }
       else{
-        this.setState({carouselOne: 'white', carouselTwo: '#7d47d3'});
+        this.setState({carouselOne: 'white', carouselTwo: 'black'});
       }
     };
 
