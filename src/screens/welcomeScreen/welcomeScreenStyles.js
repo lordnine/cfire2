@@ -11,10 +11,11 @@ const welcomeScreenStyles = {
     },
 
     carouselContainer: {
-        height: '62%',
+        height: '44%',
         backgroundColor: CAMPFIRE_SECONDARY, //////'#25284f', 
         borderRadius: 18,
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'flex-start'
     },
 
     carouselStyle: {

@@ -50,7 +50,10 @@ export default class WelcomeScreen extends React.Component {
 <Divider style={adjustableStyleFunctions.transparentDivider('12%')} />
 
 
-          <View style={[welcomeScreenStyles.carouselContainer, {width: Dimensions.get('window').width * .9}]}>
+          <View style={[welcomeScreenStyles.carouselContainer, {width: Dimensions.get('window').width * .9, justifyContent: 'flex-start'}]}>
+          <View style={{width: '100%', paddingTop: 0 , alignItems: 'flex-end', justifyContent: 'flex-start', paddingRight: '4%'}}>
+          {renderBullets}
+          </View>
             <ScrollView style={welcomeScreenStyles.carouselStyle} 
               horizontal 
               disableIntervalMomentum={true} 
@@ -69,18 +72,25 @@ export default class WelcomeScreen extends React.Component {
                 isCollege={false}
                 />
             </ScrollView>
-            {renderBullets}
 
             <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-            <View style={[loginFlowStyles.twoButtonContainer,{width: '90%'}]}>
+
+          </View>
+
+          <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+
+
+              <View style={loginFlowStyles.twoButtonContainer}>
+
+                
 
 {/* LEFT BUTTON */}
 <View style={loginFlowStyles.twoButtonWidth}>
   <Button
-    title="Learn More"
+    title="School List"
     buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
     titleStyle={text.minimalistButtonText}
-    onPress={() => this.props.navigation.navigate('Learn')}
+    onPress={() => this.props.navigation.navigate('CreateAccount')}
   />
 </View>
 
@@ -88,7 +98,7 @@ export default class WelcomeScreen extends React.Component {
 
 <View style={loginFlowStyles.twoButtonWidth}>
   <Button
-    title="Create Account"
+    title="School List"
     buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
     titleStyle={text.inverseMinimalistButtonText}
     onPress={() => this.props.navigation.navigate('CreateAccount')}
@@ -96,18 +106,7 @@ export default class WelcomeScreen extends React.Component {
 </View>
 
 
-
 </View>
-
-<Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
-
-          </View>
-
-          <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
-
-              <Divider style={adjustableStyleFunctions.transparentDivider('9%')}/>
-
-          
           
         </View>
 
