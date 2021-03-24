@@ -50,7 +50,7 @@ export default class WelcomeScreen extends React.Component {
 <Divider style={adjustableStyleFunctions.transparentDivider('15%')} />
 
 
-          <View style={[welcomeScreenStyles.carouselContainer, {width: Dimensions.get('window').width * .9, justifyContent: 'flex-start'}]}>
+          <View style={[welcomeScreenStyles.carouselContainer, {width: Dimensions.get('window').width * .88, justifyContent: 'flex-start'}]}>
           <View style={{width: '100%', paddingTop: 0 , alignItems: 'flex-end', justifyContent: 'flex-start', paddingRight: '4%'}}>
           {renderBullets}
           </View>
@@ -64,23 +64,25 @@ export default class WelcomeScreen extends React.Component {
               onMomentumScrollEnd={(data) => this.handleScrollEnd(data)}          
               >
                 <CarouselElement elementTitle="College Student?" elementSubTitle='Join us and start saving today'
-                width={Dimensions.get('window').width * .9}
+                width={Dimensions.get('window').width * .88}
                 isCollege={true}
                 />
                 <CarouselElement elementTitle="Fire Sales" elementSubTitle='And deals in your college town'
-                width={Dimensions.get('window').width * .9}
+                width={Dimensions.get('window').width * .88}
                 isCollege={false}
                 />
             </ScrollView>
 
             <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
 
+            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+
           </View>
 
           <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
 
 
-              <View style={[loginFlowStyles.twoButtonContainer, {width: '94%'}]}>
+              <View style={[loginFlowStyles.twoButtonContainer, {width: '92%'}]}>
 
                 
 
@@ -98,7 +100,7 @@ export default class WelcomeScreen extends React.Component {
 
 <View style={loginFlowStyles.twoButtonWidth}>
   <Button
-    title="Create Account"
+    title="Get Started"
     buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
     titleStyle={text.inverseMinimalistButtonText}
     onPress={() => this.props.navigation.navigate('CreateAccount')}

@@ -18,7 +18,7 @@ class CarouselElement extends React.Component {
         return (
 
                 <View style={[carouselElementStyles.carouselElement, {width: this.props.width}]}>
-                    <Divider style={adjustableStyleFunctions.transparentDivider('18%')}/>
+                    <Divider style={adjustableStyleFunctions.transparentDivider('16%')}/>
                     <Image source={(this.props.isCollege ? collegelogo : couponLogo)} resizeMode='contain' style={{width: '22%', height: '20%', tintColor: 'white'}}/> 
                     <Divider style={adjustableStyleFunctions.transparentDivider('12%')}/>
                     <Text style={carouselElementStyles.elementTitle}>{ elementTitle }</Text>

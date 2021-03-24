@@ -11,7 +11,7 @@ const welcomeScreenStyles = {
     },
 
     carouselContainer: {
-        height: '42%',
+        height: '44%',
         backgroundColor: CAMPFIRE_SECONDARY, //////'#25284f', 
         borderRadius: 18,
         alignItems: 'center',

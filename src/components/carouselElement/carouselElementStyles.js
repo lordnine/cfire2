@@ -12,13 +12,13 @@ import { CAMPFIRE_SECONDARY } from '../../styles/colors';
         },
 
         elementTitle: {
-            fontSize: 38, 
+            fontSize: 36, 
             fontWeight: '700', 
             color: 'white',
         },
 
         elementSubTitle: {
-            fontSize: 24, 
+            fontSize: 20, 
             fontWeight: '500', 
             color: 'white', 
             textAlign: 'center', 
