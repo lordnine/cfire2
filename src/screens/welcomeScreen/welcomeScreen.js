@@ -47,7 +47,7 @@ export default class WelcomeScreen extends React.Component {
 
 
 
-<Divider style={adjustableStyleFunctions.transparentDivider('12%')} />
+<Divider style={adjustableStyleFunctions.transparentDivider('15%')} />
 
 
           <View style={[welcomeScreenStyles.carouselContainer, {width: Dimensions.get('window').width * .9, justifyContent: 'flex-start'}]}>
@@ -73,24 +73,24 @@ export default class WelcomeScreen extends React.Component {
                 />
             </ScrollView>
 
-            <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
+            <Divider style={adjustableStyleFunctions.transparentDivider('2%')} />
 
           </View>
 
           <Divider style={adjustableStyleFunctions.transparentDivider('4%')} />
 
 
-              <View style={loginFlowStyles.twoButtonContainer}>
+              <View style={[loginFlowStyles.twoButtonContainer, {width: '94%'}]}>
 
                 
 
 {/* LEFT BUTTON */}
 <View style={loginFlowStyles.twoButtonWidth}>
   <Button
-    title="School List"
+    title="Learn More"
     buttonStyle={[buttons.mainButton, buttons.minimalistButton]}
     titleStyle={text.minimalistButtonText}
-    onPress={() => this.props.navigation.navigate('CreateAccount')}
+    onPress={() => this.props.navigation.navigate('Learn')}
   />
 </View>
 
@@ -98,7 +98,7 @@ export default class WelcomeScreen extends React.Component {
 
 <View style={loginFlowStyles.twoButtonWidth}>
   <Button
-    title="School List"
+    title="Create Account"
     buttonStyle={[buttons.mainButton, buttons.inverseMinimalistButton]}
     titleStyle={text.inverseMinimalistButtonText}
     onPress={() => this.props.navigation.navigate('CreateAccount')}
