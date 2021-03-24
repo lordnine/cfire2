@@ -11,8 +11,7 @@ const welcomeScreenStyles = {
     },
 
     carouselContainer: {
-        height: '33%',
-        width: 340,
+        height: '62%',
         backgroundColor: CAMPFIRE_SECONDARY, //////'#25284f', 
         borderRadius: 18,
         alignItems: 'center'
@@ -27,9 +26,9 @@ const welcomeScreenStyles = {
     buttonContainer: {
         flexDirection: 'row', 
         width: '100%', 
-        alignItems: 'center', 
-        justifyContent: 'space-between',
-        width: 340,
+        alignItems: 'flex-end', 
+        justifyContent: 'flex-end',
+        width: '100%',
     },
 
     buttonWidth: {

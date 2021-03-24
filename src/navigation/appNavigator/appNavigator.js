@@ -50,6 +50,7 @@ function AppNavigator(props) {
           <>
               <Stack.Screen
                 name="Welcome" component={WelcomeScreen} options={{ headerShown: false }}
+                options={appNavigatorHeaders.purpleHeader}
               />
               <Stack.Screen
                 name="CreateAccount" component={CreateAccountScreen}

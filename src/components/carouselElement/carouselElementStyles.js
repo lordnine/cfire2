@@ -6,20 +6,19 @@ import { CAMPFIRE_SECONDARY } from '../../styles/colors';
 
         carouselElement: {
             backgroundColor: CAMPFIRE_SECONDARY, //////'#25284f', 
-            height: '100%', 
-            width: 340, 
-            justifyContent: 'center', 
+            justifyContent: 'flex-start', 
             alignItems: 'center',
+            height: '100%'
         },
 
         elementTitle: {
-            fontSize: 21, 
-            fontWeight: '600', 
+            fontSize: 38, 
+            fontWeight: '700', 
             color: 'white',
         },
 
         elementSubTitle: {
-            fontSize: 18, 
+            fontSize: 24, 
             fontWeight: '500', 
             color: 'white', 
             textAlign: 'center', 

@@ -7,7 +7,7 @@ const buttons = {
         minHeight: 50,
         minWidth: '49%',
         borderWidth: 2,
-        borderRadius: 28,
+        borderRadius: 30,
     },
 
     minimalistButton: {
