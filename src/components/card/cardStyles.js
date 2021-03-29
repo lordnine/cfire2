@@ -7,11 +7,11 @@ const cardStyles = {
         marginTop: 2,
         marginBottom: 2,
         borderWidth: 0,
-        minHeight: 162,
+        minHeight: 220,
         borderRadius: 10,
         flex: 1,
         height:'40%',
-        width: '100%'
+        width: '100%',
     },
 
     shadow: {
@@ -20,144 +20,90 @@ const cardStyles = {
         shadowRadius: 3,
         shadowOpacity: 0.2,
         elevation: 100,
-    },
-
-    imageContainer: {
-        borderRadius: 10,
         elevation: 1,
-        overflow: 'hidden',
-        height: 130,
-        flex: 1,
     },
 
-    horizontalStyles: {
-        height: 200,
+    wrappingContainer: {
+        height: '100%', 
+        backgroundColor: 'white', 
+        justifyContent: 'space-between', 
+        alignItems: 'center', 
+        height: '100%', 
+        borderRadius: 10, 
     },
 
-    verticalStyles: {
-        height: 110,
-        flex: 1,
-        backgroundColor: 'grey',
+    barContainer: {
+        width: '93%', 
+        height: '15%', 
+        alignItems: 'flex-start', 
+        flexWrap: 'wrap', 
+        marginVertical: '4%'
+    },
+
+    leftTopIconContainer: {
+        width: '50%', 
+        justifyContent: 'flex-start',
+    },
+
+    leftBottomIconContainer: {
+        width: '50%', 
+        height: '100%', 
+        justifyContent: 'flex-end'
+    },
+
+    rightTopIconContainer: {
+        height: '100%', 
+        width: '50%', 
+        alignItems: 'flex-end'
+    },
+    
+    rightBottomIconContainer: {
+        width: '50%', 
+        height: '100%', 
+        justifyContent: 'flex-end', 
+        alignItems: 'flex-end'
+    },
+    
+    qrTouchable: {
+        height: '100%', 
+        width: '20%', 
+        alignItems: 'flex-end', 
+        justifyContent: 'flex-end'
+    },
+
+    cardIcon: {
+        width: 18, 
+        height: 18, 
+        tintColor: 'darkgrey'
     },
 
     companyNameText: {
         fontSize: 20,
         fontWeight: '800',
         color: CAMPFIRE_PRIMARY,
-        paddingLeft: '4%',
-        paddingRight: '4%',
-        paddingTop: '2%',
-        paddingBottom: '2%',
         textAlign: 'center',
-    },
-
-    regBackground:{
-        backgroundColor: 'white',
-    },
-
-    cardDescription: {
-        padding: 6,
-        height: 90,
-        flex: 1,
-        flexWrap: 'nowrap',
-    },
-
-    cardTitle: {
-        flex: 1,
-        flexWrap: 'nowrap',
-        paddingBottom: 8
-    },
-
-    cardCTA: {
-        color: 'cornflowerblue'
-    },
-
-    touchableContainer: {
-        height: '100%',
     },
     
     companyNameContainer: {
         width: '100%', 
-        height:'92%',
-        marginTop: '4%', 
         alignItems:'center', 
         justifyContent: 'center', 
-        position: 'absolute',
     },
 
     dealContainer: {
         width: '100%', 
-        height:'100%', 
-        alignItems:'flex-start', 
-        justifyContent: 'flex-end', 
-        position: 'absolute',
-    },
-
-    shareContainer: {
-        justifyContent: 'flex-end',
-        height: '7.8%',
-        width: '8%',
-        alignItems: 'flex-end',
-        marginTop: '47.8%',
-        marginLeft: '3%',
-        fontSize: 13, 
-        fontWeight: '600', 
     },
 
     dealText: {
         color: 'grey', 
         fontSize: 16, 
         fontWeight: '500', 
-        marginBottom: '4%'
-    },
-    
-    dateContainer: {
-        width: '100%', 
-        height:'100%', 
-        alignItems:'flex-end', 
-        justifyContent: 'flex-start', 
-        position: 'absolute',
     },
 
     dateText: {
         color: 'darkgrey', 
-        marginRight: '4.5%', 
         fontSize: 13, 
         fontWeight: '600', 
-        marginTop: '4%',
-    },
-
-    categoryContainer: {
-        width: '100%', 
-        height: '100%', 
-        justifyContent: 'flex-start', 
-        alignItems: 'center' , 
-        position: 'absolute',
-    },
-
-    categoryImage: {
-        height: '8%', 
-        flexWrap: 'nowrap', 
-        marginTop: '4%', 
-        marginRight: '86%',
-        tintColor: 'darkgrey'
-    },
-
-    qrContainer: {
-        width: '100%', 
-        height: '100%', 
-        justifyContent: 'flex-end', 
-        alignItems: 'center' , 
-        position: 'absolute',
-    },
-
-    qrImage: {
-        height: '8.5%', 
-        justifyContent: 'flex-end',
-        alignItems: 'flex-end',
-        marginBottom: '4%',
-        marginLeft: '85%',
-        tintColor: `darkgrey`
     },
 
 };

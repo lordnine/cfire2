@@ -18,48 +18,54 @@ import sharelogo from '../../assets/images/sharelogo.png';
 
 class Card extends React.Component {
     render() {
-        const { navigation, dealBlurb, storeName, categoryID, key, time} = this.props;
 
-        const crdContainer = [cardStyles.card, cardStyles.shadow];
-        const imgContainer = [cardStyles.imageContainer, cardStyles.horizontalStyles, cardStyles.shadow
-        ];
-        const backgroundStyles = [ cardStyles.regBackground];
+        const { navigation, dealBlurb, storeName, categoryID, key, time} = this.props;
 
         const categoryLogo = [burgerlogo, shoppinglogo, supplieslogo, scissorslogo];
 
-        const categoryColor = ['#485063', '#039be5', '#009688', '#ff99cc'];
-
         return (
-            <View style={crdContainer}>
+            <View style={[cardStyles.card, cardStyles.shadow]}>
+              <TouchableOpacity style={{height: '100%'}} onPress={() => this.props.navigation.navigate('Card', { element: this.props.id})}>
 
-              {/* Top portion of the card - contains company name and color currently */}
-              <TouchableOpacity style={cardStyles.touchableContainer} onPress={() => this.props.navigation.navigate('Card', { element: 3})}>
-                <View style={[imgContainer, backgroundStyles]}>
+                <View style={cardStyles.wrappingContainer}>
+
+                  <View style={cardStyles.barContainer}>
+
+                    <View style={cardStyles.leftTopIconContainer} >
+                        <Image style={cardStyles.cardIcon} source={categoryLogo[this.props.categoryID]} resizeMode='contain'></Image>
+                    </View>
+
+                    <View style={cardStyles.rightTopIconContainer}>
+                        <Text style={cardStyles.dateText}>{this.props.time}d</Text>
+                    </View>
+                    
+                  </View>
+
+
                   <View style={cardStyles.companyNameContainer}>
                     <Text style={cardStyles.companyNameText}>{this.props.storeName}</Text>
                     <Text style={cardStyles.dealText}>{this.props.dealBlurb}</Text>
                   </View>
 
-                  <View style={cardStyles.dateContainer}>
-                    <Text style={cardStyles.dateText}>{this.props.time}d</Text>
-                  </View>
+                  <View style={cardStyles.barContainer}>
 
-                  <View style={cardStyles.categoryContainer} onPress={() => this.props.navigation.navigate('Card', { element: 2})}>
-                    <Image style={[cardStyles.categoryImage, /*{tintColor: categoryColor[this.props.categoryID]}*/]} source={categoryLogo[this.props.categoryID]} resizeMode='contain'></Image>
-                  </View>
+                    <View style={cardStyles.leftBottomIconContainer}>
+                      <Image style={cardStyles.cardIcon} source={sharelogo} resizeMode='contain'></Image>
+                    </View>
 
-                  <TouchableOpacity style={cardStyles.qrContainer} onPress={() => this.props.navigation.navigate('Card', { element: this.props.id})}>
-                   {/*<Text style={cardStyles.qrImage}>QR</Text> */}
-                    <Image style={cardStyles.qrImage}source={qrlogo} resizeMode='contain'></Image>   
-                  </TouchableOpacity>
+                    <View style={cardStyles.rightTopIconContainer}>
+                      <TouchableOpacity style={cardStyles.qrTouchable} 
+                      onPress={() => this.props.navigation.navigate('Card', { element: this.props.id})}>
+                        <Image style={cardStyles.cardIcon}source={qrlogo} resizeMode='contain'></Image>   
+                      </TouchableOpacity>
+                    </View>
 
-                  <View style={cardStyles.shareContainer}>
-                    <Image style={{height: '100%', width: '100%', tintColor: `darkgrey`}} source={sharelogo} resizeMode='contain'></Image>
+
                   </View>
 
                 </View>
-              </TouchableOpacity>
 
+              </TouchableOpacity>
             </View>
         );
     }
