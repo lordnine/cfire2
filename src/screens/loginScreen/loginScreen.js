@@ -148,7 +148,7 @@ class LoginScreen extends React.Component {
                 {/* LEFT BUTTON */}
 
                 {/* CONDITIONALLY RENDER RIGHT BUTTON */}
-                {(this.state.password1 && this.state.email) ? activeButton : inactiveButton}
+                {(this.state.password1 && this.state.email && !this.state.processSubmit) ? activeButton : inactiveButton}
 
               </View>
 
