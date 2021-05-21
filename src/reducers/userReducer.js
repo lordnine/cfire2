@@ -9,7 +9,7 @@ import {
 } from '../actions/actionTypes';
 
 const initialState = {
-  authed: false,
+  authed: true,
 };
 
 /**
