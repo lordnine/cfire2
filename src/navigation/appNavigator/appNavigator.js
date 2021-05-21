@@ -38,7 +38,6 @@ function AppNavigator(props) {
                 name="Card" component={CardScreen}
                 options={appNavigatorHeaders.purpleHeader}
               />
-
               <Stack.Screen
                 name="Specific" component={SpecificCategoryScreen}
                 options={appNavigatorHeaders.purpleHeader}

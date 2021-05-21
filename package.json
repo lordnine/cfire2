@@ -45,5 +45,8 @@
     "jest-expo": "^39.0.0"
   },
   "private": true,
-  "name": "campfire"
+  "name": "campfire",
+  "volta": {
+    "node": "14.17.0"
+  }
 }
