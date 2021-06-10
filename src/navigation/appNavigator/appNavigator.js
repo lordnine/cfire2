@@ -43,10 +43,10 @@ function AppNavigator(props) {
 					name="Specific" component={SpecificCategoryScreen}
 					options={appNavigatorHeaders.purpleHeader}
 				/>
-				{/* <Stack.Screen
+				<Stack.Screen
 					name="StoreDeals" component={StoreDealsScreen}
 					options={appNavigatorHeaders.purpleHeader}
-				/> */}
+				/>
           	</>
 
         ) : (
