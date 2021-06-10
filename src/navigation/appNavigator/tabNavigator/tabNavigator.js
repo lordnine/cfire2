@@ -21,7 +21,7 @@ return(
     <Tab.Navigator initialRouteName="Home" drawerPosition='right' 
       tabBarOptions={tabNavigatorStyles.tintStyle} 
     >
-        <Tab.Screen name="Home" component={StoresListScreen} 
+        <Tab.Screen name="Home" component={HomeScreen} 
           options={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
               return (
@@ -30,6 +30,16 @@ return(
             },
           })}
         />
+
+    <Tab.Screen name="Stores" component={StoresListScreen}
+      options={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          return (
+            <Image source={houselogo} style={[tabNavigatorStyles.tabLogo, { tintColor: color }]} resizeMode='contain' />
+          );
+        },
+      })}
+    />
 
         <Tab.Screen name="Search" component={CategoryScreen} 
           options={({ route }) => ({
