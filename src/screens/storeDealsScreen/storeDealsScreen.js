@@ -6,37 +6,39 @@ import {
 } from 'react-native';
 import { db } from '../../utils/firebase';
 import { FlatList } from 'react-native';
+import DealsList from '../../components/dealsList/dealsList';
 
-var storesRef = db.collection("stores");
+var dealsRef = db.collection("deals");
 
 export default class StoresListScreen extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      stores: []
+      deals: []
     };
   }
 
   componentDidMount() {
-    // storesRef.get()
-    //   .then((querySnapshot) => {
-    //     const storeData = [];
-    //     querySnapshot.forEach((doc) => {
-    //       // storeData.push((doc.data().storeName));
-    //       // this.setState({ stores: storeData });
-    //     });
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error getting documents: ", error);
-    //   });
+    dealsRef.get()
+      .then((querySnapshot) => {
+        const dealsData = [];
+        querySnapshot.forEach((doc) => {
+          dealsData.push((doc.data().dealText));
+          this.setState({ deals: dealsData });
+        });
+      })
+      .catch((error) => {
+        console.log("Error getting documents: ", error);
+      });
   }
 
   render() {
     return (
       <View>
-        <Text>
-          Deals
-        </Text>
+        <DealsList
+          navigation={this.props.navigation}
+          deals={this.state.deals}
+        />
       </View>
     );
   }

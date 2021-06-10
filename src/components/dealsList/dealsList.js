@@ -4,36 +4,29 @@ import {
   StyleSheet,
   Text
 } from 'react-native';
-import { db } from '../../utils/firebase';
 import { FlatList } from 'react-native';
 
 export default class DealsList extends React.Component {
 
-  componentDidMount() {
-    // storesRef.get()
-    //   .then((querySnapshot) => {
-    //     const storeData = [];
-    //     querySnapshot.forEach((doc) => {
-    //       storeData.push((doc.data().storeName));
-    //       this.setState({ stores: storeData })
-    //     });
-    //     console.log(this.state.stores[0]);
-    //   })
-    //   .catch((error) => {
-    //     console.log("Error getting documents: ", error);
-    //   });
-  }
+  renderDealCard = ({ item, index }) => {
+    console.log(JSON.stringify(item));
+    return (
+      <Text>
+        {item}
+      </Text>
+    )
+  };
 
   render() {
     return (
       <View>
-        <Text>
-          Deals
-        </Text>
+        <FlatList
+          data={this.props.deals}
+          renderItem={this.renderDealCard}
+        />
       </View>
     );
   }
-
 }
 
 
